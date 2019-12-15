@@ -1,0 +1,22 @@
+import React from "react";
+import classNames from "classnames";
+import { makeStyles } from "@material-ui/core/styles";
+import styles from "assets/jss/material-kit-react/views/landingPage.js";
+import ProductSection from "./Sections/ProductSection.js";
+import "assets/scss/canvas.scss";
+
+const useStyles = makeStyles(styles);
+
+export default function LandingPage(props) {
+  const classes = useStyles();
+  const { ...rest } = props;
+  return (
+    <div>
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.container}>
+          <ProductSection />
+        </div>
+      </div>
+    </div>
+  );
+}
