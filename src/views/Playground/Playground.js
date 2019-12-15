@@ -7,6 +7,7 @@ import GridItem from "components/Grid/GridItem.js";
 import AceEditor from "react-ace";
 import Sketch from 'react-p5'
 import styles from "assets/jss/material-kit-react/views/playground.js";
+import Node from './tree'
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/snippets/javascript";
@@ -14,64 +15,35 @@ import "ace-builds/src-noconflict/theme-twilight";
 
 const useStyles = makeStyles(styles);
 
-class Node{
-  left = null
-  right = null
-  x = null
-  y = null
-
-  constructor(value){
-    this.value = value
-  }
-
-  insert(value){
-    let node = this
-    while(node){
-      if(value <= this.value){
-        if(this.left == null){
-          this.left = new Node(value)
-          break
-        }
-        else{
-          node = this.left
-        }
-      }
-      else{
-        if(this.right == null){
-          this.right = new Node(value)
-          break
-        }
-        else{
-          node = this.right
-        }
-      }
-    }
-  }
-}
-
-var ix = 0
-
 export default function Playground(props) {
   const classes = useStyles();
-  const size = 25
+  let size = 25
   let x = 220
-  let y = 10
-  
+  let y = 16
+  var ix = 0
+  let margin = 50;
+  let tree = new Node(5)
+  tree.x = x
+  tree.y = y
+
   function setup(p5, canvasParentRef) {
     p5.createCanvas(500, 500).parent(canvasParentRef)
   }
+
   function draw(p5){
-
     p5.fill(255)
-
+    
     while(ix < 10){
-      let left = x + size
-      let right = x - size
+
+      let left = x + size - margin
+      let right = x - size + margin
       let down = y + size
       p5.line(right, down, x, y);
       p5.line(left, down, x, y);
       p5.ellipse(x, y, 10)
-      if(Math.random() * 100 > 25){
+      p5.ellipse(right, down, 10)
+      p5.ellipse(left, down, 10)
+      if(Math.round(Math.random())){
         x = left
       }
       else{
