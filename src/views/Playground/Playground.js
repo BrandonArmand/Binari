@@ -17,41 +17,48 @@ const useStyles = makeStyles(styles);
 
 export default function Playground(props) {
   const classes = useStyles();
-  let size = 25
-  let x = 220
-  let y = 16
-  var ix = 0
-  let margin = 50;
-  let tree = new Node(5)
-  tree.x = x
-  tree.y = y
+  let tree = new Node(50)
+  tree.x = 220
+  tree.y = 16
+  let drawQ = [tree]
+  let layerQ = []
+  let layer = 0
 
   function setup(p5, canvasParentRef) {
     p5.createCanvas(500, 500).parent(canvasParentRef)
   }
 
-  function draw(p5){
-    p5.fill(255)
-    
-    while(ix < 10){
+  for (var i = 0; i < 25; i++) {
+    tree.insert(Math.floor(Math.random() * 100));
+  }
 
-      let left = x + size - margin
-      let right = x - size + margin
-      let down = y + size
-      p5.line(right, down, x, y);
-      p5.line(left, down, x, y);
-      p5.ellipse(x, y, 10)
-      p5.ellipse(right, down, 10)
-      p5.ellipse(left, down, 10)
-      if(Math.round(Math.random())){
-        x = left
-      }
-      else{
-        x = right
-      }
-      y = down
-      ix++;
-    }
+  function draw(p5){
+    drawQ.forEach((el,i)=>{
+        if(el.left){
+            el.left.x = el.x - 50
+            el.left.y = el.y + 20
+            p5.stroke(0)
+            p5.line(el.x, el.y, el.left.x, el.left.y);
+            layerQ.push(el.left)
+        }
+        if(el.right){
+            el.right.x = el.x + 50
+            el.right.y = el.y + 20
+            p5.stroke(0)
+            p5.line(el.x, el.y, el.right.x, el.right.y);
+            layerQ.push(el.right)
+        }
+        p5.textAlign(p5.CENTER);
+        p5.noStroke()
+        p5.ellipse(el.x, el.y, 20)
+        p5.text(el.value, el.x, el.y + 5);
+
+        if(!drawQ[i+1]){
+            layer++
+            drawQ = [...layerQ]
+            layerQ = []
+        }
+    })
   }
 
   return (

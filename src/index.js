@@ -43,8 +43,8 @@ function App(){
               <h1 className={classes.title}>Binari</h1>
               <h4>
                 Binary Trees are a gateway towards a deeper understanding of dynamic programming.
-                Through the use of both recurssion and iterative implimentations any developer can guided
-                towards a more complete programmer.
+                Through the use of both recurssion and iterative implimentations any developer can be guided
+                towards becoming a more complete programmer.
               </h4>
               <br />
             </GridItem>

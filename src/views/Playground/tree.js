@@ -44,14 +44,14 @@ drawQ.forEach((el,i)=>{
         layerQ.push(el.left)
     }
     if(el.right){
-        el.right.x = el.x - 50
-        el.left.y = el.y + 20
+        el.right.x = el.x + 50
+        el.right.y = el.y + 20
         layerQ.push(el.right)
     }
     //el.draw()
     if(!drawQ[i+1]){
         layer++
-        drawQ.push(...layerQ)
+        drawQ = [...layerQ]
         layerQ = []
     }
 })
