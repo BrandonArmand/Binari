@@ -31,27 +31,3 @@ export default class Node{
         }
     }
 }
-
-let tree = new Node(10)
-let drawQ = [tree]
-let layerQ = []
-let layer = 0
-
-drawQ.forEach((el,i)=>{
-    if(el.left){
-        el.left.x = el.x - 50
-        el.left.y = el.y + 20
-        layerQ.push(el.left)
-    }
-    if(el.right){
-        el.right.x = el.x + 50
-        el.right.y = el.y + 20
-        layerQ.push(el.right)
-    }
-    //el.draw()
-    if(!drawQ[i+1]){
-        layer++
-        drawQ = [...layerQ]
-        layerQ = []
-    }
-})
