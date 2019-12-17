@@ -57,8 +57,8 @@ export default function Playground(props) {
         }
         p5.textAlign(p5.CENTER);
         p5.noStroke()
-        p5.ellipse(el.x, el.y, (20 * elementScale))
-        p5.text(el.value, el.x, el.y + 5);
+        p5.ellipse(el.x, el.y, (16 * elementScale))
+        p5.text(el.value, el.x, el.y + 6);
 
         if(!drawQ[i+1]){
             layer++

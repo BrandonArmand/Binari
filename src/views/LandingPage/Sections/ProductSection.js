@@ -56,6 +56,22 @@ export default function ProductSection() {
           </GridItem>
         </GridContainer>
       </div>
+      <div>
+      <GridContainer justify="center">
+          <GridItem xs={12} sm={6} md={6}>
+            <iframe 
+              width="100%" 
+              height="315" 
+              src="https://www.youtube-nocookie.com/embed/oSWTXtMglKE?controls=0" 
+              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+              </iframe>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
+            <h2 className={classes.title}>Gayle Laakmann McDowell</h2>
+          </GridItem>
+        </GridContainer>
+      </div>
     </div>
   );
 }
