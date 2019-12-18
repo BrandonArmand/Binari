@@ -17,7 +17,7 @@ const useStyles = makeStyles(styles);
 
 export default function Playground(props) {
   const classes = useStyles();
-  const elementScale = window.devicePixelRatio || 1
+  const elementScale = window.devicePixelRatio < 2 ? 2 : window.devicePixelRatio
   const windowSize = elementScale * 500
 
   let tree = new Node(50)
@@ -25,11 +25,13 @@ export default function Playground(props) {
       tree.y = (20 * elementScale)
   let drawQ = [tree]
   let layerQ = []
-  let layer = 0
+  let layer = 1
+  let ix = 0
 
   function setup(p5, canvasParentRef) {
     p5.textSize((12 * elementScale))
     p5.createCanvas(windowSize, windowSize).parent(canvasParentRef)
+    p5.frameRate(200)
   }
 
   for (var i = 0; i < 25; i++) {
@@ -38,27 +40,32 @@ export default function Playground(props) {
 
   function draw(p5){
     drawQ.forEach((el,i)=>{
-        let distanceX = ((windowSize / 9) / p5.pow(2, layer) *  elementScale) + 10
+        let distanceX = ((windowSize / 2.4) / p5.pow(2, layer)) + 10
         let distanceY = (20 * elementScale) + (layer * 9)
+
+        p5.strokeWeight(elementScale + 1)
+        p5.stroke(0)
 
         if(el.left){
             el.left.x = el.x - distanceX
             el.left.y = el.y + distanceY
-            p5.stroke(0)
             p5.line(el.x, el.y, el.left.x, el.left.y);
             layerQ.push(el.left)
         }
+
         if(el.right){
             el.right.x = el.x + distanceX
             el.right.y = el.y + distanceY
-            p5.stroke(0)
             p5.line(el.x, el.y, el.right.x, el.right.y);
             layerQ.push(el.right)
         }
+
         p5.textAlign(p5.CENTER);
         p5.noStroke()
+        p5.fill(p5.map(el.value,100,0,0,255),220,250);
         p5.ellipse(el.x, el.y, (16 * elementScale))
-        p5.text(el.value, el.x, el.y + 6);
+        p5.fill('black')
+        p5.text(el.value, el.x, el.y + (6 + elementScale));
 
         if(!drawQ[i+1]){
             layer++
@@ -90,7 +97,6 @@ export default function Playground(props) {
                   <h1>Binary Trees</h1>
                   <h2>Introduction</h2>
                   <Sketch setup={setup} draw={draw} />
-                  <h2>Chapter 1: Initialization</h2>
                 </GridItem>
             </GridContainer>
             </div>
