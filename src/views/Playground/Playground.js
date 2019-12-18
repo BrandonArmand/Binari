@@ -12,8 +12,40 @@ import "ace-builds/src-min-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/snippets/javascript";
 import "ace-builds/src-noconflict/theme-twilight";
+import {js} from 'js-beautify'
 
+const beautify = js
 const useStyles = makeStyles(styles);
+const defaultCode = beautify(`
+  class Node{
+    left = null
+    right = null
+
+    constructor(value){
+        this.value = value
+    }
+
+    insert(value){
+        if(value <= this.value){
+            if(this.left == null){
+                this.left = new Node(value)
+            }
+            else{
+                this.left.insert(value)
+            }
+        }
+        else{
+            if(this.right == null){
+                this.right = new Node(value)
+            }
+            else{
+                this.right.insert(value)
+            } 
+        }
+    }
+  }
+`)
+
 
 export default function Playground(props) {
   const classes = useStyles();
@@ -40,7 +72,7 @@ export default function Playground(props) {
 
   function draw(p5){
     drawQ.forEach((el,i)=>{
-        let distanceX = ((windowSize / 2.4) / p5.pow(2, layer)) + 10
+        let distanceX = ((windowSize / 2.4) / p5.pow(2, layer)) + 12
         let distanceY = (20 * elementScale) + (layer * 9)
 
         p5.strokeWeight(elementScale + 1)
@@ -61,9 +93,11 @@ export default function Playground(props) {
         }
 
         p5.textAlign(p5.CENTER);
-        p5.noStroke()
+        p5.stroke(0)
+        p5.strokeWeight(1)
         p5.fill(p5.map(el.value,100,0,0,255),220,250);
-        p5.ellipse(el.x, el.y, (16 * elementScale))
+        p5.ellipse(el.x, el.y, (17 * elementScale))
+        p5.noStroke()
         p5.fill('black')
         p5.text(el.value, el.x, el.y + (6 + elementScale));
 
@@ -88,6 +122,7 @@ export default function Playground(props) {
                   name="code"
                   width="100%"
                   height="1000px"
+                  value={defaultCode}
                   enableBasicAutocompletion={true}
                   enableLiveAutocompletion={true}
                   editorProps={{ $blockScrolling: false }}
