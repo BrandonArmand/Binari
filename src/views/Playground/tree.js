@@ -1,4 +1,5 @@
-export default class Node{
+//Nice but not Browser Nice Code
+class Nodex{
     left = null
     right = null
 
@@ -21,6 +22,33 @@ export default class Node{
             }
             else{
                 this.right.insert(value)
+            } 
+        }
+    }
+}
+
+
+//Browser Nice
+export default function Node(value){
+    this.left = null
+    this.right = null
+    this.value = value
+
+    this.insert = function(newValue){
+        if(newValue <= this.value){
+            if(this.left == null){
+                this.left = new Node(newValue)
+            }
+            else{
+                this.left.insert(newValue)
+            }
+        }
+        else{
+            if(this.right == null){
+                this.right = new Node(newValue)
+            }
+            else{
+                this.right.insert(newValue)
             } 
         }
     }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "components/CustomButtons/Button.js";
@@ -16,58 +16,34 @@ import {js} from 'js-beautify'
 
 const beautify = js
 const useStyles = makeStyles(styles);
-const defaultCode = beautify(`
-  class Node{
-    left = null
-    right = null
-
-    constructor(value){
-        this.value = value
-    }
-
-    insert(value){
-        if(value <= this.value){
-            if(this.left == null){
-                this.left = new Node(value)
-            }
-            else{
-                this.left.insert(value)
-            }
-        }
-        else{
-            if(this.right == null){
-                this.right = new Node(value)
-            }
-            else{
-                this.right.insert(value)
-            } 
-        }
-    }
-  }
-`)
-
 
 export default function Playground(props) {
+  const [currentCode, setCode] = useState(""+Node);
+  const displayCode = beautify(currentCode)
+
   const classes = useStyles();
   const elementScale = window.devicePixelRatio < 2 ? 2 : window.devicePixelRatio
   const windowSize = elementScale * 500
+  const gval = eval
 
-  let tree = new Node(50)
+  let unsavedCode = displayCode
+  let treeNode = gval(`(${currentCode})`)
+
+  let tree = new treeNode(50)
       tree.x = windowSize / 2
       tree.y = (20 * elementScale)
   let drawQ = [tree]
   let layerQ = []
   let layer = 1
-  let ix = 0
 
   function setup(p5, canvasParentRef) {
     p5.textSize((12 * elementScale))
     p5.createCanvas(windowSize, windowSize).parent(canvasParentRef)
     p5.frameRate(200)
-  }
-
-  for (var i = 0; i < 25; i++) {
-    tree.insert(Math.floor(Math.random() * 100));
+    
+    for (var i = 0; i < 25; i++) {
+      tree.insert(Math.floor(Math.random() * 100));
+    }
   }
 
   function draw(p5){
@@ -116,20 +92,21 @@ export default function Playground(props) {
           <div>
             <GridContainer>
                 <GridItem xs={12} sm={5} md={5}>
-                <AceEditor
-                  mode="javascript"
-                  theme="twilight"
-                  name="code"
-                  width="100%"
-                  height="1000px"
-                  value={defaultCode}
-                  enableBasicAutocompletion={true}
-                  enableLiveAutocompletion={true}
-                  editorProps={{ $blockScrolling: false }}
-                />
+                  <AceEditor
+                    mode="javascript"
+                    theme="twilight"
+                    name="code"
+                    width="100%"
+                    height="1000px"
+                    value={displayCode}
+                    onChange={(val)=> unsavedCode = val}
+                    enableBasicAutocompletion={true}
+                    enableLiveAutocompletion={true}
+                    editorProps={{ $blockScrolling: false }}
+                  />
                 </GridItem>
                 <GridItem xs={12} sm={7} md={7}>
-                  <h1>Binary Trees</h1>
+                  <h1>Binary Trees</h1><button onClick={()=>setCode(unsavedCode)}></button>
                   <h2>Introduction</h2>
                   <Sketch setup={setup} draw={draw} />
                 </GridItem>
