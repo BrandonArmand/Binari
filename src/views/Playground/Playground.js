@@ -18,7 +18,7 @@ const beautify = js
 const useStyles = makeStyles(styles);
 
 export default function Playground(props) {
-  const [currentCode, setCode] = useState(""+Node);
+  const [currentCode, setCode] = useState(Node);
   const displayCode = beautify(currentCode)
 
   const classes = useStyles();

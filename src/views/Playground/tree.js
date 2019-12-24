@@ -29,7 +29,8 @@ class Nodex{
 
 
 //Browser Nice
-export default function Node(value){
+// + String for avoiding code compression
+export default (`function Node(value){
     this.left = null
     this.right = null
     this.value = value
@@ -52,4 +53,4 @@ export default function Node(value){
             } 
         }
     }
-}
+}`)
