@@ -21,6 +21,7 @@ export default function Playground(props) {
   const classes = useStyles();
   const [currentCode, setCode] = useState(Node);
   const displayCode = beautify(currentCode)
+
   let unsavedCode = displayCode
   let treeNode = new Function(`${currentCode}; return Node`)()
   let tree = new treeNode(50)
@@ -46,13 +47,22 @@ export default function Playground(props) {
                   />
                 </GridItem>
                 <GridItem xs={12} sm={7} md={7}>
-                  <Button onClick={()=>setCode(unsavedCode)}>Run</Button>
-                  <h1>Binary Trees</h1>
-                  <h2>Introduction</h2>
-                  <Canvas tree={tree} size={25} />
+                  <div className={classes.canvasRegion}>
+                    <Button 
+                      color="primary"
+                      simple={true}
+                      onClick={()=>setCode(unsavedCode)}
+                      className={classes.runCode}
+                    >Run Code</Button>
+                    <div className={classes.titleRegion}>
+                      <h1>Binary Trees</h1>
+                      <h2>Introduction</h2>
+                    </div>
+                    <Canvas tree={tree} size={25} />
+                  </div>
                 </GridItem>
             </GridContainer>
-            </div>
+          </div>
         </div>
       </div>
     </>

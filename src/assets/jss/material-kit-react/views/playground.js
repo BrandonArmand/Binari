@@ -29,7 +29,7 @@ const profilePageStyle = {
   main: {
     background: "#FFFFFF",
     position: "relative",
-    zIndex: "3"
+    zIndex: "3",
   },
   mainRaised: {
     margin: "-60px 30px 0px",
@@ -59,6 +59,18 @@ const profilePageStyle = {
   navWrapper: {
     margin: "20px auto 50px auto",
     textAlign: "center"
+  },
+  titleRegion: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+  canvasRegion: {
+    padding: "0 30px"
+  },
+  runCode: {
+    position: "absolute",
+    left: "-123px"
   }
 };
 
