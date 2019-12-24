@@ -53,7 +53,7 @@ export default function Playground(props) {
                       simple={true}
                       onClick={()=>setCode(unsavedCode)}
                       className={classes.runCode}
-                    >Run Code</Button>
+                    > Run Code </Button>
                     <div className={classes.titleRegion}>
                       <h1>Binary Trees</h1>
                       <h2>Introduction</h2>

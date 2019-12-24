@@ -1,6 +1,6 @@
 {
   "name": "Binari",
-  "version": "1.8.0",
+  "version": "0.3.0",
   "description": "A utility for developers to help understand Binary Trees",
   "private": true,
   "main": "dist/index.js",
