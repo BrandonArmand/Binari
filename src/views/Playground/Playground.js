@@ -8,6 +8,7 @@ import AceEditor from "react-ace";
 import styles from "assets/jss/material-kit-react/views/playground.js";
 import Node from './tree'
 import Canvas from './canvas'
+import Error from './Error'
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/snippets/javascript";
@@ -23,8 +24,35 @@ export default function Playground(props) {
   const displayCode = beautify(currentCode)
 
   let unsavedCode = displayCode
-  let treeNode = new Function(`${currentCode}; return Node`)()
-  let tree = new treeNode(50)
+  let canvas
+
+  try {
+    let node = new Function(`${currentCode}; return Node`)()
+
+    //Tests all edge cases before the real run
+    let BinaryTree = new node(50)
+    if(typeof BinaryTree.left === 'undefined'){
+      throw {name: 'ReferenceError', message: "BinaryTree.left is not defined"}
+    }
+    if(typeof BinaryTree.right === 'undefined'){
+      throw {name: 'ReferenceError', message: "BinaryTree.right is not defined"}
+    }
+    if(typeof BinaryTree.value === 'undefined'){
+      throw {name: 'ReferenceError', message: "BinaryTree.value is not defined"}
+    }
+    BinaryTree.insert(25)
+    BinaryTree.insert(15)
+    BinaryTree.insert(35)
+    BinaryTree.insert(75)
+    BinaryTree.insert(85)
+    BinaryTree.insert(65)
+
+    //True Initialization
+    let tree = new node(50)
+    canvas = <Canvas tree={tree} size={28} />                    
+  } catch (err) {
+    canvas = <Error type={err.name}>{err.message}</Error>
+  }
 
   return (
     <>
@@ -49,7 +77,7 @@ export default function Playground(props) {
                 <GridItem xs={12} sm={7} md={7}>
                   <div className={classes.canvasRegion}>
                     <Button 
-                      color="primary"
+                      color="secondary"
                       simple={true}
                       onClick={()=>setCode(unsavedCode)}
                       className={classes.runCode}
@@ -58,7 +86,7 @@ export default function Playground(props) {
                       <h1>Binary Trees</h1>
                       <h2>Introduction</h2>
                     </div>
-                    <Canvas tree={tree} size={25} />
+                    {canvas}             
                   </div>
                 </GridItem>
             </GridContainer>
