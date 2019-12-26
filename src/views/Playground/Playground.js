@@ -73,15 +73,21 @@ export default function Playground(props) {
                     enableLiveAutocompletion={true}
                     editorProps={{ $blockScrolling: false }}
                   />
+                  <div className={classes.codeButtons}>
+                    <Button 
+                      color="white"
+                      simple={true}
+                      onClick={()=>setCode(unsavedCode)}
+                    > Run Code </Button>
+                    <Button 
+                      color="warning"
+                      simple={true}
+                      onClick={()=>setCode(Node)}
+                    > Reset </Button>
+                  </div>
                 </GridItem>
                 <GridItem xs={12} sm={7} md={7}>
                   <div className={classes.canvasRegion}>
-                    <Button 
-                      color="secondary"
-                      simple={true}
-                      onClick={()=>setCode(unsavedCode)}
-                      className={classes.runCode}
-                    > Run Code </Button>
                     <div className={classes.titleRegion}>
                       <h1>Binary Trees</h1>
                       <h2>Introduction</h2>

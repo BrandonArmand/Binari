@@ -68,9 +68,14 @@ const profilePageStyle = {
   canvasRegion: {
     padding: "0 30px"
   },
-  runCode: {
+  codeButtons: {
     position: "absolute",
-    left: "-123px"
+    //left: "32.667%",
+    right: 0,
+    top: 0,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
   }
 };
 
