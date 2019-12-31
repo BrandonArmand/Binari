@@ -66,7 +66,8 @@ const profilePageStyle = {
     alignItems: "center"
   },
   canvasRegion: {
-    padding: "0 30px"
+    position: "relative",
+    height: '100%'
   },
   codeButtons: {
     position: "absolute",
@@ -76,6 +77,9 @@ const profilePageStyle = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+  },
+  splitter: {
+    maxHeight: '669px'
   }
 };
 

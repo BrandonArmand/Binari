@@ -6,14 +6,17 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import AceEditor from "react-ace";
 import styles from "assets/jss/material-kit-react/views/playground.js";
+import SplitterLayout from 'react-splitter-layout';
 import Node from './tree'
 import Canvas from './canvas'
 import Error from './Error'
 import Debug from './Debug'
+import Info from './Info'
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/snippets/javascript";
 import "ace-builds/src-noconflict/theme-twilight";
+import 'react-splitter-layout/lib/index.css';
 import {js} from 'js-beautify'
 
 const consolePrint = console.log
@@ -108,7 +111,16 @@ export default function Playground(props) {
                       <h1>Binary Trees</h1>
                       <h2>Introduction</h2>
                     </div>
-                    {canvas}             
+                    <SplitterLayout vertical={true} customClassName={classes.splitter} secondaryInitialSize={160}>
+                      {canvas}
+                      <Info>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nulla iaculis elit sed mi sodales auctor.Cras nec est tristique, tristique libero vel, ultrices neque.Mauris interdum dolor vel ligula iaculis, id viverra ex ornare.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                        Nulla eget felis at leo porta pellentesque.Donec rutrum risus dolor, a imperdiet augue facilisis mattis.Maecenas placerat orci velit, sed pulvinar lacus mattis id.Cras sollicitudin nulla eu sollicitudin venenatis.Vivamus sodales magna elementum nisi rutrum elementum.Integer non aliquam felis.Ut tristique convallis lorem sed efficitur.Maecenas vel sollicitudin risus.Donec tincidunt eros luctus tristique volutpat.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nulla iaculis elit sed mi sodales auctor.Cras nec est tristique, tristique libero vel, ultrices neque.Mauris interdum dolor vel ligula iaculis, id viverra ex ornare.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                        Nulla eget felis at leo porta pellentesque.Donec rutrum risus dolor, a imperdiet augue facilisis mattis.Maecenas placerat orci velit, sed pulvinar lacus mattis id.Cras sollicitudin nulla eu sollicitudin venenatis.Vivamus sodales magna elementum nisi rutrum elementum.Integer non aliquam felis.Ut tristique convallis lorem sed efficitur.Maecenas vel sollicitudin risus.Donec tincidunt eros luctus tristique volutpat.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nulla iaculis elit sed mi sodales auctor.Cras nec est tristique, tristique libero vel, ultrices neque.Mauris interdum dolor vel ligula iaculis, id viverra ex ornare.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                        Nulla eget felis at leo porta pellentesque.Donec rutrum risus dolor, a imperdiet augue facilisis mattis.Maecenas placerat orci velit, sed pulvinar lacus mattis id.Cras sollicitudin nulla eu sollicitudin venenatis.Vivamus sodales magna elementum nisi rutrum elementum.Integer non aliquam felis.Ut tristique convallis lorem sed efficitur.Maecenas vel sollicitudin risus.Donec tincidunt eros luctus tristique volutpat. 
+                        </p>
+                      </Info>
+                    </SplitterLayout>
                   </div>
                 </GridItem>
             </GridContainer>

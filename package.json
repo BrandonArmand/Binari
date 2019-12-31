@@ -22,7 +22,7 @@
     "react-router-dom": "5.0.1",
     "react-scripts": "^3.3.0",
     "react-slick": "0.25.2",
-    "react-swipeable-views": "0.13.3"
+    "react-splitter-layout": "^4.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.5.5",
