@@ -30,7 +30,19 @@ class Nodex{
 
 //Browser Nice
 // + String for avoiding code compression
-export default (`function Node(value){
+export default (`
+    /****************************************************************
+     * Initialize the binary tree on the right.
+     *
+     * @param numeric value
+     * 
+     * @method insert
+     * * Inserts values in the correct leaf using a recursive method
+     * *
+     * * @param numeric value
+     * 
+     *****************************************************************/
+    function Node(value){
     this.left = null
     this.right = null
     this.value = value

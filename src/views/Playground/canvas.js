@@ -19,7 +19,7 @@ export default function Canvas(props){
 
     function setup(p5, canvasParentRef) {
         p5.textSize((12 * elementScale))
-        p5.createCanvas(windowSize, windowSize).parent(canvasParentRef)
+        p5.createCanvas(windowSize, 600).parent(canvasParentRef)
         p5.frameRate(200)
     }
 

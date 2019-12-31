@@ -9,12 +9,14 @@ import styles from "assets/jss/material-kit-react/views/playground.js";
 import Node from './tree'
 import Canvas from './canvas'
 import Error from './Error'
+import Debug from './Debug'
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/snippets/javascript";
 import "ace-builds/src-noconflict/theme-twilight";
 import {js} from 'js-beautify'
 
+const consolePrint = console.log
 const beautify = js
 const useStyles = makeStyles(styles);
 
@@ -22,9 +24,15 @@ export default function Playground(props) {
   const classes = useStyles();
   const [currentCode, setCode] = useState(Node);
   const displayCode = beautify(currentCode)
+  const log = []
+
+  console.log = function(message){
+    log.push(message)
+  }
 
   let unsavedCode = displayCode
   let canvas
+  let debug
 
   try {
     let node = new Function(`${currentCode}; return Node`)()
@@ -49,7 +57,9 @@ export default function Playground(props) {
 
     //True Initialization
     let tree = new node(50)
-    canvas = <Canvas tree={tree} size={28} />                    
+
+    canvas = <Canvas tree={tree} size={28} />
+    debug = <Debug>{''+log}</Debug>
   } catch (err) {
     canvas = <Error type={err.name}>{err.message}</Error>
   }
@@ -66,13 +76,14 @@ export default function Playground(props) {
                     theme="twilight"
                     name="code"
                     width="100%"
-                    height="1000px"
+                    height="600px"
                     value={displayCode}
                     onChange={(val)=> unsavedCode = val}
                     enableBasicAutocompletion={true}
                     enableLiveAutocompletion={true}
                     editorProps={{ $blockScrolling: false }}
                   />
+                  {debug}
                   <div className={classes.codeButtons}>
                     <Button 
                       color="white"
