@@ -34,12 +34,12 @@ export default (`
     /****************************************************************
      * Initialize the binary tree on the right.
      *
-     * @param numeric value
+     * @param value (int)
      * 
      * @method insert
      * * Inserts values in the correct leaf using a recursive method
      * *
-     * * @param numeric value
+     * * @param newValue (int)
      * 
      *****************************************************************/
     function Node(value){

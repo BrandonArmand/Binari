@@ -59,9 +59,12 @@ export default function Playground(props) {
     let tree = new node(50)
 
     canvas = <Canvas tree={tree} size={28} />
-    debug = <Debug>{''+log}</Debug>
+    console.log('Success')
   } catch (err) {
     canvas = <Error type={err.name}>{err.message}</Error>
+    console.log('Error')
+  } finally {
+    debug = <Debug data={log}></Debug>
   }
 
   return (

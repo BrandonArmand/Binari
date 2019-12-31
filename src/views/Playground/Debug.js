@@ -19,13 +19,13 @@ const useStyle = makeStyles({
 
 export default function Debug(props){
     const classes = useStyle()
-    const {type, children} = props
+    const {data} = props
 
     return (
         <>
         <h3 className={classes.title}>Console |</h3>
         <div className={classes.log}>
-            {children}
+            {data.map(el => <div>{el}</div>)}
         </div>
         </>
     )
