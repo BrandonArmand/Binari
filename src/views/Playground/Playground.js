@@ -26,8 +26,10 @@ export default function Playground(props) {
   const displayCode = beautify(currentCode)
   const log = []
 
-  console.log = function(message){
-    log.push(message)
+  console.log = function(...args){
+    args.forEach(e=>{
+      log.push(e)
+    })
   }
 
   let unsavedCode = displayCode
