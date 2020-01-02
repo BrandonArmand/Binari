@@ -1,4 +1,4 @@
-# [Binari](https://binari.netlify.com)
+# [Binari](https://binari.netlify.com) v0.6.0
 Interactive code editor with a live binary tree visual designed to teach new developers the fundementals of dynamic programming.
 
 ### Site Navigation
@@ -18,7 +18,7 @@ Interactive code editor with a live binary tree visual designed to teach new dev
 
 If you would like to contribute, reach out to me first. Currently the application is too early in development to split work between too many developers. Once the application is in version 0.9.0+ I will open up public issues for all to work on.
 
-However, you are still open to fork the project and build on feature you think are approriate. I will still happily consider them.
+However, you are still open to fork the project and build on features you think are approriate. I will still happily consider them.
 
 ### Setup
 1) Fork the repo.
