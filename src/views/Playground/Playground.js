@@ -5,19 +5,17 @@ import Button from "components/CustomButtons/Button.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import AceEditor from "react-ace";
-import styles from "assets/jss/material-kit-react/views/playground.js";
-import SplitterLayout from 'react-splitter-layout';
-import Node from './tree'
-import Canvas from './canvas'
-import Error from './Error'
-import Debug from './Debug'
-import Info from './Info'
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/snippets/javascript";
 import "ace-builds/src-noconflict/theme-twilight";
+import styles from "assets/jss/material-kit-react/views/playground.js";
+import SplitterLayout from 'react-splitter-layout';
 import 'react-splitter-layout/lib/index.css';
+
 import {js} from 'js-beautify'
+import {Canvas, Debug, Error, Info} from './components'
+import chapter from './chapters'
 
 const consolePrint = console.log
 const beautify = js
@@ -25,19 +23,19 @@ const useStyles = makeStyles(styles);
 
 export default function Playground(props) {
   const classes = useStyles();
-  const [currentCode, setCode] = useState(Node);
-  const displayCode = beautify(currentCode)
+  const [page, setPage] = useState(0);
+  const [currentCode, setCode] = useState(beautify(chapter[page].defaultCode));
+  const unsavedCode = currentCode
   const log = []
+
+  let canvas
+  let debug
 
   console.log = function(...args){
     args.forEach(e=>{
       log.push(e)
     })
   }
-
-  let unsavedCode = displayCode
-  let canvas
-  let debug
 
   try {
     let node = new Function(`${currentCode}; return Node`)()
@@ -69,7 +67,7 @@ export default function Playground(props) {
     canvas = <Error type={err.name}>{err.message}</Error>
     console.log('Error')
   } finally {
-    debug = <Debug data={log}></Debug>
+    debug = <Debug data={log}/>
   }
 
   return (
@@ -85,7 +83,7 @@ export default function Playground(props) {
                     name="code"
                     width="100%"
                     height="600px"
-                    value={displayCode}
+                    value={currentCode}
                     onChange={(val)=> unsavedCode = val}
                     enableBasicAutocompletion={true}
                     enableLiveAutocompletion={true}
@@ -101,7 +99,7 @@ export default function Playground(props) {
                     <Button 
                       color="warning"
                       simple={true}
-                      onClick={()=>setCode(Node)}
+                      onClick={()=>setCode(beautify(chapter[page].defaultCode))}
                     > Reset </Button>
                   </div>
                 </GridItem>
@@ -113,13 +111,7 @@ export default function Playground(props) {
                     </div>
                     <SplitterLayout vertical={true} customClassName={classes.splitter} secondaryInitialSize={160}>
                       {canvas}
-                      <Info>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nulla iaculis elit sed mi sodales auctor.Cras nec est tristique, tristique libero vel, ultrices neque.Mauris interdum dolor vel ligula iaculis, id viverra ex ornare.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                        Nulla eget felis at leo porta pellentesque.Donec rutrum risus dolor, a imperdiet augue facilisis mattis.Maecenas placerat orci velit, sed pulvinar lacus mattis id.Cras sollicitudin nulla eu sollicitudin venenatis.Vivamus sodales magna elementum nisi rutrum elementum.Integer non aliquam felis.Ut tristique convallis lorem sed efficitur.Maecenas vel sollicitudin risus.Donec tincidunt eros luctus tristique volutpat.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nulla iaculis elit sed mi sodales auctor.Cras nec est tristique, tristique libero vel, ultrices neque.Mauris interdum dolor vel ligula iaculis, id viverra ex ornare.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                        Nulla eget felis at leo porta pellentesque.Donec rutrum risus dolor, a imperdiet augue facilisis mattis.Maecenas placerat orci velit, sed pulvinar lacus mattis id.Cras sollicitudin nulla eu sollicitudin venenatis.Vivamus sodales magna elementum nisi rutrum elementum.Integer non aliquam felis.Ut tristique convallis lorem sed efficitur.Maecenas vel sollicitudin risus.Donec tincidunt eros luctus tristique volutpat.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nulla iaculis elit sed mi sodales auctor.Cras nec est tristique, tristique libero vel, ultrices neque.Mauris interdum dolor vel ligula iaculis, id viverra ex ornare.Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                        Nulla eget felis at leo porta pellentesque.Donec rutrum risus dolor, a imperdiet augue facilisis mattis.Maecenas placerat orci velit, sed pulvinar lacus mattis id.Cras sollicitudin nulla eu sollicitudin venenatis.Vivamus sodales magna elementum nisi rutrum elementum.Integer non aliquam felis.Ut tristique convallis lorem sed efficitur.Maecenas vel sollicitudin risus.Donec tincidunt eros luctus tristique volutpat. 
-                        </p>
-                      </Info>
+                      <Info text={chapter[page].lesson}/>
                     </SplitterLayout>
                   </div>
                 </GridItem>
