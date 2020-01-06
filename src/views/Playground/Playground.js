@@ -25,9 +25,9 @@ export default function Playground(props) {
   const classes = useStyles();
   const [page, setPage] = useState(0);
   const [currentCode, setCode] = useState(beautify(chapter[page].defaultCode));
-  const unsavedCode = currentCode
-  const log = []
 
+  let unsavedCode = currentCode
+  let log = []
   let canvas
   let debug
 
