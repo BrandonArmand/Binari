@@ -1,14 +1,9 @@
 #defaultCanvas0{
-    width: 100% !important;
-    height: 100% !important;
+    // width: 100% !important;
+    // height: 100% !important;
+    margin-left: 3%;
 }
 
-/*
-#code{
-    width: 100% !important;
-    height: 100% !important;
-    .ace_text-input{
-        height: 100% !important;
-    }
+.splitter-layout .layout-pane{
+    overflow: hidden !important;
 }
-*/
