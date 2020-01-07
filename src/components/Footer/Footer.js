@@ -25,15 +25,17 @@ export default function Footer(props) {
                 href="http://brandonarmand.com"
                 className={classes.block}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Brandon A. Welsh
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href=""
+                href="https://github.com/BrandonArmand/Binari/blob/master/LICENSE.md"
                 className={classes.block}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 MIT License
               </a>

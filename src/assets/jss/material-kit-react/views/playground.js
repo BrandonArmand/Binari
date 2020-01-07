@@ -79,7 +79,7 @@ const profilePageStyle = {
     justifyContent: "center",
   },
   splitter: {
-    maxHeight: '669px'
+    maxHeight: '100%'
   }
 };
 

@@ -1,9 +1,35 @@
-#defaultCanvas0{
-    // width: 100% !important;
-    // height: 100% !important;
-    margin-left: 3%;
+.splitter-layout{
+
+    .layout-pane-primary{
+        overflow: hidden !important;
+
+        div:first-child{
+            display: flex;
+            justify-content: center;
+
+            #defaultCanvas0{
+
+            }
+        }
+    }
 }
 
-.splitter-layout .layout-pane-primary{
-    overflow: hidden !important;
+table{
+    border-collapse:collapse;
+
+    tr{
+        &:nth-child(even){
+            background-color: #444;
+        }
+
+        td{
+            padding: 5px 5px;
+
+            &:first-child{
+                background-color: #222;
+                padding: 1px;
+                text-align: center;
+            }
+        }
+    }
 }

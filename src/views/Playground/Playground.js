@@ -14,10 +14,9 @@ import SplitterLayout from 'react-splitter-layout';
 import 'react-splitter-layout/lib/index.css';
 
 import {js} from 'js-beautify'
-import {Canvas, Debug, Error, Info} from './components'
+import {Canvas, Debug, Error, Info, Directory} from './components'
 import chapter from './chapters'
 
-const consolePrint = console.log
 const beautify = js
 const useStyles = makeStyles(styles);
 
@@ -76,6 +75,21 @@ export default function Playground(props) {
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div>
             <GridContainer>
+                <GridItem xs={12} sm={1} md={1}>
+                  <Directory>
+                    <tr><td>0.</td><td>Introduction</td></tr>
+                    <tr><td>1.</td><td>Insert</td></tr>
+                    <tr><td>2.</td><td>To be added...</td></tr>
+                    <tr><td>3.</td><td>To be added...</td></tr>
+                    <tr><td>4.</td><td>To be added...</td></tr>
+                    <tr><td>5.</td><td>To be added...</td></tr>
+                    <tr><td>6.</td><td>To be added...</td></tr>
+                    <tr><td>7.</td><td>To be added...</td></tr>
+                    <tr><td>8.</td><td>To be added...</td></tr>
+                    <tr><td>9.</td><td>To be added...</td></tr>
+                    <tr><td>10.</td><td>To be added...</td></tr>
+                  </Directory>
+                </GridItem>
                 <GridItem xs={12} sm={5} md={5}>
                   <AceEditor
                     mode="javascript"
@@ -103,12 +117,8 @@ export default function Playground(props) {
                     > Reset </Button>
                   </div>
                 </GridItem>
-                <GridItem xs={12} sm={7} md={7}>
+                <GridItem xs={12} sm={6} md={6}>
                   <div className={classes.canvasRegion}>
-                    <div className={classes.titleRegion}>
-                      <h1>Binary Trees</h1>
-                      <h2>Introduction</h2>
-                    </div>
                     <SplitterLayout vertical={true} customClassName={classes.splitter} secondaryInitialSize={160}>
                       {canvas}
                       <Info text={chapter[page].lesson}/>
