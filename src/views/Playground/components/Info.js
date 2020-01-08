@@ -6,6 +6,7 @@ const useStyle = makeStyles({
     main: {
         background: 'white',
         width: '100%',
+        maxWidth: '100%',
         padding: '0 30px',
     }
 })

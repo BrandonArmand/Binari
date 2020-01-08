@@ -8,7 +8,8 @@
             justify-content: center;
 
             #defaultCanvas0{
-
+                width: 100% !important;
+                height: 100% !important;
             }
         }
     }
@@ -23,7 +24,7 @@ table{
         }
 
         &:hover{
-            background-color: #2643e7;
+            background-color: #464e77;
             cursor: pointer;
         }
 

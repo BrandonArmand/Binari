@@ -75,28 +75,18 @@ export default function Playground(props) {
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div>
             <GridContainer>
-                <GridItem xs={12} sm={1} md={1}>
+                <GridItem xs={12} sm={2} md={2} lg={2}>
                   <Directory>
-                    <tr><td>0.</td><td>Introduction</td></tr>
-                    <tr><td>1.</td><td>Insert</td></tr>
-                    <tr><td>2.</td><td>To be added...</td></tr>
-                    <tr><td>3.</td><td>To be added...</td></tr>
-                    <tr><td>4.</td><td>To be added...</td></tr>
-                    <tr><td>5.</td><td>To be added...</td></tr>
-                    <tr><td>6.</td><td>To be added...</td></tr>
-                    <tr><td>7.</td><td>To be added...</td></tr>
-                    <tr><td>8.</td><td>To be added...</td></tr>
-                    <tr><td>9.</td><td>To be added...</td></tr>
-                    <tr><td>10.</td><td>To be added...</td></tr>
+                    {chapter.map((el,i)=> <tr><td>{i}</td><td>{el.name}</td></tr>)}
                   </Directory>
                 </GridItem>
-                <GridItem xs={12} sm={5} md={5}>
+                <GridItem xs={12} sm={5} md={5} lg={5}>
                   <AceEditor
                     mode="javascript"
                     theme="twilight"
                     name="code"
                     width="100%"
-                    height="600px"
+                    height="calc(100vh - 325px)"
                     value={currentCode}
                     onChange={(val)=> unsavedCode = val}
                     enableBasicAutocompletion={true}
@@ -117,7 +107,7 @@ export default function Playground(props) {
                     > Reset </Button>
                   </div>
                 </GridItem>
-                <GridItem xs={12} sm={6} md={6}>
+                <GridItem xs={12} sm={5} md={5} lg={5}>
                   <div className={classes.canvasRegion}>
                     <SplitterLayout vertical={true} customClassName={classes.splitter} secondaryInitialSize={160}>
                       {canvas}
