@@ -30,6 +30,11 @@ export default function Playground(props) {
   let canvas
   let debug
 
+  function changePage(newPage){
+    setPage(newPage)
+    setCode(beautify(chapter[newPage].defaultCode))
+  }
+
   console.log = function(...args){
     args.forEach(e=>{
       log.push(e)
@@ -77,7 +82,7 @@ export default function Playground(props) {
             <GridContainer>
                 <GridItem xs={12} sm={2} md={2} lg={2}>
                   <Directory>
-                    {chapter.map((el,i)=> <tr><td>{i}</td><td>{el.name}</td></tr>)}
+                  {chapter.map((el,i)=> <tr onClick={()=>changePage(i)} style={{background: page === i && "#222"}}><td>{i}</td><td>{el.name}</td></tr>)}
                   </Directory>
                 </GridItem>
                 <GridItem xs={12} sm={5} md={5} lg={5}>

@@ -1,3 +1,8 @@
+import defaultCode from './defaultCode'
+import lesson from './lesson'
+
 export default {
-    name: 'Insertion'
+    name: 'Insertion',
+    defaultCode,
+    lesson
 }
