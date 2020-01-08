@@ -6,7 +6,7 @@ Interactive code editor with a live binary tree visual designed to teach new dev
 * [Home](https://binari.netlify.com) - Basic introduction to the application.
 * [Playground](https://binari.netlify.com/playground) - The primary learning route. Includes the code editor and canvas.
 
-![Binari](https://user-images.githubusercontent.com/27185256/71660555-4939dc00-2d00-11ea-97f0-9dd15a03f574.png "Site Photo")
+![Binari](https://user-images.githubusercontent.com/27185256/71960208-4a0fb980-31a9-11ea-9d6c-f264e024113a.png "Site Photo")
 
 ## Built With
 
