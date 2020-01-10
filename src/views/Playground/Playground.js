@@ -42,19 +42,20 @@ export default function Playground(props) {
   }
 
   try {
-    let node = new Function(`${currentCode}; return Node`)()
+    let node = new Function(`${currentCode}; return {tree, Node}`)()
 
     //Tests all edge cases before the real run
-    let BinaryTree = new node(50)
+    let BinaryTree = new node.Node(50)
     if(typeof BinaryTree.left === 'undefined'){
-      throw {name: 'ReferenceError', message: "BinaryTree.left is not defined"}
+      throw {name: 'ReferenceError', message: "tree.left is not defined"}
     }
     if(typeof BinaryTree.right === 'undefined'){
-      throw {name: 'ReferenceError', message: "BinaryTree.right is not defined"}
+      throw {name: 'ReferenceError', message: "tree.right is not defined"}
     }
     if(typeof BinaryTree.value === 'undefined'){
-      throw {name: 'ReferenceError', message: "BinaryTree.value is not defined"}
+      throw {name: 'ReferenceError', message: "tree.value is not defined"}
     }
+
     BinaryTree.insert(25)
     BinaryTree.insert(15)
     BinaryTree.insert(35)
@@ -63,7 +64,7 @@ export default function Playground(props) {
     BinaryTree.insert(65)
 
     //True Initialization
-    let tree = new node(50)
+    let tree = node.tree
 
     canvas = <Canvas tree={tree} size={28} />
     console.log('Success')

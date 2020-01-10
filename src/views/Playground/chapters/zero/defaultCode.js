@@ -33,4 +33,18 @@ this.insert = function(newValue){
         } 
     }
 }
-}`)
+}
+
+let tree = new Node(50)
+
+//for (var i = 0; i < 28; i++) {
+//    tree.insert(Math.floor(Math.random() * 100));
+//}
+
+tree.insert(25)
+tree.insert(15)
+tree.insert(35)
+tree.insert(75)
+tree.insert(85)
+tree.insert(65)
+`)

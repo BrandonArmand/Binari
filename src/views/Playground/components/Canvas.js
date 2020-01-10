@@ -13,9 +13,7 @@ export default function Canvas(props){
     let layerQ = []
     let layer = 1
 
-    for (var i = 0; i < treeSize; i++) {
-        tree.insert(Math.floor(Math.random() * 100));
-    }
+    
 
     function setup(p5, canvasParentRef) {
         p5.textSize((12 * elementScale))
