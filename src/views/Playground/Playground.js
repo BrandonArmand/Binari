@@ -42,7 +42,10 @@ export default function Playground(props) {
   }
 
   try {
-    let node = new Function(`${currentCode}; return {tree, Node}`)()
+    let node = new Function(`
+      ${currentCode}
+      return {tree, Node}
+    `)()
 
     //Tests all edge cases before the real run
     let BinaryTree = new node.Node(50)
