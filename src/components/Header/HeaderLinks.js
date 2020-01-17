@@ -45,6 +45,24 @@ export default function HeaderLinks(props) {
         </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
+        <Link to="/about" className={classes.link}>
+          <Tooltip
+            id="About"
+            title="Get to know me!"
+            placement={window.innerWidth > 959 ? "top" : "left"}
+            classes={{ tooltip: classes.tooltip }}
+          >
+          <Button
+            color="transparent"
+            target="_blank"
+            className={classes.navLink}
+          >
+            About
+          </Button>
+          </Tooltip>
+        </Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
         {/*<Tooltip title="Delete">
           <IconButton aria-label="Delete">
             <DeleteIcon />
