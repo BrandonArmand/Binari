@@ -39,3 +39,28 @@ table{
         }
     }
 }
+
+@media (max-width: 944px){
+    div[class*="main"]{
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media (max-height: 840px){
+    div[class*="margin"]{
+        margin-top: 0;
+        position: absolute;
+        top: 90px;
+        width: 100%;
+    }
+
+    div[class*="main"]{
+        width: 100%;
+        margin: 0;
+    }
+}
+
+#code{
+    min-height: 245px;
+}
