@@ -89,8 +89,8 @@ export default function Playground(props) {
 
   return (
     <>
-      <div className={classes.margin}>
-        <div className={classNames(classes.main, classes.mainRaised)}>
+      <div className={'margin-top '+classes.margin}>
+        <div className={'floating-main '+classNames(classes.main, classes.mainRaised)}>
           <div>
             <GridContainer>
                 <GridItem xs={12} sm={2} md={2} lg={2}>

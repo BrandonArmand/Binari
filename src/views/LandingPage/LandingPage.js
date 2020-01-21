@@ -12,7 +12,7 @@ export default function LandingPage(props) {
   
   return (
     <div>
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div className={'floating-main '+classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
         </div>

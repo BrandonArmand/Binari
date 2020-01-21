@@ -20,7 +20,7 @@ export default function About(props) {
   
   return (
     <div>
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div className={'floating-main '+classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <GridContainer justify="left">
             <GridItem xs={12} sm={12} md={12}>
