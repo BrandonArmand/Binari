@@ -6,6 +6,7 @@ import GridItem from "components/Grid/GridItem.js";
 import styles from "assets/jss/material-kit-react/views/aboutPage.js";
 
 import Card from './components/Card'
+import Clearfix from "components/Clearfix/Clearfix";
 
 const useStyles = makeStyles(styles);
 
@@ -39,8 +40,7 @@ export default function About(props) {
               <Card avatar="https://avatars0.githubusercontent.com/u/27185256?v=4" linkedin="test" github="test" web="test">
                 <h2>Brandon A. Welsh</h2>
               </Card>
-          </GridContainer>
-          <GridContainer justify="space-evenly">
+
               <h1 className={classes.title}>Contributors</h1>
               {contributors ? contributors.map((el)=>{
                 return (
@@ -49,6 +49,37 @@ export default function About(props) {
                   </Card>
                 )
               }) : <p>Loading...</p>}
+          </GridContainer>
+          <GridContainer justify="left">
+            <GridItem xs={12} sm={12} md={12}>
+              <h2 className={classes.title}>Want to help?</h2>
+              <h2 className={classes.subtitle}>
+                There are a list of issues on Github that you are welcome to work on, 
+                but if you have an idea of your own, we are open to allowing any pull request we believe fits well with Binari's vision.
+              </h2>
+              <h3 className={classes.subtitle}>Things you can do:</h3>
+            </GridItem>
+            <GridItem xs={4} sm={4} md={4}>
+              <ul className={classes.subtitle}>
+                <li>Bug Fixes</li>
+                <li>Spelling Fixes</li>
+              </ul>
+            </GridItem>
+            <GridItem xs={4} sm={4} md={4}>
+              <ul className={classes.subtitle}>
+                <li>UI/UX</li>
+                <li>Art</li>
+              </ul>
+            </GridItem>
+            <GridItem xs={4} sm={4} md={4}>
+              <ul className={classes.subtitle}>
+                <li>Enhancments</li>
+                <li>Optimizations</li>
+              </ul>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={12}>
+              <a href="https://github.com/BrandonArmand/Binari/issues"><h4>Start Contributing</h4></a>
+            </GridItem>
           </GridContainer>
         </div>
       </div>

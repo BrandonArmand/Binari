@@ -20,7 +20,9 @@ var styles = {
   },
   cardImg: {
     maxWidth: '200px',
-    maxHeight: '200px'
+    maxHeight: '200px',
+    width: '200px',
+    height: '200px'
   },
   cardHeader: {
     display: 'flex',
