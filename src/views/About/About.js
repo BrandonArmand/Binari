@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useLayoutEffect, useState} from "react";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -26,7 +26,7 @@ export default function About(props) {
   const [contributors, setContributors] = useState(null)
   const apiToken = process.env.REACT_APP_TOKEN //Read-Access Token
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     fetch(`https://api.github.com/repos/brandonarmand/binari/stats/contributors?access_token=${apiToken}`)
       .then(response => response.json())
       .then(data => setContributors(data))
