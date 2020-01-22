@@ -22,7 +22,9 @@ var styles = {
     maxWidth: '200px',
     maxHeight: '200px',
     width: '200px',
-    height: '200px'
+    height: '200px',
+    minWidth: '200px',
+    minHeight: '200px',
   },
   cardHeader: {
     display: 'flex',
