@@ -68,7 +68,12 @@ export default function About(props) {
                     <h3>{el.author.login}</h3>
                   </Card>
                 )
-              }) : <p>Loading...</p>}
+              }) : (
+                  <Card>
+                    <h3>...</h3>
+                  </Card>
+                )
+              }
           </GridContainer>
           <GridContainer justify="left">
             <GridItem xs={12} sm={12} md={12}>
