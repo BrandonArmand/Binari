@@ -5,6 +5,8 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import styles from "assets/jss/material-kit-react/views/aboutPage.js";
 
+import Card from './components/Card'
+
 const useStyles = makeStyles(styles);
 
 export default function About(props) {
@@ -12,10 +14,10 @@ export default function About(props) {
   const [contributors, setContributors] = useState(null)
   const apiToken = process.env.REACT_APP_TOKEN //Read-Access Token
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch(`https://api.github.com/repos/brandonarmand/binari/stats/contributors?access_token=${apiToken}`)
-    .then( response => response.json() )
-    .then( data => setContributors(data) )
+      .then(response => response.json())
+      .then(data => setContributors(data))
   })
   
   return (
@@ -31,21 +33,22 @@ export default function About(props) {
                 I am here to fix that, and you are welcome to join.
               </h2>
             </GridItem>
-            <GridItem xs={12} sm={12} md={12}>
+          </GridContainer>
+          <GridContainer justify="space-evenly">
               <h1 className={classes.title}>Team</h1>
-              <h2 className={classes.subtitle}>
-                ** To Do**
-              {contributors ? contributors.map((el)=>{
-                return <p>{el.author.login}</p>
-              }) : <p>Loading...</p>}
-              </h2>
-            </GridItem>
-            <GridItem xs={12} sm={12} md={12}>
+              <Card avatar="https://avatars0.githubusercontent.com/u/27185256?v=4" linkedin="test" github="test" web="test">
+                <h2>Brandon A. Welsh</h2>
+              </Card>
+          </GridContainer>
+          <GridContainer justify="space-evenly">
               <h1 className={classes.title}>Contributors</h1>
-              <h2 className={classes.subtitle}>
-                ** To Do**
-              </h2>
-            </GridItem>
+              {contributors ? contributors.map((el)=>{
+                return (
+                  <Card avatar={el.author.avatar_url} github={el.author.html_url} commits={el.total}>
+                    <h3>{el.author.login}</h3>
+                  </Card>
+                )
+              }) : <p>Loading...</p>}
           </GridContainer>
         </div>
       </div>

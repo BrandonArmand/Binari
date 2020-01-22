@@ -9,11 +9,11 @@ const aboutPageStyle = {
   title: {
     ...title,
     display: "inline-block",
-    position: "relative",
     marginTop: "30px",
     minHeight: "32px",
     color: "#333",
-    textDecoration: "none"
+    textDecoration: "none",
+    width: '100%'
   },
   subtitle: {
     fontSize: "1.313rem",
