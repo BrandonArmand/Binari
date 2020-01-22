@@ -19,7 +19,8 @@ var styles = {
     textDecoration: "none"
   },
   cardImg: {
-    maxWidth: '200px'
+    maxWidth: '200px',
+    maxHeight: '200px'
   },
   cardHeader: {
     display: 'flex',
