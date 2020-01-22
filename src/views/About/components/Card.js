@@ -79,16 +79,16 @@ export default function ContributorCard(props) {
                                 {props.commits}
                             </div>
                         }
-                        {props.commits && 
+                        {props.additions && 
                             <div className={classes.info}>
                                 <i className={"fas fa-plus "+classes.icon} style={{color:"lightgreen"}}/>{" "}
-                                20,000
+                                {props.additions}
                             </div>
                         }
-                        {props.commits && 
+                        {props.deletions && 
                             <div className={classes.info}>
                                 <i className={"fas fa-minus "+classes.icon} style={{color:"red"}}/>{" "}
-                                582
+                                {props.deletions}
                             </div>
                         }
                     </div>

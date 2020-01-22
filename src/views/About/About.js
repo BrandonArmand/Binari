@@ -6,9 +6,20 @@ import GridItem from "components/Grid/GridItem.js";
 import styles from "assets/jss/material-kit-react/views/aboutPage.js";
 
 import Card from './components/Card'
-import Clearfix from "components/Clearfix/Clearfix";
 
 const useStyles = makeStyles(styles);
+
+function commitAdd(arr){
+  return arr.reduce((a,b)=>{
+    return (typeof a.a != 'undefined' ? a.a : a) + b.a
+  })
+}
+
+function commitDel(arr){
+  return arr.reduce((a,b)=>{
+    return (typeof a.d != 'undefined' ? a.d : a) + b.d
+  })
+}
 
 export default function About(props) {
   const classes = useStyles();
@@ -37,14 +48,23 @@ export default function About(props) {
           </GridContainer>
           <GridContainer justify="space-evenly">
               <h1 className={classes.title}>Team</h1>
-              <Card avatar="https://avatars0.githubusercontent.com/u/27185256?v=4" linkedin="test" github="test" web="test">
+              <Card 
+                avatar="https://avatars0.githubusercontent.com/u/27185256?v=4" 
+                linkedin="test" 
+                github="test" 
+                web="test">
                 <h2>Brandon A. Welsh</h2>
               </Card>
 
               <h1 className={classes.title}>Contributors</h1>
               {contributors ? contributors.map((el)=>{
                 return (
-                  <Card avatar={el.author.avatar_url} github={el.author.html_url} commits={el.total}>
+                  <Card 
+                    avatar={el.author.avatar_url} 
+                    github={el.author.html_url} 
+                    commits={el.total}
+                    additions={commitAdd(el.weeks)}
+                    deletions={commitDel(el.weeks)}>
                     <h3>{el.author.login}</h3>
                   </Card>
                 )
