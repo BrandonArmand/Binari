@@ -59,19 +59,19 @@ export default function About(props) {
               </h2>
               <h3 className={classes.subtitle}>Things you can do:</h3>
             </GridItem>
-            <GridItem xs={4} sm={4} md={4}>
+            <GridItem xs={6} sm={4} md={4}>
               <ul className={classes.subtitle}>
                 <li>Bug Fixes</li>
                 <li>Spelling Fixes</li>
               </ul>
             </GridItem>
-            <GridItem xs={4} sm={4} md={4}>
+            <GridItem xs={6} sm={4} md={4}>
               <ul className={classes.subtitle}>
                 <li>UI/UX</li>
                 <li>Art</li>
               </ul>
             </GridItem>
-            <GridItem xs={4} sm={4} md={4}>
+            <GridItem xs={6} sm={4} md={4}>
               <ul className={classes.subtitle}>
                 <li>Enhancments</li>
                 <li>Optimizations</li>
