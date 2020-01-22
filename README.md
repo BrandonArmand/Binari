@@ -1,4 +1,4 @@
-# [Binari](https://binari.netlify.com) v0.8.5
+# [Binari](https://binari.netlify.com) v0.9.0
 Interactive code editor with a live binary tree visual designed to teach new developers the fundementals of dynamic programming.
 
 ### Site Navigation
