@@ -58,19 +58,19 @@ export default function ContributorCard(props) {
                     <img className={classes.cardImg} src={props.avatar}></img>
                     <div className={classes.wrapper}>
                         {props.linkedin &&
-                            <Button color="linkedin" simple>
+                            <Button color="linkedin" simple href={props.linkedin}>
                                 <i className="fab fa-linkedin"/>{" "}
                                 Linkedin
                             </Button>
                         }
                         {props.github && 
-                            <Button color="linkedin" simple>
+                            <Button color="linkedin" simple href={props.github}>
                                 <i className="fab fa-github"/>{" "}
                                 Github
                             </Button>
                         }
                         {props.web && 
-                            <Button color="linkedin" simple>
+                            <Button color="linkedin" simple href={props.web}>
                                 <i className="fas fa-globe"/>{" "}
                                 Website
                             </Button>

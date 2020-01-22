@@ -50,14 +50,14 @@ export default function About(props) {
               <h1 className={classes.title}>Team</h1>
               <Card 
                 avatar="https://avatars0.githubusercontent.com/u/27185256?v=4" 
-                linkedin="test" 
-                github="test" 
-                web="test">
+                linkedin="https://www.linkedin.com/in/brandonarmand/" 
+                github="https://github.com/BrandonArmand" 
+                web="http://brandonarmand.com/">
                 <h2>Brandon A. Welsh</h2>
               </Card>
 
               <h1 className={classes.title}>Contributors</h1>
-              {contributors ? contributors.map((el)=>{
+              {contributors != null ? contributors.map((el)=>{
                 return (
                   <Card 
                     avatar={el.author.avatar_url} 
