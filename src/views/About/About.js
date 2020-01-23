@@ -99,12 +99,14 @@ export default function About(props) {
               <ul className={classes.subtitle}>
                 <li>Bug Fixes</li>
                 <li>Spelling Fixes</li>
+                <li>Code Cleanup</li>
               </ul>
             </GridItem>
             <GridItem xs={6} sm={4} md={4}>
               <ul className={classes.subtitle}>
                 <li>UI/UX</li>
                 <li>Art</li>
+                <li>Copywriting</li>
               </ul>
             </GridItem>
             <GridItem xs={6} sm={4} md={4}>
@@ -114,7 +116,7 @@ export default function About(props) {
               </ul>
             </GridItem>
             <GridItem xs={12} sm={12} md={12}>
-              <a href="https://github.com/BrandonArmand/Binari/issues"><h4>Start Contributing</h4></a>
+              <a href="https://github.com/BrandonArmand/Binari/issues"><h4 className={classes.footer}>Start Contributing</h4></a>
             </GridItem>
           </GridContainer>
         </div>
