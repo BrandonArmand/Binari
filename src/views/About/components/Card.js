@@ -54,7 +54,7 @@ export default function ContributorCard(props) {
   return (
         <GridItem className={classes.card}>
           <Card>
-            <CardHeader color="primary" img>
+            <CardHeader color={props.color} img>
                 <div className={classes.cardHeader}>
                     <img className={classes.cardImg} src={props.avatar}></img>
                     <div className={classes.wrapper}>

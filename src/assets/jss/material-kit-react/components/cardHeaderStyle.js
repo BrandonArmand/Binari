@@ -23,7 +23,13 @@ const cardHeaderStyle = {
   successCardHeader,
   dangerCardHeader,
   infoCardHeader,
-  primaryCardHeader
+  primaryCardHeader,
+  gigiCardHeader: {
+    background: 'linear-gradient(315deg, #fc5296 0%,#f67062)',
+  },
+  brandonCardHeader: {
+    background: 'linear-gradient(315deg, #63a4ff 0%,#83eaf1)'
+  }
 };
 
 export default cardHeaderStyle;
