@@ -74,7 +74,8 @@ export default function About(props) {
                     github={el.author.html_url} 
                     commits={el.total}
                     additions={commitAdd(el.weeks)}
-                    deletions={commitDel(el.weeks)}>
+                    deletions={commitDel(el.weeks)}
+                    color="default">
                     <h3>{el.author.login}</h3>
                   </Card>
                 )

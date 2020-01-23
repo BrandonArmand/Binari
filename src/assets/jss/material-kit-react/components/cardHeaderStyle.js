@@ -29,6 +29,9 @@ const cardHeaderStyle = {
   },
   brandonCardHeader: {
     background: 'linear-gradient(315deg, #63a4ff 0%,#83eaf1)'
+  },
+  defaultCardHeader :{
+    background: 'linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%)'
   }
 };
 
