@@ -26,12 +26,15 @@ const cardHeaderStyle = {
   primaryCardHeader,
   gigiCardHeader: {
     background: 'linear-gradient(315deg, #fc5296 0%,#f67062)',
+    boxShadow: primaryCardHeader.boxShadow
   },
   brandonCardHeader: {
-    background: 'linear-gradient(315deg, #63a4ff 0%,#83eaf1)'
+    background: 'linear-gradient(315deg, #63a4ff 0%,#83eaf1)',
+    boxShadow: infoCardHeader.boxShadow
   },
   defaultCardHeader :{
-    background: 'linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%)'
+    background: 'linear-gradient(315deg, #2b4162 0%, #12100e 74%)',
+    boxShadow: successCardHeader.boxShadow
   }
 };
 

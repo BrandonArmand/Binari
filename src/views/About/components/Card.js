@@ -8,6 +8,10 @@ import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
 import Button from "components/CustomButtons/Button.js";
 import Clearfix from "components/Clearfix/Clearfix.js";
+import Tooltip from "@material-ui/core/Tooltip";
+import tooltip from "assets/jss/material-kit-react/tooltipsStyle.js";
+
+
 
 var styles = {
   cardTitle: {
@@ -36,7 +40,8 @@ var styles = {
   info: {
     display: 'flex',
     justifyContent: 'flex-start',
-    padding: '12px 30px'
+    padding: '12px 30px',
+    color: 'white'
   },
   wrapper: {
     width: '100%'
@@ -44,7 +49,8 @@ var styles = {
   icon: {
       marginRight: '10px',
       marginTop: '2px'
-    }
+  },
+  ...tooltip
 };
 
 const useStyles = makeStyles(styles);
@@ -83,22 +89,40 @@ export default function ContributorCard(props) {
                             </Button>
                         }
                         {props.commits && 
-                            <div className={classes.info}>
-                                <i className={"fas fa-code-branch "+classes.icon} style={{color:"lightblue"}}/>{" "}
-                                {props.commits}
-                            </div>
+                              <Tooltip
+                                title="Commits"
+                                placement="right"
+                                classes={{ tooltip: classes.tooltip }}
+                              >
+                              <div className={classes.info}>
+                                  <i className={"fas fa-code-branch "+classes.icon} style={{color:"lightblue"}}/>{" "}
+                                  {props.commits}
+                              </div>
+                            </Tooltip>
                         }
                         {props.additions && 
-                            <div className={classes.info}>
-                                <i className={"fas fa-plus "+classes.icon} style={{color:"lightgreen"}}/>{" "}
-                                {props.additions}
-                            </div>
+                            <Tooltip
+                              title="Additions"
+                              placement="right"
+                              classes={{ tooltip: classes.tooltip }}
+                            >
+                              <div className={classes.info}>
+                                  <i className={"fas fa-plus "+classes.icon} style={{color:"lightgreen"}}/>{" "}
+                                  {props.additions}
+                              </div>
+                            </Tooltip>
                         }
                         {props.deletions && 
-                            <div className={classes.info}>
-                                <i className={"fas fa-minus "+classes.icon} style={{color:"red"}}/>{" "}
-                                {props.deletions}
-                            </div>
+                            <Tooltip
+                              title="Deletions"
+                              placement="right"
+                              classes={{ tooltip: classes.tooltip }}
+                            >
+                              <div className={classes.info}>
+                                  <i className={"fas fa-minus "+classes.icon} style={{color:"red"}}/>{" "}
+                                  {props.deletions}
+                              </div>
+                            </Tooltip>
                         }
                     </div>
                 </div>
