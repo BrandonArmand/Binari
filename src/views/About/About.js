@@ -29,8 +29,10 @@ export default function About(props) {
   useLayoutEffect(() => {
     fetch(`https://api.github.com/repos/brandonarmand/binari/stats/contributors?access_token=${apiToken}`)
       .then(response => response.json())
-      .then(data => setContributors(data))
+      .then(data => !data.message && setContributors(data))
   })
+
+  console.log(contributors)
   
   return (
     <div>
@@ -49,11 +51,17 @@ export default function About(props) {
           <GridContainer justify="space-evenly">
               <h1 className={classes.title}>Team</h1>
               <Card 
-                avatar="https://avatars0.githubusercontent.com/u/27185256?v=4" 
+                avatar="https://media-exp2.licdn.com/dms/image/C5603AQHDpyHFybEEeg/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=ZrTlFl6PrO1swAzrq4EYWfyl_ZwcoSSbfGr8yQIUCas" 
                 linkedin="https://www.linkedin.com/in/brandonarmand/" 
                 github="https://github.com/BrandonArmand" 
                 web="http://brandonarmand.com/">
                 <h2>Brandon A. Welsh</h2>
+              </Card>
+              <Card 
+                avatar="https://media-exp2.licdn.com/dms/image/C5603AQFecyMds2zhrA/profile-displayphoto-shrink_800_800/0?e=1585180800&v=beta&t=ih5qU0freZMFTXBCDkq2PZam8mptYB8hbErd8dJWJcM" 
+                linkedin="https://www.linkedin.com/in/gizella-o-824a13161/" 
+                dribbble="https://dribbble.com/gizellaortiz">
+                <h2>Gigi Ortiz</h2>
               </Card>
 
               <h1 className={classes.title}>Contributors</h1>

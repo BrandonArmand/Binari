@@ -25,6 +25,7 @@ var styles = {
     height: '200px',
     minWidth: '200px',
     minHeight: '200px',
+    background: 'grey'
   },
   cardHeader: {
     display: 'flex',
@@ -67,6 +68,12 @@ export default function ContributorCard(props) {
                             <Button color="linkedin" simple href={props.github}>
                                 <i className="fab fa-github"/>{" "}
                                 Github
+                            </Button>
+                        }
+                        {props.dribbble && 
+                            <Button color="linkedin" simple href={props.dribbble}>
+                                <i className="fab fa-dribbble"/>{" "}
+                                Dribbble
                             </Button>
                         }
                         {props.web && 
