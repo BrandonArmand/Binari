@@ -25,10 +25,10 @@ Anyone can help. We welcome first-time contributors, as well as experienced cont
 
 There is plenty to do for both developers and designers of every skill level. Check out the issues, or pitch your own ideas.
 
-#### Starting points.
-- New to open-source? I suggest fixing a spelling error or try doing a `first-timers-only` issue.
-- Expert on all things binary tree? Try building a lesson.
-- Designer? Don't be shy, we could use some work with our designs.
+### Starting points.
+- New to open-source? I suggest fixing a spelling error or try doing a [first-timers-only](https://github.com/BrandonArmand/Binari/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) issue.
+- Expert on all things binary tree? Try [building a lesson](https://github.com/BrandonArmand/Binari/issues/8).
+- Designer? Don't be shy, we could use some work with our [designs](https://github.com/BrandonArmand/Binari/issues/7).
 
 ### Setup
 1) Fork the repo.
