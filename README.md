@@ -21,11 +21,14 @@ Interactive code editor with a live binary tree visual designed to teach new dev
 
 ## Contributing
 [![Issues](https://img.shields.io/github/issues-raw/brandonarmand/binari?maxAge=25000)](https://github.com/brandonarmand/binari/issues)  
-Anyone can help.
+Anyone can help. We welcome first-time contributors, as well as experienced contributors.
 
-We welcome first-time contributors!
+There is plenty to do for both developers and designers of every skill level. Check out the issues, or pitch your own ideas.
 
-There is plenty to do for developers and designers of all skill levels. Check out the issues, or pitch your own ideas.
+#### Starting points.
+- New to open-source? I suggest fixing a spelling error or try doing a `first-timers-only` issue.
+- Expert on all things binary tree? Try building a lesson.
+- Designer? Don't be shy, we could use some work with our designs.
 
 ### Setup
 1) Fork the repo.
