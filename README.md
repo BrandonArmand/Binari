@@ -20,7 +20,7 @@ Interactive code editor with a live binary tree visual designed to teach new dev
 * [Material UI Pro](https://demos.creative-tim.com/material-dashboard-pro-react/#/documentation/tutorial) - Design System.
 
 ## Contributing
-[![Issues](https://img.shields.io/github/issues-raw/brandonarmand/PlayMusic.svg?maxAge=25000)](https://github.com/brandonarmand/binari/issues)  
+[![Issues](https://img.shields.io/github/issues-raw/brandonarmand/binari?maxAge=25000)](https://github.com/brandonarmand/binari/issues)  
 Anyone can help.
 
 We welcome first-time contributors!
