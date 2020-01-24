@@ -1,6 +1,7 @@
 # [Binari](https://binari.netlify.com) v0.9.0
 
 [![Open Source Helpers](https://www.codetriage.com/brandonarmand/binari/badges/users.svg)](https://www.codetriage.com/brandonarmand/binari)
+[![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)
 
 Interactive code editor with a live binary tree visual designed to teach new developers the fundementals of dynamic programming and algorithms.
 
