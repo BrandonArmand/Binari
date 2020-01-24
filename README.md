@@ -20,7 +20,9 @@ Interactive code editor with a live binary tree visual designed to teach new dev
 
 ## Contributing
 
-Anyone can help. 
+Anyone can help.
+
+We welcome first-time contributors!
 
 There is plenty to do for developers and designers of all skill levels. Check out the issues, or pitch your own ideas.
 
