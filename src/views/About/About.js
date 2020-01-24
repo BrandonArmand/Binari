@@ -59,7 +59,7 @@ export default function About(props) {
                 <h2>Brandon A. Welsh</h2>
               </Card>
               <Card 
-                avatar="https://media-exp2.licdn.com/dms/image/C5603AQFecyMds2zhrA/profile-displayphoto-shrink_800_800/0?e=1585180800&v=beta&t=ih5qU0freZMFTXBCDkq2PZam8mptYB8hbErd8dJWJcM" 
+                avatar="https://media-exp1.licdn.com/dms/image/C4E03AQHuvD1qATn3AQ/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=4203eiQl-31Rsqj0qicTXSjkjqA0ugfGXlDeqmpyuVw" 
                 linkedin="https://www.linkedin.com/in/gizella-o-824a13161/" 
                 dribbble="https://dribbble.com/gizellaortiz"
                 color="gigi">
