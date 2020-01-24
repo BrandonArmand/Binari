@@ -19,9 +19,9 @@ Interactive code editor with a live binary tree visual designed to teach new dev
 
 ## Contributing
 
-If you would like to contribute, reach out to me first. Currently the application is too early in development to split work between too many developers. Once the application is in version 0.9.0+ I will open up public issues for all to work on.
+Anyone can help. 
 
-However, you are still open to fork the project and build on features you think are approriate. I will still happily consider them.
+There is plenty to do for developers and designers of all skill levels. Check out the issues, or pitch your own ideas.
 
 ### Setup
 1) Fork the repo.
