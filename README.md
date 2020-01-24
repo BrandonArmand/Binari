@@ -2,7 +2,7 @@
 
 [![Open Source Helpers](https://www.codetriage.com/brandonarmand/binari/badges/users.svg)](https://www.codetriage.com/brandonarmand/binari)
 
-Interactive code editor with a live binary tree visual designed to teach new developers the fundementals of dynamic programming.
+Interactive code editor with a live binary tree visual designed to teach new developers the fundementals of dynamic programming and algorithms.
 
 ### Site Navigation
 
