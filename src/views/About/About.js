@@ -29,7 +29,7 @@ export default function About(props) {
   useLayoutEffect(() => {
     fetch(`https://api.github.com/repos/brandonarmand/binari/stats/contributors?access_token=${apiToken}`)
       .then(response => response.json())
-      .then(data => !data.message && setContributors(data))
+      .then(data => !data.message && setContributors(data.sort((a, b) => a.total + b.total)))
   })
 
   console.log(contributors)
