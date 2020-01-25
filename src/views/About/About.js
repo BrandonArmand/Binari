@@ -80,7 +80,11 @@ export default function About(props) {
                   </Card>
                 )
               }) : (
-                  <Card>
+                  <Card
+                    commits={'...'}
+                    additions={'...'}
+                    deletions={'...'}
+                    color="default">
                     <h3>...</h3>
                   </Card>
                 )
