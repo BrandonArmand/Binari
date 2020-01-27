@@ -30,6 +30,11 @@ There is plenty to do for both developers and designers of every skill level. Ch
 - Expert on all things binary tree? Try [building a lesson](https://github.com/BrandonArmand/Binari/issues/8).
 - Designer? Don't be shy, we could use some work with our [designs](https://github.com/BrandonArmand/Binari/issues/7).
 
+### Rules
+1. Read the rules!
+2. Issues tagged with `first-timers-only` are reserved for new contributors. Let them have a chance.
+3. Each pull request should only introduce a single update at a time. Do not reference multiple issues that are unrelated to one-another.
+
 ### Setup
 1) Fork the repo.
 2) Run a couple of commands in the project's file directory.
