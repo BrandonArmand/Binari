@@ -24,10 +24,16 @@ function commitDel(arr){
 export default function About(props) {
   const classes = useStyles();
   const [contributors, setContributors] = useState(null)
-  const apiToken = process.env.REACT_APP_TOKEN //Read-Access Token
+  const apiHeaders = new Headers()
+  apiHeaders.append("Authorization", `Bearer ${process.env.REACT_APP_TOKEN}`)
+  const reqOptions = {
+    method: 'GET',
+    headers: apiHeaders,
+    redirect: 'follow'
+  };
 
   useLayoutEffect(() => {
-    fetch(`https://api.github.com/repos/brandonarmand/binari/stats/contributors?access_token=${apiToken}`)
+    fetch(`https://api.github.com/repos/brandonarmand/binari/stats/contributors`, reqOptions)
       .then(response => response.json())
       .then(data => !data.message && setContributors(data.sort((a, b) => a.total < b.total ? 1 : -1)))
   })
