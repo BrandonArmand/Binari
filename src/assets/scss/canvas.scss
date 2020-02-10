@@ -43,7 +43,8 @@ table{
 @media (max-width: 944px){
     div.floating-main{
         width: 100%;
-        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -56,8 +57,11 @@ table{
     }
 
     div.floating-main{
-        width: 100%;
         margin: 0;
+        position: absolute;
+        top: 90px;
+        width: 100%;
+        margin-bottom: 100px;
     }
 }
 
