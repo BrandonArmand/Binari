@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // nodejs library to set properties for components
@@ -11,7 +12,7 @@ import styles from "assets/jss/material-kit-react/components/parallaxStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function Parallax(props) {
+function Parallax(props) {
   let windowScrollTop;
   if (window.innerWidth >= 768) {
     windowScrollTop = window.pageYOffset / 3;
@@ -35,7 +36,8 @@ export default function Parallax(props) {
     var windowScrollTop = window.pageYOffset / 3;
     setTransform("translate3d(0," + windowScrollTop + "px,0)");
   };
-  const { filter, className, children, style, image, small } = props;
+  const { filter, className, children, style, image, small, location } = props;
+  const inHomePage = location.pathname === '/';
   const classes = useStyles();
   const parallaxClasses = classNames({
     [classes.parallax]: true,
@@ -52,7 +54,7 @@ export default function Parallax(props) {
         transform: transform
       }}
     >
-      {children}
+      {inHomePage && children}
     </div>
   );
 }
@@ -65,3 +67,5 @@ Parallax.propTypes = {
   image: PropTypes.string,
   small: PropTypes.bool
 };
+
+export default withRouter(Parallax);
