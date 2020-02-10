@@ -25,14 +25,14 @@ export default function About(props) {
   const classes = useStyles();
   const [contributors, setContributors] = useState(null)
   const apiHeaders = new Headers()
-  apiHeaders.append("Authorization", `Bearer ${process.env.REACT_APP_TOKEN}`)
+        apiHeaders.append("Authorization", `Bearer ${process.env.REACT_APP_TOKEN}`)
   const reqOptions = {
     method: 'GET',
     headers: apiHeaders,
     redirect: 'follow'
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     fetch(`https://api.github.com/repos/brandonarmand/binari/stats/contributors`, reqOptions)
       .then(response => response.json())
       .then(data => !data.message && setContributors(data.sort((a, b) => a.total < b.total ? 1 : -1)))
