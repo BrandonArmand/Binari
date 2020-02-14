@@ -61,8 +61,8 @@ export default function ProductSection() {
           <GridItem xs={12} sm={6} md={6}>
             <iframe 
               width="100%" 
-              height="315" 
-              src="https://www.youtube-nocookie.com/embed/oSWTXtMglKE?controls=0" 
+              height="315"
+              src="https://www.youtube-nocookie.com/embed/7HgsS8bRvjo"
               frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
               allowfullscreen>
               </iframe>
