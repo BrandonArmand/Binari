@@ -7,19 +7,9 @@ import styles from "assets/jss/material-kit-react/views/aboutPage.js";
 
 import Card from './components/Card'
 
+import {commitAdd,commitDel} from './helpers'
+
 const useStyles = makeStyles(styles);
-
-function commitAdd(arr){
-  return arr.reduce((a,b)=>{
-    return (typeof a.a != 'undefined' ? a.a : a) + b.a
-  })
-}
-
-function commitDel(arr){
-  return arr.reduce((a,b)=>{
-    return (typeof a.d != 'undefined' ? a.d : a) + b.d
-  })
-}
 
 export default function About(props) {
   const classes = useStyles();
