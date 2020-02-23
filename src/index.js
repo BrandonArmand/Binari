@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
 import "assets/scss/material-kit-react.scss?v=1.8.0";
+import Button from "components/Button/Button";
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
@@ -49,6 +50,7 @@ function App(){
                 towards becoming a more complete programmer.
               </h4>
               <br />
+              <Button color="primary" linkTo="/playground">Get Started</Button>
             </GridItem>
           </GridContainer>
         </div>
