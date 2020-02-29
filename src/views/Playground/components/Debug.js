@@ -10,7 +10,8 @@ const useStyle = makeStyles({
     padding: "10px",
     background: "#333",
     color: "#ddd",
-    height: "110px"
+    height: "110px",
+    overflowY: "scroll"
   },
   title: {
     fontFamily: "IBM Plex Mono",
@@ -46,6 +47,28 @@ const useStyle = makeStyles({
 
 export default function Debug({ data }) {
   const classes = useStyle();
+  const wrkspc = Math.floor(Math.random() * 100) + 100
+  const output = data.map(el => {
+      let result = ''
+      switch(el){
+        case 'Success': result = <span className={classes.success}>{el}</span>; break
+        case 'Error': result = <span className={classes.error}>{el}</span>; break
+        default: result = <span>{el}</span>
+      }
+      return lineOutput(result, wrkspc)
+  })
+
+  function lineOutput(line, wrkspc) {
+    return (
+      <div>
+        <span className={classes.directory}>
+          {`binari@env/wrkspc${wrkspc}`}
+        </span>{" "}
+        {"> "}
+        {line}
+      </div>
+    )
+  }
 
   return (
     <>
@@ -53,16 +76,7 @@ export default function Debug({ data }) {
         <img src={consoleIcon} alt="" className={classes.icon} /> Console
       </h3>
       <div className={classes.log}>
-        {data.map(el => (
-          <div>
-            <span className={classes.directory}>
-              {`binari@env/wrkspc${Math.floor(Math.random() * 100) + 100}`}
-            </span>{" "}
-            {"> "}
-            {el === "Success" && <span className={classes.success}>{el}</span>}
-            {el === "Error" && <span className={classes.error}>{el}</span>}
-          </div>
-        ))}
+        {output}
       </div>
     </>
   );
