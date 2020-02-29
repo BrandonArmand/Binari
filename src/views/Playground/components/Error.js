@@ -1,36 +1,63 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import warningIcon from "../../../assets/imgs/warning.svg";
 
 const useStyle = makeStyles({
-    error: {
-        width: "100%",
-        height: '100%',
-        margin: 'auto',
-        padding: '50px',
-        background: '#333',
-        color: 'whitesmoke'
-    },
-    title: {
-        background: '#d96161',
-        color: 'whitesmoke',
-        margin: 0,
-        padding: '0 10px'
-    },
-    errorType: {
-        float: 'right'
-    }
-})
+  error: {
+    background: "#333",
+    color: "#ddd",
+    fontFamily: "Consolas, serif",
+    height: "100%",
+    margin: "auto",
+    padding: "10px",
+    width: "100%"
+  },
+  title: {
+    alignItems: "center",
+    background: "linear-gradient(179.45deg, #CD0505 6.17%, #9F2828 93.84%)",
+    color: "#ddd",
+    display: "flex",
+    fontFamily: "IBM Plex Mono",
+    fontSize: "20px",
+    fontStyle: "normal",
+    fontWeight: "300",
+    lineHeight: "31px",
+    margin: 0,
+    padding: "5px 10px"
+  },
+  errorType: {
+    display: "inline-block",
+    marginLeft: "auto"
+  },
+  errorFont: {
+    color: "rgb(255, 30, 30)"
+  },
+  icon: {
+    display: "inline-block",
+    height: "22px",
+    marginBottom: "3px",
+    marginLeft: "0.2rem",
+    marginRight: "17px",
+    width: "22px"
+  }
+});
 
-export default function Error(props){
-    const classes = useStyle()
-    const {type, children} = props
+export default function Error({ type, children }) {
+  const classes = useStyle();
 
-    return (
-        <>
-        <h3 className={classes.title}>Error | <span className={classes.errorType}>{type}</span></h3>
-        <div className={classes.error}>
-            {children}
-        </div>
-        </>
-    )
+  return (
+    <>
+      <h3 className={classes.title}>
+        <img
+          src={warningIcon}
+          alt=""
+          className={`${classes.icon} fas fa-times`}
+        ></img>{" "}
+        Error <span className={classes.errorType}>{type}</span>
+      </h3>
+      <div className={classes.error}>
+        <span className={classes.errorFont}>{type}</span>: {children}
+      </div>
+    </>
+  );
 }
