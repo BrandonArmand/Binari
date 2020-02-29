@@ -14,7 +14,7 @@ import SplitterLayout from 'react-splitter-layout';
 import 'react-splitter-layout/lib/index.css';
 
 import {js} from 'js-beautify'
-import {Canvas, Debug, Error, Info, Directory} from './components'
+import {Canvas, Debug, Error, Info, Directory, Icon} from './components'
 import chapter from './chapters'
 
 const beautify = js
@@ -127,10 +127,15 @@ export default function Playground(props) {
                 </GridItem>
                 <GridItem xs={12} sm={5} md={5} lg={5}>
                   <div className={classes.canvasRegion}>
+                
                     <SplitterLayout vertical={true} customClassName={classes.splitter} secondaryInitialSize={160}>
+                     {/* need to set secondaryInitialSize={10} on button click */}
                       {canvas}
+                      
                       <Info text={chapter[page].lesson}/>
+                      
                     </SplitterLayout>
+                    
                   </div>
                 </GridItem>
             </GridContainer>

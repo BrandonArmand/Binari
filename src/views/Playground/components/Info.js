@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Markdown from 'react-markdown'
+import Icon from './Icon'
 
 const useStyle = makeStyles({
     main: {
@@ -16,6 +17,10 @@ export default function Info(props){
     const {text} = props
     
     return (
+        <>
+        <Icon/>
         <Markdown className={classes.main} source={text}/>
+        </>
     )
 }
+

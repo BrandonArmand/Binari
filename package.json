@@ -11,7 +11,7 @@
     "history": "4.9.0",
     "js-beautify": "^1.10.2",
     "moment": "2.24.0",
-    "node-sass": "4.12.0",
+    "node-sass": "^4.13.1",
     "nouislider": "14.0.2",
     "prop-types": "15.7.2",
     "react": "16.9.0",
