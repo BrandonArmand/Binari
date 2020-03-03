@@ -15,7 +15,7 @@ import GridItem from "components/Grid/GridItem.js";
 
 import LandingPage from "views/LandingPage/LandingPage.js";
 import Playground from "views/Playground/Playground";
-import About from "views/About/About"
+import About from "views/About/About";
 
 
 var hist = createBrowserHistory();
@@ -46,7 +46,7 @@ function App(){
               <h1 className={classes.title}>Binari</h1>
               <h4>
                 Binary Trees are a gateway towards a deeper understanding of dynamic programming.
-                Through the use of both recurssion and iterative implimentations any developer can be guided
+                Through the use of both recursion and iterative implementations, any developer can be guided
                 towards becoming a more complete programmer.
               </h4>
               <br />
