@@ -36,17 +36,17 @@ export default function About(props) {
         <div className={classes.container}>
           <GridContainer justify="left">
             <GridItem xs={12} sm={12} md={12}>
-              <h1 className={classes.title}>Mission</h1>
+              <h1 className={classes.title}>Mission Statement</h1>
               <h2 className={classes.subtitle}>
-                Binari's mission statement is to provide the best experience for new developers through an easy to use code-editor and data structure visuallization.
-                The problem with learning a new algorithm or data-structure tends to lie with the intial understanding with how the data/code gets organized. 
+                Binari's mission is to provide the best experience for new developers through an easy to use code-editor and data-structure visualizer.
+                The problem with learning a new algorithm or data-structure tends to lie in understanding how the data/code gets organized. 
                 I am here to fix that, and you are welcome to join.
               </h2>
             </GridItem>
           </GridContainer>
           <GridContainer justify="space-evenly">
               <h1 className={classes.title}>Team</h1>
-              <Card 
+              <Card
                 avatar="https://media-exp2.licdn.com/dms/image/C5603AQHDpyHFybEEeg/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=ZrTlFl6PrO1swAzrq4EYWfyl_ZwcoSSbfGr8yQIUCas" 
                 linkedin="https://www.linkedin.com/in/brandonarmand/" 
                 github="https://github.com/BrandonArmand" 
@@ -90,10 +90,10 @@ export default function About(props) {
             <GridItem xs={12} sm={12} md={12}>
               <h2 className={classes.title}>Want to help?</h2>
               <h2 className={classes.subtitle}>
-                There are a list of issues on Github that you are welcome to work on, 
-                but if you have an idea of your own, we are open to allowing any pull request we believe fits well with Binari's vision.
+                There are a list of issues on Github that you are welcome to work on. 
+                If you have an idea of your own, we are open to allowing any pull requests we believe fit well with Binari's vision.
               </h2>
-              <h3 className={classes.subtitle}>Things you can do:</h3>
+              <h3 className={classes.listTitle}>Things you can do:</h3>
             </GridItem>
             <GridItem xs={6} sm={4} md={4}>
               <ul className={classes.subtitle}>

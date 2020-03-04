@@ -9,13 +9,20 @@ const aboutPageStyle = {
   title: {
     ...title,
     display: "inline-block",
-    marginTop: "30px",
+    marginTop: "70px",
+    marginBottom: "50px",
     minHeight: "32px",
     color: "#333",
     textDecoration: "none",
     width: '100%'
   },
   subtitle: {
+    marginTop: "-20px",
+    fontSize: "1.313rem",
+    color: '#333'
+  },
+  listTitle: {
+    marginBottom: "50px",
     fontSize: "1.313rem",
     color: '#333'
   },

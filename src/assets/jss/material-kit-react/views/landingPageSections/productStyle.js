@@ -14,6 +14,21 @@ const productStyle = {
   },
   description: {
     color: "#999"
+  },
+  infoSection: {
+    marginTop: "20px",
+    marginBottom: "50px"
+  },
+  videoTitle: {
+    ...title,
+    marginTop: "10px",
+    overflowWrap: "break-word",
+    marginLeft: "20px"
+  },
+  videoDescription: {
+    color: "#999",
+    textAlign: "left",
+    marginLeft: "30px"
   }
 };
 

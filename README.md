@@ -4,7 +4,7 @@
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
 
-Interactive code editor with a live binary tree visual designed to teach new developers the fundementals of dynamic programming and algorithms.
+Interactive code editor with a live binary tree visual designed to teach new developers the fundamentals of dynamic programming and algorithms.
 
 ### Site Navigation
 
@@ -12,7 +12,7 @@ Interactive code editor with a live binary tree visual designed to teach new dev
 * [Playground](https://binari.netlify.com/playground) - The primary learning route. Includes the code editor and canvas.
 * [About](https://binari.netlify.com/about) - Application description w/ github API itegration for contributor info.
 
-![Binari](https://user-images.githubusercontent.com/27185256/71960208-4a0fb980-31a9-11ea-9d6c-f264e024113a.png "Site Photo")
+![Binari](https://user-images.githubusercontent.com/27185256/75616028-5278d680-5b00-11ea-8b74-b728553e5499.png "Site Photo")
 
 ## Built With
 
