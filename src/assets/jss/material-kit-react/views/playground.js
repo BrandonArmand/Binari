@@ -81,6 +81,15 @@ const profilePageStyle = {
   },
   splitter: {
     maxHeight: '100%'
+  },
+  difficulty: {
+    height: "1.9em",
+    width: "15px",
+    float: "right",
+    borderBottom: 'solid 1px #333'
+  },
+  lesson: {
+    paddingLeft: '5px'
   }
 };
 

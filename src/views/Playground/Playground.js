@@ -19,6 +19,12 @@ import chapter from "./chapters";
 
 const beautify = js;
 const useStyles = makeStyles(styles);
+const difficultyColorScheme = {
+  0: 'rgb(150, 255, 255)',
+  1: 'rgb(150, 255, 171)',
+  2: 'rgb(255, 229, 150)',
+  3: 'rgb(255, 150, 150)',
+}
 
 export default function Playground(props) {
   const classes = useStyles();
@@ -109,7 +115,8 @@ export default function Playground(props) {
                       style={{ background: page === i && "#222" }}
                     >
                       <td>{i}</td>
-                      <td>{el.name}<div style={{ background: el.difficulty, height: "20px", width: "20px", display: "inline-block", float: "right" }}></div></td>
+                      <td className={classes.lesson}>{el.name}</td>
+                      <td style={{ background: difficultyColorScheme[el.difficulty] }} className={classes.difficulty}></td>
                     </tr>
                   ))}
                 </Directory>

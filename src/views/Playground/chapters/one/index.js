@@ -5,5 +5,5 @@ export default {
     name: 'Insertion',
     defaultCode,
     lesson,
-    difficulty: 'yellow'
+    difficulty: 1
 }

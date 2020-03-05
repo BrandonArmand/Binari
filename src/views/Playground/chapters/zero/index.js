@@ -5,5 +5,5 @@ export default{
     name: 'Introduction',
     defaultCode, 
     lesson,
-    difficulty: 'skyblue'
+    difficulty: 0
 }

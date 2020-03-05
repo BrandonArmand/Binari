@@ -17,7 +17,7 @@ const useStyle = makeStyles({
         width: '100%',
         textAlign: 'start',
         fontSize: '14px',
-        lineHeight: '1.2em'
+        lineHeight: '1.7em'
     }
 })
 
