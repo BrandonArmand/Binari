@@ -4,5 +4,6 @@ import lesson from './lesson'
 export default {
     name: 'Insertion',
     defaultCode,
-    lesson
+    lesson,
+    difficulty: 'yellow'
 }

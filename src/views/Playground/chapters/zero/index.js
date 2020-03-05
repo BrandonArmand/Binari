@@ -4,5 +4,7 @@ import lesson from './lesson'
 export default{
     name: 'Introduction',
     defaultCode, 
-    lesson
+    lesson,
+    difficulty: 'skyblue'
 }
+//add diffculty here??????????????????

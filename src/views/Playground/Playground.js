@@ -109,7 +109,7 @@ export default function Playground(props) {
                       style={{ background: page === i && "#222" }}
                     >
                       <td>{i}</td>
-                      <td>{el.name}</td>
+                      <td>{el.name}<div style={{ background: el.difficulty, height: "20px", width: "20px", display: "inline-block", float: "right" }}></div></td>
                     </tr>
                   ))}
                 </Directory>
