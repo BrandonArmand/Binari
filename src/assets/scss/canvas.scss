@@ -53,7 +53,7 @@ table{
         width: 100%;
     }
 
-    div.floating-main{
+    div.floating-main:not(.landing-region){
         margin: 0;
         position: absolute;
         top: 90px;

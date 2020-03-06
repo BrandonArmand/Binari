@@ -36,6 +36,9 @@ export default function About(props) {
         <div className={classes.container}>
           <GridContainer justify="left">
             <GridItem xs={12} sm={12} md={12}>
+              <h1 style={{"textAlign": "center"}}  className={classes.title}>About Binari</h1>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={12}>
               <h1 className={classes.title}>Mission Statement</h1>
               <h2 className={classes.subtitle}>
                 Binari's mission is to provide the best experience for new developers through an easy to use code-editor and data-structure visualizer.

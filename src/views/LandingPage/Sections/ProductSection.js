@@ -58,7 +58,7 @@ export default function ProductSection() {
       </div>
       <div>
       <GridContainer justify="center">
-          <GridItem xs={12} sm={6} md={6}>
+          <GridItem xs={12} sm={12} md={6}>
             <iframe 
               width="100%" 
               height="315"
@@ -67,7 +67,7 @@ export default function ProductSection() {
               allowfullscreen>
               </iframe>
           </GridItem>
-          <GridItem xs={6} sm={6} md={6}>
+          <GridItem xs={12} sm={12} md={6}>
             <h2 className={classes.videoTitle}>Universal Value Tree Problem</h2>
             <h5 className={classes.videoDescription}>
               There are many resources on the internet that break down various complex algorithms
