@@ -27,3 +27,4 @@ yarn-error.log*
 /dist
 # compiled css
 *.css
+.vscode/vscode-kanban.json
