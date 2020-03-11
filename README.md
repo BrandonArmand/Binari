@@ -1,8 +1,8 @@
-# [Binari](https://binari.netlify.com) v0.9.0
+# [Binari](https://binari.dev) v0.9.0
 
 [![Open Source Helpers](https://www.codetriage.com/brandonarmand/binari/badges/users.svg)](https://www.codetriage.com/brandonarmand/binari)
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bc927965-8d4c-490b-b2cf-44d05c36b24e/deploy-status)](https://app.netlify.com/sites/binari/deploys)
 
 Interactive code editor with a live binary tree visual designed to teach new developers the fundamentals of dynamic programming and algorithms.
 
