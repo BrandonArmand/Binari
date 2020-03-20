@@ -1,8 +1,6 @@
 import React from "react";
 // nodejs library that concatenates classes
-import {
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
@@ -63,7 +61,11 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
-  const brandComponent = <Link to={route} className={classes.link}><Button className={classes.title}>{brand}</Button></Link>;
+  const brandComponent = (
+    <Link to={route} className={classes.link}>
+      <Button className={classes.title}>{brand}</Button>
+    </Link>
+  );
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
@@ -131,6 +133,7 @@ Header.propTypes = {
   brand: PropTypes.string,
   fixed: PropTypes.bool,
   absolute: PropTypes.bool,
+  route: PropTypes.any,
   // this will cause the sidebar to change the color from
   // props.color (see above) to changeColorOnScroll.color
   // when the window.pageYOffset is heigher or equal to

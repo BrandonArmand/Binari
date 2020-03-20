@@ -37,7 +37,7 @@ function Parallax(props) {
     setTransform("translate3d(0," + windowScrollTop + "px,0)");
   };
   const { filter, className, children, style, image, small, location } = props;
-  const inHomePage = location.pathname === '/';
+  const inHomePage = location.pathname === "/";
   const classes = useStyles();
   const parallaxClasses = classNames({
     [classes.parallax]: true,
@@ -65,7 +65,8 @@ Parallax.propTypes = {
   children: PropTypes.node,
   style: PropTypes.string,
   image: PropTypes.string,
-  small: PropTypes.bool
+  small: PropTypes.bool,
+  location: PropTypes.any
 };
 
 export default withRouter(Parallax);

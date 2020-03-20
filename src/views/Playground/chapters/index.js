@@ -1,7 +1,4 @@
-import zero from './zero'
-import one from './one'
+import zero from "./zero";
+import one from "./one";
 
-export default [
-    zero,
-    one
-]
+export default [zero, one];

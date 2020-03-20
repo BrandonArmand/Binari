@@ -1,9 +1,9 @@
-import defaultCode from './defaultCode'
-import lesson from './lesson'
+import defaultCode from "./defaultCode";
+import lesson from "./lesson";
 
-export default{
-    name: 'Introduction',
-    defaultCode, 
-    lesson,
-    difficulty: 0
-}
+export default {
+  name: "Introduction",
+  defaultCode,
+  lesson,
+  difficulty: 0
+};

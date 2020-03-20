@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import consoleIcon from "../../../assets/imgs/console.svg";
+import PropTypes from "prop-types";
 
 const useStyle = makeStyles({
   log: {
@@ -45,18 +46,23 @@ const useStyle = makeStyles({
   }
 });
 
-export default function Debug({ data }) {
+const Debug = ({ data }) => {
   const classes = useStyle();
-  const wrkspc = Math.floor(Math.random() * 100) + 100
+  const wrkspc = Math.floor(Math.random() * 100) + 100;
   const output = data.map(el => {
-      let result = ''
-      switch(el){
-        case 'Success': result = <span className={classes.success}>{el}</span>; break
-        case 'Error': result = <span className={classes.error}>{el}</span>; break
-        default: result = <span>{el}</span>
-      }
-      return lineOutput(result, wrkspc)
-  })
+    let result = "";
+    switch (el) {
+      case "Success":
+        result = <span className={classes.success}>{el}</span>;
+        break;
+      case "Error":
+        result = <span className={classes.error}>{el}</span>;
+        break;
+      default:
+        result = <span>{el}</span>;
+    }
+    return lineOutput(result, wrkspc);
+  });
 
   function lineOutput(line, wrkspc) {
     return (
@@ -67,7 +73,7 @@ export default function Debug({ data }) {
         {"> "}
         {line}
       </div>
-    )
+    );
   }
 
   return (
@@ -75,9 +81,13 @@ export default function Debug({ data }) {
       <h3 className={classes.title}>
         <img src={consoleIcon} alt="" className={classes.icon} /> Console
       </h3>
-      <div className={classes.log}>
-        {output}
-      </div>
+      <div className={classes.log}>{output}</div>
     </>
   );
-}
+};
+
+Debug.propTypes = {
+  data: PropTypes.any
+};
+
+export default Debug;

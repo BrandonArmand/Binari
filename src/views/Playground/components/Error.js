@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import warningIcon from "../../../assets/imgs/warning.svg";
+import PropTypes from "prop-types";
 
 const useStyle = makeStyles({
   error: {
@@ -42,7 +43,7 @@ const useStyle = makeStyles({
   }
 });
 
-export default function Error({ type, children }) {
+const Error = ({ type, children }) => {
   const classes = useStyle();
 
   return (
@@ -60,4 +61,11 @@ export default function Error({ type, children }) {
       </div>
     </>
   );
-}
+};
+
+Error.propTypes = {
+  type: PropTypes.any,
+  children: PropTypes.any
+};
+
+export default Error;
