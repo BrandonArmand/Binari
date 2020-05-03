@@ -1,4 +1,4 @@
-export default (`
+export default `
 /****************************************************************
  * Initialize the binary tree on the right.
  *
@@ -18,4 +18,4 @@ this.value = value
 this.insert = function(newValue){
 
 }
-}`)
+}`;

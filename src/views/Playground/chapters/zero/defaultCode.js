@@ -1,4 +1,4 @@
-export default (`
+export default `
 /****************************************************************
  * Initialize the binary tree on the right.
  *
@@ -46,4 +46,4 @@ let tree = new Node(50)
 for (var i = 0; i < 14; i++) {
     tree.insert(Math.floor(Math.random() * 100));
 }
-`)
+`;

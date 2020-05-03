@@ -29,7 +29,7 @@ const profilePageStyle = {
   main: {
     background: "#FFFFFF",
     position: "relative",
-    zIndex: "3",
+    zIndex: "3"
   },
   mainRaised: {
     margin: "-60px 30px 0px",
@@ -67,8 +67,8 @@ const profilePageStyle = {
   },
   canvasRegion: {
     position: "relative",
-    height: '100%',
-    minHeight: '400px'
+    height: "100%",
+    minHeight: "400px"
   },
   codeButtons: {
     position: "absolute",
@@ -77,19 +77,19 @@ const profilePageStyle = {
     top: 0,
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "center"
   },
   splitter: {
-    maxHeight: '100%'
+    maxHeight: "100%"
   },
   difficulty: {
     height: "1.9em",
     width: "15px",
     float: "right",
-    borderBottom: 'solid 1px #333'
+    borderBottom: "solid 1px #333"
   },
   lesson: {
-    paddingLeft: '5px'
+    paddingLeft: "5px"
   }
 };
 
