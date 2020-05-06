@@ -5,9 +5,10 @@ export default `
  * @param value (int)
  * 
  * @method search
- * * Searches values in the correct leaf using a recursive method
+ * * Searches values in the BST using a recursive method
  * *
- * * @param newValue (int)
+ * * @param tree (Node)
+ * * @param key (int)
  * 
  *****************************************************************/
 function Node(value) {
@@ -54,6 +55,4 @@ let tree = new Node(50)
 
 let isPresent = tree.search(tree, 25)
 isPresent == null ? console.log("Not Present") : console.log("Present")
-
-
 `;
