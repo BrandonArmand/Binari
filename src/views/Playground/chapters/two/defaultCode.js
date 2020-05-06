@@ -1,16 +1,16 @@
 export default `
 /****************************************************************
- * Initialize the binary tree on the right.
+ * Initialize and search the binary tree on the right.
  *
  * @param value (int)
  * 
- * @method insert
- * * Inserts values in the correct leaf using a recursive method
+ * @method search
+ * * Searches values in the correct leaf using a recursive method
  * *
  * * @param newValue (int)
  * 
  *****************************************************************/
-function Node(value){
+function Node(value) {
 this.left = null
 this.right = null
 this.value = value
@@ -25,25 +25,35 @@ this.insert = function(newValue) {
         }
     }
     else if (newValue > this.value) {
-        if(this.right == null) {
+        if (this.right == null) {
             this.right = new Node(newValue)
         }
         else {
             this.right.insert(newValue)
-        } 
+        }
     }
 }
+
+this.search = function(tree, key) {
+    if (tree == null || tree.value == key) {
+        return tree
+    } 
+    if (key < tree.value) {
+        return this.search(tree.left, key)
+    }
+    return this.search(tree.right, key)
+}
+
 }
 
 let tree = new Node(50)
     tree.insert(25)
     tree.insert(15)
-    tree.insert(35)
-    tree.insert(75)
-    tree.insert(85)
-    tree.insert(65)
+    tree.insert(64)
+    tree.insert(55)
 
-for (var i = 0; i < 14; i++) {
-    tree.insert(Math.floor(Math.random() * 100));
-}
+let isPresent = tree.search(tree, 25)
+isPresent == null ? console.log("Not Present") : console.log("Present")
+
+
 `;
