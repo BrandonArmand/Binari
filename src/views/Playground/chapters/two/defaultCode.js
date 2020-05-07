@@ -52,6 +52,8 @@ let tree = new Node(50)
     tree.insert(15)
     tree.insert(64)
     tree.insert(55)
+    tree.insert(40)
+    tree.insert(70)
 
 let isPresent = tree.search(tree, 25)
 isPresent == null ? console.log("Not Present") : console.log("Present")
