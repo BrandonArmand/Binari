@@ -5,5 +5,5 @@ export default {
   name: "Check Balance",
   defaultCode,
   lesson,
-  difficulty: 2
+  difficulty: 1
 };
