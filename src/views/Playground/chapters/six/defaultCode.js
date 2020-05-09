@@ -1,11 +1,11 @@
 export default `
 /****************************************************************
- * Initialize and traverse the binary tree on the right in Depth-First Search manner
+ * Initialize the binary tree on the right and check if it is balanced
  *
  * @param tree (Node)
  * 
- * @methods preorder, inorder, postorder
- * * Traverses the BST in DFS manner using recursive methods
+ * @method checkBalance
+ * * Checks if the binary tree is balanced or not using recursive method
  * *
  * * @param tree (Node)
  * 
@@ -34,33 +34,27 @@ function Node(value) {
         }
     }
 
-    this.preorder = function(tree) {
+    this.getDepth = function(tree) {
         if (tree == null) {
-            return
+            return 0
         }
-        console.log(tree.value)
-        this.preorder(tree.left)
-        this.preorder(tree.right)
+        let leftDepth = this.getDepth(tree.left)
+        let rightDepth = this.getDepth(tree.right)
+        return 1 + Math.max(leftDepth, rightDepth)
     }
 
-    this.inorder = function(tree) {
+    this.checkBalance = function(tree) {
         if (tree == null) {
-            return
+            return true
         }
-        this.inorder(tree.left)
-        console.log(tree.value)
-        this.inorder(tree.right)
-    }
-
-    this.postorder = function(tree) {
-        if (tree == null) {
-            return
+        let ldepth = this.getDepth(tree.left)
+        let rdepth = this.getDepth(tree.right)
+        let diff = Math.abs(ldepth - rdepth)
+        if (diff <= 1 && this.checkBalance(tree.left) && this.checkBalance(tree.right)) {
+            return true
         }
-        this.postorder(tree.left)
-        this.postorder(tree.right)
-        console.log(tree.value)
+        return false
     }
-
 }
 
 let tree = new Node(50)
@@ -71,12 +65,6 @@ let tree = new Node(50)
     tree.insert(40)
     tree.insert(70)
 
-console.log("Preorder Traversal:")
-tree.preorder(tree)
-
-console.log("Inorder Traversal:")
-tree.inorder(tree)
-
-console.log("Postorder Traversal:")
-tree.postorder(tree)
+let isBalanced = tree.checkBalance(tree)
+isBalanced ? console.log("Tree is balanced") : console.log("Tree is not balanced")
 `;
