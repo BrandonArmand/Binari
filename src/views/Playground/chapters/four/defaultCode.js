@@ -1,11 +1,11 @@
 export default `
 /****************************************************************
- * Initialize and traverse the binary tree on the right in Depth-First Search manner
+ * Initialize and traverse the binary tree on the right in Breadth-First Search manner
  *
  * @param tree (Node)
  * 
- * @methods preorder, inorder, postorder
- * * Traverses the BST in DFS manner using recursive methods
+ * @method levelOrder
+ * * Traverses the BST in BFS manner using iterative method
  * *
  * * @param tree (Node)
  * 
@@ -34,33 +34,21 @@ function Node(value) {
         }
     }
 
-    this.preorder = function(tree) {
-        if (tree == null) {
-            return
+    this.levelOrder = function(tree) {
+        var queue = new Array()
+        queue.push(tree)
+        while (queue.length) {
+            var currNode = queue[0]
+            queue = queue.slice(1)      //equivalent to pop in queue
+            console.log(currNode.value)
+            if (currNode.left != null) {
+                queue.push(currNode.left)
+            }
+            if (currNode.right != null) {
+                queue.push(currNode.right)
+            }
         }
-        console.log(tree.value)
-        this.preorder(tree.left)
-        this.preorder(tree.right)
     }
-
-    this.inorder = function(tree) {
-        if (tree == null) {
-            return
-        }
-        this.inorder(tree.left)
-        console.log(tree.value)
-        this.inorder(tree.right)
-    }
-
-    this.postorder = function(tree) {
-        if (tree == null) {
-            return
-        }
-        this.postorder(tree.left)
-        this.postorder(tree.right)
-        console.log(tree.value)
-    }
-
 }
 
 let tree = new Node(50)
@@ -71,12 +59,6 @@ let tree = new Node(50)
     tree.insert(40)
     tree.insert(70)
 
-console.log("Preorder Traversal:")
-tree.preorder(tree)
-
-console.log("Inorder Traversal:")
-tree.inorder(tree)
-
-console.log("Postorder Traversal:")
-tree.postorder(tree)
+console.log("Level-Order (or Breadth-First Search) Traversal")
+tree.levelOrder(tree)
 `;
