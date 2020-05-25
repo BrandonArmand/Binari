@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import { List, ListItem } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import styles from "assets/jss/material-kit-react/components/footerStyle.js";
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { List, ListItem } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import styles from 'assets/jss/material-kit-react/components/footerStyle.js';
 
 const useStyles = makeStyles(styles);
 
@@ -12,7 +12,7 @@ export default function Footer(props) {
   const { whiteFont } = props;
   const footerClasses = classNames({
     [classes.footer]: true,
-    [classes.footerWhiteFont]: whiteFont
+    [classes.footerWhiteFont]: whiteFont,
   });
 
   return (
@@ -22,7 +22,10 @@ export default function Footer(props) {
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a href="https://www.netlify.com">
-                <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Deploys by Netlify" />
+                <img
+                  src="https://www.vectorlogo.zone/logos/netlify/netlify-ar21.svg"
+                  alt="Deploys by Netlify"
+                />
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
@@ -53,5 +56,5 @@ export default function Footer(props) {
 }
 
 Footer.propTypes = {
-  whiteFont: PropTypes.bool
+  whiteFont: PropTypes.bool,
 };
