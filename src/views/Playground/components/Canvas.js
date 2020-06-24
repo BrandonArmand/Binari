@@ -19,18 +19,18 @@ const Canvas = props => {
   setTree();
 
   /**Add position, layer and order from left to right information to this node and all it's children**/
-  function positionNode( node, layer, xOrder){
+  function positionNode(node, layer, xOrder) {
     node.layer = layer;
     node.xOrder = xOrder;
-    node.y = ((node.layer-1)*yDiff+top) * elementScale;
-    let xDiff = windowSize/(Math.pow(2,layer-1));
-    node.x = xDiff * (xOrder-.5);
+    node.y = ((node.layer - 1) * yDiff + top) * elementScale;
+    let xDiff = windowSize / Math.pow(2, layer - 1);
+    node.x = xDiff * (xOrder - 0.5);
     nodeList.push(node);
-    if(node.left != null){
-      positionNode(node.left,layer+1,xOrder*2-1);
+    if (node.left != null) {
+      positionNode(node.left, layer + 1, xOrder * 2 - 1);
     }
-    if(node.right != null){
-      positionNode(node.right,layer+1,xOrder*2);
+    if (node.right != null) {
+      positionNode(node.right, layer + 1, xOrder * 2);
     }
   }
 
@@ -41,10 +41,10 @@ const Canvas = props => {
     setTree();
   }
 
-  function setTree(){
+  function setTree() {
     nodeList = [];
     //Generate all position and layer data
-    return positionNode(tree,1,1);
+    return positionNode(tree, 1, 1);
   }
 
   function draw(p5) {
@@ -52,11 +52,11 @@ const Canvas = props => {
     nodeList.forEach((el) => {
       //Draw lines to children
       p5.stroke("black");
-      if(el.left != null){
-          p5.line(el.x,el.y,el.left.x,el.left.y);
+      if (el.left != null) {
+        p5.line(el.x, el.y, el.left.x, el.left.y);
       }
-      if(el.right != null){
-          p5.line(el.x,el.y,el.right.x,el.right.y);
+      if (el.right != null) {
+        p5.line(el.x, el.y, el.right.x, el.right.y);
       }
       //Draw node
       p5.textAlign(p5.CENTER);
