@@ -17,6 +17,8 @@ import { js } from "js-beautify";
 import { Canvas, Debug, Error, Info, Directory } from "./components";
 import chapter from "./chapters";
 
+import baseTest from "./test.js";
+
 const beautify = js;
 const useStyles = makeStyles(styles);
 const difficultyColorScheme = {
@@ -53,38 +55,10 @@ export default function Playground(props) {
       return {tree, Node}
     `)();
 
-    //Tests all edge cases before the real run
-    let BinaryTree = new node.Node(50);
-    let tree = node.tree;
-
-    if (typeof tree.left === "undefined") {
-      throw { name: "ReferenceError", message: "tree.left is not defined" };
-    }
-    if (typeof tree.right === "undefined") {
-      throw { name: "ReferenceError", message: "tree.right is not defined" };
-    }
-    if (typeof tree.value === "undefined") {
-      throw { name: "ReferenceError", message: "tree.value is not defined" };
-    }
-    if (typeof BinaryTree.left === "undefined") {
-      throw { name: "ReferenceError", message: "Node.left is not defined" };
-    }
-    if (typeof BinaryTree.right === "undefined") {
-      throw { name: "ReferenceError", message: "Node.right is not defined" };
-    }
-    if (typeof BinaryTree.value === "undefined") {
-      throw { name: "ReferenceError", message: "Node.value is not defined" };
-    }
-
-    BinaryTree.insert(25);
-    BinaryTree.insert(15);
-    BinaryTree.insert(35);
-    BinaryTree.insert(75);
-    BinaryTree.insert(85);
-    BinaryTree.insert(65);
+    baseTest(node);
 
     //True Initialization
-    canvas = <Canvas tree={tree} size={28} />;
+    canvas = <Canvas tree={node.tree} size={28} />;
     console.log("Success");
   } catch (err) {
     canvas = <Error type={err.name}>{err.message}</Error>;
