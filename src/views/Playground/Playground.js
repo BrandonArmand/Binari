@@ -17,7 +17,7 @@ import { js } from "js-beautify";
 import { Canvas, Debug, Error, Info, Directory } from "./components";
 import chapter from "./chapters";
 
-import baseTest from "./test.js";
+import baseTest from "./test";
 
 const beautify = js;
 const useStyles = makeStyles(styles);
@@ -55,8 +55,11 @@ export default function Playground(props) {
       return {tree, Node}
     `)();
 
+    //Validate tree implementation
     baseTest(node);
-
+    //Check if chapter's requirements have been met
+    let chapterPassed = chapter[page].test(node);
+    console.log(chapterPassed ? "Chapter Passed" : "Chapter Failed");
     //True Initialization
     canvas = <Canvas tree={node.tree} size={28} />;
     console.log("Success");
