@@ -1,7 +1,7 @@
 /**
  * Basic validation tests to run on all tree implementations
  */
-let test = node => {
+let test = (node) => {
   let BinaryTree = new node.Node(50);
   let tree = node.tree;
 

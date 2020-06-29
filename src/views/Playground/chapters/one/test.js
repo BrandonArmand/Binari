@@ -1,9 +1,9 @@
 /**
  * Returns if chaper's goal has been met by implementation
  */
-let test = node => {
+let test = (node) => {
   // TODO: Implement
-  return false;
+  return node != null;
 };
 
 export default test;

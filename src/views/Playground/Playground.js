@@ -57,9 +57,9 @@ export default function Playground(props) {
 
     //Validate tree implementation
     baseTest(node);
-    //Check if chapter's requirements have been met
-    let chapterPassed = chapter[page].test(node);
-    console.log(chapterPassed ? "Chapter Passed" : "Chapter Failed");
+    //Check if chapter's requirements have been met example:
+    /*let chapterPassed = chapter[page].test(node);
+    console.log(chapterPassed ? "Chapter Passed" : "Chapter Failed");*/
     //True Initialization
     canvas = <Canvas tree={node.tree} size={28} />;
     console.log("Success");
