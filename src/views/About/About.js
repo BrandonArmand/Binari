@@ -33,7 +33,7 @@ export default function About() {
           !data.message &&
           setContributors(data.sort((a, b) => (a.total < b.total ? 1 : -1)))
       );
-  });
+  }, []);
 
   console.log(contributors);
 
