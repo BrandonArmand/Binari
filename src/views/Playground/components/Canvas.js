@@ -7,42 +7,58 @@ const Canvas = props => {
     window.devicePixelRatio < 2 ? 2 : window.devicePixelRatio;
   const windowSize = elementScale * 500;
 
+  /*Array of all nodes*/
+  var nodeList;
+  /*All nodes represented as a reference to the root node*/
   let tree = props.tree;
-  tree.x = windowSize / 2;
-  tree.y = 20 * elementScale;
-  let drawQ = [tree];
-  let layerQ = [];
-  let layer = 1;
+  /*Offset of the root node from the top of the canvas relative to elementScale*/
+  let top = 20;
+  /*Space between the layers realative to elementScale*/
+  let yDiff = 40;
+
+  setTree();
+
+  /**Add position, layer and order from left to right information to this node and all it's children**/
+  function positionNode(node, layer, xOrder) {
+    node.layer = layer;
+    node.xOrder = xOrder;
+    node.y = ((node.layer - 1) * yDiff + top) * elementScale;
+    let xDiff = windowSize / Math.pow(2, layer - 1);
+    node.x = xDiff * (xOrder - 0.5);
+    nodeList.push(node);
+    if (node.left != null) {
+      positionNode(node.left, layer + 1, xOrder * 2 - 1);
+    }
+    if (node.right != null) {
+      positionNode(node.right, layer + 1, xOrder * 2);
+    }
+  }
 
   function setup(p5, canvasParentRef) {
     p5.textSize(12 * elementScale);
     p5.createCanvas(windowSize, 1000).parent(canvasParentRef);
-    p5.frameRate(200);
+    p5.frameRate(100);
+    setTree();
+  }
+
+  function setTree() {
+    nodeList = [];
+    //Generate all position and layer data
+    return positionNode(tree, 1, 1);
   }
 
   function draw(p5) {
-    drawQ.forEach((el, i) => {
-      let distanceX = windowSize / 2.4 / p5.pow(2, layer) + 12;
-      let distanceY = 20 * elementScale + layer * 9;
-
-      layer == 1 && p5.background("white");
-      p5.strokeWeight(elementScale + 1);
-      p5.stroke(0);
-
-      if (el.left) {
-        el.left.x = el.x - distanceX;
-        el.left.y = el.y + distanceY;
+    p5.background("white");
+    nodeList.forEach((el) => {
+      //Draw lines to children
+      p5.stroke("black");
+      if (el.left != null) {
         p5.line(el.x, el.y, el.left.x, el.left.y);
-        layerQ.push(el.left);
       }
-
-      if (el.right) {
-        el.right.x = el.x + distanceX;
-        el.right.y = el.y + distanceY;
+      if (el.right != null) {
         p5.line(el.x, el.y, el.right.x, el.right.y);
-        layerQ.push(el.right);
       }
-
+      //Draw node
       p5.textAlign(p5.CENTER);
       p5.stroke(0);
       p5.strokeWeight(1);
@@ -51,12 +67,6 @@ const Canvas = props => {
       p5.noStroke();
       p5.fill("black");
       p5.text(el.value, el.x, el.y + (6 + elementScale));
-
-      if (!drawQ[i + 1]) {
-        layer++;
-        drawQ = [...layerQ];
-        layerQ = [];
-      }
     });
   }
 
