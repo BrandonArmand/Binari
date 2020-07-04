@@ -49,7 +49,7 @@ const Canvas = props => {
 
   function draw(p5) {
     p5.background("white");
-    nodeList.forEach((el) => {
+    nodeList.forEach(el => {
       //Draw lines to children
       p5.stroke("black");
       if (el.left != null) {

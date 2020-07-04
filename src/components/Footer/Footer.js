@@ -22,7 +22,10 @@ export default function Footer(props) {
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a href="https://www.netlify.com">
-                <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Deploys by Netlify" />
+                <img
+                  src="https://www.netlify.com/img/global/badges/netlify-dark.svg"
+                  alt="Deploys by Netlify"
+                />
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
