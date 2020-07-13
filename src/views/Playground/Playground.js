@@ -38,6 +38,17 @@ export default function Playground(props) {
   let canvas;
   let debug;
 
+  document.onkeydown = function(e) {
+    //CTRL + ENTER to run code
+    if (e.ctrlKey && e.keyCode == 13) {
+      document.getElementById("btnRunCode").click(); 
+    }
+    //CTRL + ALT + R to Reset code
+    if (e.ctrlKey && e.altKey && e.which == 82 == 82) {
+      document.getElementById("btnReset").click();
+    }
+  };
+
   function changePage(newPage) {
     setPage(newPage);
     setCode(beautify(chapter[newPage].defaultCode));
@@ -120,17 +131,21 @@ export default function Playground(props) {
                 {debug}
                 <div className={classes.codeButtons}>
                   <Button
+                    Id = "btnRunCode"
                     color="white"
                     simple={true}
                     onClick={() => setCode(unsavedCode)}
+                    title="Run (CTR+Enter)"
                   >
                     {" "}
                     Run Code{" "}
                   </Button>
                   <Button
+                    Id = "btnReset"
                     color="warning"
                     simple={true}
                     onClick={() => setCode(beautify(chapter[page].defaultCode))}
+                    title="Run (CTRL+ALT+R)"
                   >
                     {" "}
                     Reset{" "}
