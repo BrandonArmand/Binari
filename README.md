@@ -3,6 +3,7 @@
 [![Open Source Helpers](https://www.codetriage.com/brandonarmand/binari/badges/users.svg)](https://www.codetriage.com/brandonarmand/binari)
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bc927965-8d4c-490b-b2cf-44d05c36b24e/deploy-status)](https://app.netlify.com/sites/binari/deploys)
+[![DeepScan grade](https://deepscan.io/api/teams/7989/projects/10120/branches/136074/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=7989&pid=10120&bid=136074)
 
 Interactive code editor with a live binary tree visual designed to teach new developers the fundamentals of dynamic programming and algorithms.
 
