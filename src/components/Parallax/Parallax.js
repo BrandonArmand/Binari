@@ -13,60 +13,60 @@ import styles from "assets/jss/material-kit-react/components/parallaxStyle.js";
 const useStyles = makeStyles(styles);
 
 function Parallax(props) {
-  let windowScrollTop;
-  if (window.innerWidth >= 768) {
-    windowScrollTop = window.pageYOffset / 3;
-  } else {
-    windowScrollTop = 0;
-  }
-  const [transform, setTransform] = React.useState(
-    "translate3d(0," + windowScrollTop + "px,0)"
-  );
-  React.useEffect(() => {
+    let windowScrollTop;
     if (window.innerWidth >= 768) {
-      window.addEventListener("scroll", resetTransform);
+        windowScrollTop = window.pageYOffset / 3;
+    } else {
+        windowScrollTop = 0;
     }
-    return function cleanup() {
-      if (window.innerWidth >= 768) {
-        window.removeEventListener("scroll", resetTransform);
-      }
+    const [transform, setTransform] = React.useState(
+        "translate3d(0," + windowScrollTop + "px,0)"
+    );
+    React.useEffect(() => {
+        if (window.innerWidth >= 768) {
+            window.addEventListener("scroll", resetTransform);
+        }
+        return function cleanup() {
+            if (window.innerWidth >= 768) {
+                window.removeEventListener("scroll", resetTransform);
+            }
+        };
+    });
+    const resetTransform = () => {
+        var windowScrollTop = window.pageYOffset / 3;
+        setTransform("translate3d(0," + windowScrollTop + "px,0)");
     };
-  });
-  const resetTransform = () => {
-    var windowScrollTop = window.pageYOffset / 3;
-    setTransform("translate3d(0," + windowScrollTop + "px,0)");
-  };
-  const { filter, className, children, style, image, small, location } = props;
-  const inHomePage = location.pathname === "/";
-  const classes = useStyles();
-  const parallaxClasses = classNames({
-    [classes.parallax]: true,
-    [classes.filter]: filter,
-    [classes.small]: small,
-    [className]: className !== undefined
-  });
-  return (
-    <div
-      className={parallaxClasses}
-      style={{
-        ...style,
-        backgroundImage: "url(" + image + ")",
-        transform: transform
-      }}
-    >
-      {inHomePage && children}
-    </div>
-  );
+    const { filter, className, children, style, image, small, location, } = props;
+    const inHomePage = location.pathname === "/";
+    const classes = useStyles();
+    const parallaxClasses = classNames({
+        [classes.parallax]: true,
+        [classes.filter]: filter,
+        [classes.small]: small,
+        [className]: className !== undefined,
+    });
+    return (
+        <div
+            className={parallaxClasses}
+            style={{
+                ...style,
+                backgroundImage: "url(" + image + ")",
+                transform: transform,
+            }}
+        >
+            {inHomePage && children}
+        </div>
+    );
 }
 
 Parallax.propTypes = {
-  className: PropTypes.string,
-  filter: PropTypes.bool,
-  children: PropTypes.node,
-  style: PropTypes.string,
-  image: PropTypes.string,
-  small: PropTypes.bool,
-  location: PropTypes.any
+    className: PropTypes.string,
+    filter: PropTypes.bool,
+    children: PropTypes.node,
+    style: PropTypes.string,
+    image: PropTypes.string,
+    small: PropTypes.bool,
+    location: PropTypes.any,
 };
 
 export default withRouter(Parallax);

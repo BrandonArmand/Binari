@@ -7,26 +7,26 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
 const styles = {
-  grid: {}
+    grid: {},
 };
 
 const useStyles = makeStyles(styles);
 
 export default function GridContainer(props) {
-  const classes = useStyles();
-  const { children, className, ...rest } = props;
-  return (
-    <Grid container {...rest} className={classes.grid + " " + className}>
-      {children}
-    </Grid>
-  );
+    const classes = useStyles();
+    const { children, className, ...rest } = props;
+    return (
+        <Grid container {...rest} className={classes.grid + " " + className}>
+            {children}
+        </Grid>
+    );
 }
 
 GridContainer.defaultProps = {
-  className: ""
+    className: "",
 };
 
 GridContainer.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string
+    children: PropTypes.node,
+    className: PropTypes.string,
 };

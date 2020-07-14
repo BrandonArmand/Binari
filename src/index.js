@@ -21,55 +21,55 @@ var hist = createBrowserHistory();
 const useStyles = makeStyles(styles);
 
 function App() {
-  const classes = useStyles();
+    const classes = useStyles();
 
-  return (
-    <>
-      <Router history={hist}>
-        <Header
-          color="transparent"
-          route="/"
-          brand="Binari"
-          rightLinks={<HeaderLinks />}
-          fixed
-          changeColorOnScroll={{
-            height: 150,
-            color: "white"
-          }}
-        />
-        <Parallax
-          filter
-          image={
-            "https://images.unsplash.com/photo-1520262454473-a1a82276a574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
-          }
-        >
-          <div className={classes.container}>
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
-                <h1 className={classes.title}>Binari</h1>
-                <h4>
+    return (
+        <>
+            <Router history={hist}>
+                <Header
+                    color="transparent"
+                    route="/"
+                    brand="Binari"
+                    rightLinks={<HeaderLinks />}
+                    fixed
+                    changeColorOnScroll={{
+                        height: 150,
+                        color: "white",
+                    }}
+                />
+                <Parallax
+                    filter
+                    image={
+                        "https://images.unsplash.com/photo-1520262454473-a1a82276a574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
+                    }
+                >
+                    <div className={classes.container}>
+                        <GridContainer>
+                            <GridItem xs={12} sm={12} md={6}>
+                                <h1 className={classes.title}>Binari</h1>
+                                <h4>
                   Binary Trees are a gateway towards a deeper understanding of
                   dynamic programming. Through the use of both recursion and
                   iterative implementations, any developer can be guided towards
                   becoming a more complete programmer.
-                </h4>
-                <br />
-                <Button color="primary" linkTo="/playground">
+                                </h4>
+                                <br />
+                                <Button color="primary" linkTo="/playground">
                   Get Started
-                </Button>
-              </GridItem>
-            </GridContainer>
-          </div>
-        </Parallax>
-        <Switch>
-          <Route path="/playground" component={Playground} />
-          <Route path="/about" component={About} />
-          <Route path="/" component={LandingPage} />
-        </Switch>
-      </Router>
-      <Footer />
-    </>
-  );
+                                </Button>
+                            </GridItem>
+                        </GridContainer>
+                    </div>
+                </Parallax>
+                <Switch>
+                    <Route path="/playground" component={Playground} />
+                    <Route path="/about" component={About} />
+                    <Route path="/" component={LandingPage} />
+                </Switch>
+            </Router>
+            <Footer />
+        </>
+    );
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));

@@ -1,11 +1,11 @@
 export function commitAdd(arr) {
-  return arr.reduce((a, b) => {
-    return (typeof a.a != "undefined" ? a.a : a) + b.a;
-  });
+    return arr.reduce((a, b) => {
+        return (typeof a.a != "undefined" ? a.a : a) + b.a;
+    });
 }
 
 export function commitDel(arr) {
-  return arr.reduce((a, b) => {
-    return (typeof a.d != "undefined" ? a.d : a) + b.d;
-  });
+    return arr.reduce((a, b) => {
+        return (typeof a.d != "undefined" ? a.d : a) + b.d;
+    });
 }

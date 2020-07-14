@@ -1,21 +1,32 @@
 module.exports = {
-  parser: "babel-eslint",
-  env: {
-    es6: true,
-    node: true,
-    browser: true
-  },
-  parserOptions: {
-    ecmaVersion: 6,
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true
-    }
-  },
-  plugins: ["react"],
-  extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended"
-  ]
+    parser: "babel-eslint",
+    env: {
+        es6: true,
+        node: true,
+        browser: true,
+    },
+    parserOptions: {
+        ecmaVersion: 6,
+        sourceType: "module",
+        ecmaFeatures: {
+            jsx: true,
+        },
+    },
+    plugins: ["react"],
+    extends: [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    rules: {
+        indent: ["error", 4],
+        quotes: ["warn", "double"],
+        "comma-dangle": ["warn", {
+            "arrays": "never",
+            "objects": "always",
+            "imports": "never",
+            "exports": "never",
+            "functions": "never",
+        }],
+        "react/no-typos": "error",
+    },
 };

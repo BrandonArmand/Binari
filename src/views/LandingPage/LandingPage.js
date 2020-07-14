@@ -8,20 +8,20 @@ import "assets/scss/canvas.scss";
 const useStyles = makeStyles(styles);
 
 export default function LandingPage() {
-  const classes = useStyles();
+    const classes = useStyles();
 
-  return (
-    <div>
-      <div
-        className={
-          "floating-main landing-region " +
+    return (
+        <div>
+            <div
+                className={
+                    "floating-main landing-region " +
           classNames(classes.main, classes.mainRaised)
-        }
-      >
-        <div className={classes.container}>
-          <ProductSection />
+                }
+            >
+                <div className={classes.container}>
+                    <ProductSection />
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }
