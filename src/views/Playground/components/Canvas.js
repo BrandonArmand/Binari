@@ -66,7 +66,9 @@ const Canvas = props => {
             p5.ellipse(el.x, el.y, 17 * elementScale);
             p5.noStroke();
             p5.fill("black");
-            p5.text(el.value, el.x, el.y + (6 + elementScale));
+            if (el.value !== null) {
+                p5.text(el.value, el.x, el.y + (6 + elementScale));
+            }
         });
     }
 
