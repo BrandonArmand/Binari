@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "components/CustomButtons/Button.js";
@@ -13,13 +15,12 @@ import styles from "assets/jss/material-kit-react/views/playground.js";
 import SplitterLayout from "react-splitter-layout";
 import "react-splitter-layout/lib/index.css";
 
-import { js } from "js-beautify";
 import { Canvas, Debug, Error, Info, Directory } from "./components";
+import { setPage, saveCode, resetCode } from "../../store/actions";
 import chapter from "./chapters";
 
 import baseTest from "./test";
 
-const beautify = js;
 const useStyles = makeStyles(styles);
 const difficultyColorScheme = {
     0: "rgb(150, 255, 255)",
@@ -28,18 +29,17 @@ const difficultyColorScheme = {
     3: "rgb(255, 150, 150)",
 };
 
-export default function Playground(props) {
+function Playground(props) {
     const classes = useStyles();
-    const [page, setPage] = useState(0);
-    const [currentCode, setCode] = useState(beautify(chapter[page].defaultCode));
+    const { page, currentCode, setPage, saveCode, resetCode, } = props;
 
     let unsavedCode = currentCode;
     let log = [];
     let canvas;
     let debug;
 
-    document.onkeydown = function(e) {
-    //CTRL + ENTER to run code
+    document.onkeydown = function (e) {
+        //CTRL + ENTER to run code
         if (e.ctrlKey && e.keyCode === 13) {
             document.getElementById("btnRunCode").click();
         }
@@ -49,12 +49,7 @@ export default function Playground(props) {
         }
     };
 
-    function changePage(newPage) {
-        setPage(newPage);
-        setCode(beautify(chapter[newPage].defaultCode));
-    }
-
-    console.log = function(...args) {
+    console.log = function (...args) {
         args.forEach(e => {
             log.push(e);
         });
@@ -72,13 +67,13 @@ export default function Playground(props) {
         /*let chapterPassed = chapter[page].test(node);
         console.log(chapterPassed ? "Chapter Passed" : "Chapter Failed");*/
         //True Initialization
-        canvas = <Canvas tree={node.tree} size={28} />;
+        canvas = <Canvas tree={node.tree} size={28}/>;
         console.log("Success");
     } catch (err) {
         canvas = <Error type={err.name}>{err.message}</Error>;
         console.log("Error");
     } finally {
-        debug = <Debug data={log} />;
+        debug = <Debug data={log}/>;
     }
 
     useEffect(() => {
@@ -99,7 +94,7 @@ export default function Playground(props) {
                                 <Directory>
                                     {chapter.map((el, i) => (
                                         <tr
-                                            onClick={() => changePage(i)}
+                                            onClick={() => setPage(i)}
                                             style={{ background: page === i && "#222", }}
                                             key={i}
                                         >
@@ -134,21 +129,21 @@ export default function Playground(props) {
                                         Id="btnRunCode"
                                         color="white"
                                         simple={true}
-                                        onClick={() => setCode(unsavedCode)}
+                                        onClick={() => saveCode(unsavedCode)}
                                         title="Run (CTR+Enter)"
                                     >
                                         {" "}
-                    Run Code{" "}
+                                        Run Code{" "}
                                     </Button>
                                     <Button
                                         Id="btnReset"
                                         color="warning"
                                         simple={true}
-                                        onClick={() => setCode(beautify(chapter[page].defaultCode))}
+                                        onClick={() => resetCode(page)}
                                         title="Run (CTRL+ALT+R)"
                                     >
                                         {" "}
-                    Reset{" "}
+                                        Reset{" "}
                                     </Button>
                                 </div>
                             </GridItem>
@@ -160,7 +155,7 @@ export default function Playground(props) {
                                         secondaryInitialSize={160}
                                     >
                                         {canvas}
-                                        <Info text={chapter[page].lesson} />
+                                        <Info text={chapter[page].lesson}/>
                                     </SplitterLayout>
                                 </div>
                             </GridItem>
@@ -171,3 +166,23 @@ export default function Playground(props) {
         </>
     );
 }
+
+Playground.propTypes = {
+    page: PropTypes.number.isRequired,
+    currentCode: PropTypes.string.isRequired,
+    setPage: PropTypes.func.isRequired,
+    saveCode: PropTypes.func.isRequired,
+    resetCode: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => {
+    return {
+        page: state.lessons.page,
+        currentCode: state.lessons.currentCode,
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    { setPage, saveCode, resetCode, }
+)(Playground);
