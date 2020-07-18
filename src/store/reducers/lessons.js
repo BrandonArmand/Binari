@@ -2,8 +2,20 @@ import { js } from "js-beautify";
 import { SET_PAGE, SAVE_CODE, RESET_CODE } from "../actions/actionTypes";
 import chapters from "../../views/Playground/chapters";
 
-
 const beautify = js;
+
+/*
+initialState example:
+{
+    page: 0,
+    currentCode: {
+        0: "code",
+        1: null,
+        2: null
+        ...
+    }
+}
+ */
 const initialPage = 0;
 const initialState = {
     page: initialPage,
