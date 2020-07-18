@@ -139,7 +139,7 @@ function Playground(props) {
                                         Id="btnReset"
                                         color="warning"
                                         simple={true}
-                                        onClick={() => resetCode(page)}
+                                        onClick={resetCode}
                                         title="Run (CTRL+ALT+R)"
                                     >
                                         {" "}
@@ -178,7 +178,7 @@ Playground.propTypes = {
 const mapStateToProps = (state) => {
     return {
         page: state.lessons.page,
-        currentCode: state.lessons.currentCode,
+        currentCode: state.lessons.currentCode[state.lessons.page],
     };
 };
 

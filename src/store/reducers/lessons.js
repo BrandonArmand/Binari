@@ -1,11 +1,18 @@
 import { js } from "js-beautify";
 import { SET_PAGE, SAVE_CODE, RESET_CODE } from "../actions/actionTypes";
-import chapter from "../../views/Playground/chapters";
+import chapters from "../../views/Playground/chapters";
+
 
 const beautify = js;
+const initialPage = 0;
 const initialState = {
-    page: 0,
-    currentCode: beautify(chapter[0].defaultCode),
+    page: initialPage,
+    currentCode: chapters.reduce((currentCode, chapter, page) => {
+        currentCode[page] = page === initialPage ?
+            beautify(chapters[page].defaultCode)
+            : null;
+        return currentCode;
+    }, {}),
 };
 
 export default (state = initialState, action) => {
@@ -15,14 +22,29 @@ export default (state = initialState, action) => {
     case SET_PAGE:
         return {
             page: payload.page,
-            currentCode: beautify(chapter[payload.page].defaultCode),
+            currentCode: {
+                ...state.currentCode,
+                [payload.page]: state.currentCode[payload.page] === null ?
+                    beautify(chapters[payload.page].defaultCode) :
+                    state.currentCode[payload.page],
+            },
         };
 
     case SAVE_CODE:
-        return { ...state, currentCode: payload.code, };
+        return {
+            ...state, currentCode: {
+                ...state.currentCode,
+                [state.page]: payload.code,
+            },
+        };
 
     case RESET_CODE:
-        return { ...state, currentCode: beautify(chapter[payload.page].defaultCode), };
+        return {
+            ...state, currentCode: {
+                ...state.currentCode,
+                [state.page]: beautify(chapters[state.page].defaultCode),
+            },
+        };
 
     default:
         return state;

@@ -14,9 +14,8 @@ export function saveCode(code) {
     };
 }
 
-export function resetCode(page) {
+export function resetCode() {
     return {
         type: RESET_CODE,
-        payload: { page, },
     };
 }
