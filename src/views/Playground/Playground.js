@@ -31,7 +31,12 @@ const difficultyColorScheme = {
 
 function Playground(props) {
     const classes = useStyles();
-    const { page, currentCode, setPage, saveCode, resetCode, } = props;
+
+    // To make the Run and Reset buttons always work
+    // we force currentCodeObj to always be a new object
+    // and therefore re-render the Playground component
+    const { page, currentCodeObj, setPage, saveCode, resetCode, } = props;
+    const currentCode = currentCodeObj[page];
 
     let unsavedCode = currentCode;
     let log = [];
@@ -172,7 +177,7 @@ function Playground(props) {
 
 Playground.propTypes = {
     page: PropTypes.number.isRequired,
-    currentCode: PropTypes.string.isRequired,
+    currentCodeObj: PropTypes.object.isRequired,
     setPage: PropTypes.func.isRequired,
     saveCode: PropTypes.func.isRequired,
     resetCode: PropTypes.func.isRequired,
@@ -181,7 +186,7 @@ Playground.propTypes = {
 const mapStateToProps = (state) => {
     return {
         page: state.lessons.page,
-        currentCode: state.lessons.currentCode[state.lessons.page],
+        currentCodeObj: state.lessons.currentCode,
     };
 };
 
