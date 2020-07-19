@@ -94,7 +94,10 @@ function Playground(props) {
                                 <Directory>
                                     {chapter.map((el, i) => (
                                         <tr
-                                            onClick={() => setPage(i)}
+                                            onClick={() => {
+                                                saveCode(unsavedCode);
+                                                setPage(i);
+                                            }}
                                             style={{ background: page === i && "#222", }}
                                             key={i}
                                         >
