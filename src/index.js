@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
 import "assets/scss/material-kit-react.scss?v=1.8.0";
+import store from "./store";
 import Button from "components/Button/Button";
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
@@ -24,13 +26,13 @@ function App() {
     const classes = useStyles();
 
     return (
-        <>
+        <Provider store={store}>
             <Router history={hist}>
                 <Header
                     color="transparent"
                     route="/"
                     brand="Binari"
-                    rightLinks={<HeaderLinks />}
+                    rightLinks={<HeaderLinks/>}
                     fixed
                     changeColorOnScroll={{
                         height: 150,
@@ -48,28 +50,28 @@ function App() {
                             <GridItem xs={12} sm={12} md={6}>
                                 <h1 className={classes.title}>Binari</h1>
                                 <h4>
-                  Binary Trees are a gateway towards a deeper understanding of
-                  dynamic programming. Through the use of both recursion and
-                  iterative implementations, any developer can be guided towards
-                  becoming a more complete programmer.
+                                    Binary Trees are a gateway towards a deeper understanding of
+                                    dynamic programming. Through the use of both recursion and
+                                    iterative implementations, any developer can be guided towards
+                                    becoming a more complete programmer.
                                 </h4>
-                                <br />
+                                <br/>
                                 <Button color="primary" linkTo="/playground">
-                  Get Started
+                                    Get Started
                                 </Button>
                             </GridItem>
                         </GridContainer>
                     </div>
                 </Parallax>
                 <Switch>
-                    <Route path="/playground" component={Playground} />
-                    <Route path="/about" component={About} />
-                    <Route path="/" component={LandingPage} />
+                    <Route path="/playground" component={Playground}/>
+                    <Route path="/about" component={About}/>
+                    <Route path="/" component={LandingPage}/>
                 </Switch>
             </Router>
-            <Footer />
-        </>
+            <Footer/>
+        </Provider>
     );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App/>, document.getElementById("root"));
