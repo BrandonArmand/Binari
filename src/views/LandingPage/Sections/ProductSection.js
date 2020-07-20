@@ -61,6 +61,7 @@ export default function ProductSection() {
                 <GridContainer justify="center">
                     <GridItem xs={12} sm={12} md={6}>
                         <iframe
+                            title="youtube-video"
                             width="100%"
                             height="315"
                             src="https://www.youtube-nocookie.com/embed/7HgsS8bRvjo"
