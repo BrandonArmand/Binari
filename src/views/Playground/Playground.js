@@ -1,3 +1,4 @@
+/* eslint-disable no-new-func, no-console */
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -97,25 +98,27 @@ function Playground(props) {
                         <GridContainer>
                             <GridItem xs={12} sm={2} md={2} lg={2}>
                                 <Directory>
-                                    {chapter.map((el, i) => (
-                                        <tr
-                                            onClick={() => {
-                                                saveCode(unsavedCode);
-                                                setPage(i);
-                                            }}
-                                            style={{ background: page === i && "#222", }}
-                                            key={i}
-                                        >
-                                            <td>{i}</td>
-                                            <td className={classes.lesson}>{el.name}</td>
-                                            <td
-                                                style={{
-                                                    background: difficultyColorScheme[el.difficulty],
+                                    <tbody>
+                                        {chapter.map((el, i) => (
+                                            <tr
+                                                onClick={() => {
+                                                    saveCode(unsavedCode);
+                                                    setPage(i);
                                                 }}
-                                                className={classes.difficulty}
-                                            ></td>
-                                        </tr>
-                                    ))}
+                                                style={{ background: page === i && "#222", }}
+                                                key={i}
+                                            >
+                                                <td>{i}</td>
+                                                <td className={classes.lesson}>{el.name}</td>
+                                                <td
+                                                    style={{
+                                                        background: difficultyColorScheme[el.difficulty],
+                                                    }}
+                                                    className={classes.difficulty}
+                                                ></td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
                                 </Directory>
                             </GridItem>
                             <GridItem xs={12} sm={5} md={5} lg={5}>
@@ -134,7 +137,7 @@ function Playground(props) {
                                 {debug}
                                 <div className={classes.codeButtons}>
                                     <Button
-                                        Id="btnRunCode"
+                                        id="btnRunCode"
                                         color="white"
                                         simple={true}
                                         onClick={() => saveCode(unsavedCode)}
@@ -144,7 +147,7 @@ function Playground(props) {
                                         Run Code{" "}
                                     </Button>
                                     <Button
-                                        Id="btnReset"
+                                        id="btnReset"
                                         color="warning"
                                         simple={true}
                                         onClick={resetCode}
