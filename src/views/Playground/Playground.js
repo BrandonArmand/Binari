@@ -1,4 +1,5 @@
-/* eslint-disable no-new-func, no-console */
+/* eslint-disable-next-line */
+/* eslint-disable no-new-func, no-console, import/no-webpack-loader-syntax */
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -8,6 +9,8 @@ import Button from "components/CustomButtons/Button.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import AceEditor from "react-ace";
+import ace from "ace-builds/src-min-noconflict/ace";
+import javascriptWorker from "file-loader!ace-builds/src-noconflict/worker-javascript";
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/snippets/javascript";
@@ -21,6 +24,8 @@ import { setPage, saveCode, resetCode } from "../../store/actions";
 import chapter from "./chapters";
 
 import baseTest from "./test";
+
+ace.config.setModuleUrl("ace/mode/javascript_worker", javascriptWorker);
 
 const useStyles = makeStyles(styles);
 const difficultyColorScheme = {
@@ -133,6 +138,7 @@ function Playground(props) {
                                     enableBasicAutocompletion={true}
                                     enableLiveAutocompletion={true}
                                     editorProps={{ $blockScrolling: false, }}
+                                    style={{ willChange: "auto !important", }}
                                 />
                                 {debug}
                                 <div className={classes.codeButtons}>
