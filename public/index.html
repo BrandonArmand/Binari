@@ -41,8 +41,8 @@
   </head>
   <body>
     <noscript> You need to enable JavaScript to run this app. </noscript>
-    <!-- 
-          Interested in the code? Help contribute on Github! 
+    <!--
+          Interested in the code? Help contribute on Github!
           https://github.com/BrandonArmand/Binari
     -->
     <div id="root"></div>
@@ -69,6 +69,8 @@
     }
     gtag("js", new Date());
 
-    gtag("config", "UA-111160129-2");
+    gtag("config", "UA-111160129-2", {
+      cookie_flags: 'secure;samesite=none',
+    });
   </script>
 </html>
