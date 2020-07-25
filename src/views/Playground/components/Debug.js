@@ -49,7 +49,7 @@ const useStyle = makeStyles({
 const Debug = ({ data, }) => {
     const classes = useStyle();
     const wrkspc = Math.floor(Math.random() * 100) + 100;
-    const output = data.map(el => {
+    const output = data.map((el, i) => {
         let result = "";
         switch (el) {
         case "Success":
@@ -61,12 +61,12 @@ const Debug = ({ data, }) => {
         default:
             result = <span>{el}</span>;
         }
-        return lineOutput(result, wrkspc);
+        return lineOutput(result, wrkspc, i);
     });
 
-    function lineOutput(line, wrkspc) {
+    function lineOutput(line, wrkspc, key) {
         return (
-            <div>
+            <div key={key}>
                 <span className={classes.directory}>
                     {`binari@env/wrkspc${wrkspc}`}
                 </span>{" "}

@@ -4,6 +4,7 @@ import classNames from "classnames";
 import { List, ListItem } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "assets/jss/material-kit-react/components/footerStyle.js";
+import netlify from "assets/imgs/netlify.svg";
 
 const useStyles = makeStyles(styles);
 
@@ -23,7 +24,7 @@ export default function Footer(props) {
                         <ListItem className={classes.inlineBlock}>
                             <a href="https://www.netlify.com">
                                 <img
-                                    src="https://www.netlify.com/img/global/badges/netlify-dark.svg"
+                                    src={netlify}
                                     alt="Deploys by Netlify"
                                 />
                             </a>

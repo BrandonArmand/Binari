@@ -18,27 +18,27 @@ const ContributorCard = props => {
     return (
         <GridItem className={classes.card}>
             <Card>
-                <CardHeader color={props.color} img>
+                <CardHeader color={props.color}>
                     <div className={classes.cardHeader}>
-                        <img className={classes.cardImg} src={props.avatar}></img>
+                        <img className={classes.cardImg} src={props.avatar} alt="Avatar"></img>
                         <div className={classes.wrapper}>
                             {props.linkedin && (
-                                <Button color="linkedin" simple href={props.linkedin}>
+                                <Button simple href={props.linkedin}>
                                     <i className="fab fa-linkedin" /> Linkedin
                                 </Button>
                             )}
                             {props.github && (
-                                <Button color="linkedin" simple href={props.github}>
+                                <Button simple href={props.github}>
                                     <i className="fab fa-github" /> Github
                                 </Button>
                             )}
                             {props.dribbble && (
-                                <Button color="linkedin" simple href={props.dribbble}>
+                                <Button simple href={props.dribbble}>
                                     <i className="fab fa-dribbble" /> Dribbble
                                 </Button>
                             )}
                             {props.web && (
-                                <Button color="linkedin" simple href={props.web}>
+                                <Button simple href={props.web}>
                                     <i className="fas fa-globe" /> Website
                                 </Button>
                             )}

@@ -11,16 +11,17 @@ import { commitAdd, commitDel } from "./helpers";
 
 const useStyles = makeStyles(styles);
 
+const apiHeaders = new Headers();
+apiHeaders.append("Authorization", `Bearer ${process.env.REACT_APP_TOKEN}`);
+const reqOptions = {
+    method: "GET",
+    headers: apiHeaders,
+    redirect: "follow",
+};
+
 export default function About() {
     const classes = useStyles();
-    const [contributors, setContributors] = useState(null);
-    const apiHeaders = new Headers();
-    apiHeaders.append("Authorization", `Bearer ${process.env.REACT_APP_TOKEN}`);
-    const reqOptions = {
-        method: "GET",
-        headers: apiHeaders,
-        redirect: "follow",
-    };
+    const [ contributors, setContributors ] = useState(null);
 
     useEffect(() => {
         fetch(
@@ -28,11 +29,11 @@ export default function About() {
             reqOptions
         )
             .then(response => response.json())
-            .then(
-                data =>
-                    !data.message &&
-          setContributors(data.sort((a, b) => (a.total < b.total ? 1 : -1)))
-            );
+            .then(data =>
+                !data.message &&
+                setContributors(data.sort((a, b) => (a.total < b.total ? 1 : -1)))
+            )
+            .catch(error => console.log(error));
     }, []);
 
     console.log(contributors);
@@ -45,21 +46,21 @@ export default function About() {
                 }
             >
                 <div className={classes.container}>
-                    <GridContainer justify="left">
+                    <GridContainer justify="flex-start">
                         <GridItem xs={12} sm={12} md={12}>
                             <h1 style={{ textAlign: "center", }} className={classes.title}>
-                About Binari
+                                About Binari
                             </h1>
                         </GridItem>
                         <GridItem xs={12} sm={12} md={12}>
                             <h1 className={classes.title}>Mission Statement</h1>
                             <h2 className={classes.subtitle}>
-                Binari&apos;s mission is to provide the best experience for new
-                developers through an easy to use code-editor and data-structure
-                visualizer. The problem with learning a new algorithm or
-                data-structure tends to lie in understanding how the data/code
-                gets organized. I am here to fix that, and you are welcome to
-                join.
+                                Binari&apos;s mission is to provide the best experience for new
+                                developers through an easy to use code-editor and data-structure
+                                visualizer. The problem with learning a new algorithm or
+                                data-structure tends to lie in understanding how the data/code
+                                gets organized. I am here to fix that, and you are welcome to
+                                join.
                             </h2>
                         </GridItem>
                     </GridContainer>
@@ -111,14 +112,14 @@ export default function About() {
                             </Card>
                         )}
                     </GridContainer>
-                    <GridContainer justify="left">
+                    <GridContainer justify="flex-start">
                         <GridItem xs={12} sm={12} md={12}>
                             <h2 className={classes.title}>Want to help?</h2>
                             <h2 className={classes.subtitle}>
-                There are a list of issues on Github that you are welcome to
-                work on. If you have an idea of your own, we are open to
-                allowing any pull requests we believe fit well with
-                Binari&apos;s vision.
+                                There are a list of issues on Github that you are welcome to
+                                work on. If you have an idea of your own, we are open to
+                                allowing any pull requests we believe fit well with
+                                Binari&apos;s vision.
                             </h2>
                             <h3 className={classes.listTitle}>Things you can do:</h3>
                         </GridItem>
