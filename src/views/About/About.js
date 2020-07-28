@@ -33,10 +33,8 @@ export default function About() {
                 !data.message &&
                 setContributors(data.sort((a, b) => (a.total < b.total ? 1 : -1)))
             )
-            .catch(error => console.log(error));
+            .catch(error => console.error(error));
     }, []);
-
-    console.log(contributors);
 
     return (
         <div>
