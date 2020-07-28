@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
@@ -33,8 +34,10 @@ export default function About() {
                 !data.message &&
                 setContributors(data.sort((a, b) => (a.total < b.total ? 1 : -1)))
             )
-            .catch(error => console.error(error));
+            .catch(error => console.log(error));
     }, []);
+
+    console.log(contributors);
 
     return (
         <div>
