@@ -52,15 +52,16 @@ const Canvas = props => {
 
     /**Fills the customColors map**/
     function setColors(p5) {
+        //A color has a value and a darkText bool property to indicate whether the text rendered on it should be dark
         customColors = new Map([
-            ["red", p5.color("#F44336")],
-            ["pink", p5.color("#E91E63")],
-            ["purple", p5.color("#9C27B0")],
-            ["blue", p5.color("#2196F3")],
-            ["cyan", p5.color("#00BCD4")],
-            ["green", p5.color("#4CAF50")],
-            ["yellow", p5.color("#FFEB3B")],
-            ["orange", p5.color("#FF9800")]
+            ["red", {value: p5.color("#F44336"), darkText: false,}],
+            ["pink", {value: p5.color("#E91E63"), darkText: false,}],
+            ["purple", {value: p5.color("#9C27B0"), darkText: false,}],
+            ["blue", {value: p5.color("#2196F3"), darkText: true,}],
+            ["cyan", {value: p5.color("#00BCD4"), darkText: true,}],
+            ["green", {value: p5.color("#4CAF50"), darkText: true,}],
+            ["yellow", {value: p5.color("#FFEB3B"), darkText: true,}],
+            ["orange", {value: p5.color("#FF9800"), darkText: true,}]
         ]);
     }
 
@@ -77,11 +78,16 @@ const Canvas = props => {
             }
 
             //Retrieve custom color
-            let color = customColors.get(el.color);
+            let darkText = true;
+            let color;
+            let colorArg = customColors.get(el.color);
 
             //No custom color, draw the default one
-            if (color === undefined) {
+            if (colorArg === undefined) {
                 color = p5.color(p5.map(el.value, 100, 0, 0, 255), 220, 250);
+            } else {
+                color = colorArg.value;
+                darkText = colorArg.darkText;
             }
 
             //Draw node
@@ -91,7 +97,7 @@ const Canvas = props => {
             p5.fill(color);
             p5.ellipse(el.x, el.y, 17 * elementScale);
             p5.noStroke();
-            p5.fill("black");
+            p5.fill(darkText ? "black" : "white");
             if (el.value !== null) {
                 p5.text(el.value, el.x, el.y + (6 + elementScale));
             }
