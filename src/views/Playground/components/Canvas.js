@@ -53,7 +53,14 @@ const Canvas = props => {
     /**Fills the customColors map**/
     function setColors(p5) {
         customColors = new Map([
-            ["red", p5.color(255, 0, 0)],
+            ["red", p5.color("#F44336")],
+            ["pink", p5.color("#E91E63")],
+            ["purple", p5.color("#9C27B0")],
+            ["blue", p5.color("#2196F3")],
+            ["cyan", p5.color("#00BCD4")],
+            ["green", p5.color("#4CAF50")],
+            ["yellow", p5.color("#FFEB3B")],
+            ["orange", p5.color("#FF9800")]
         ]);
     }
 
@@ -68,8 +75,6 @@ const Canvas = props => {
             if (el.right != null) {
                 p5.line(el.x, el.y, el.right.x, el.right.y);
             }
-
-            p5.text(el.color, el.x, el.y - (6 + elementScale));
 
             //Retrieve custom color
             let color = customColors.get(el.color);
