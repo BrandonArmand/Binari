@@ -2,11 +2,13 @@ import React from "react";
 import Sketch from "react-p5";
 import PropTypes from "prop-types";
 
+/*A map containing all custom colors name-value pairs*/
+let customColors;
+
 const Canvas = props => {
     const elementScale =
     window.devicePixelRatio < 2 ? 2 : window.devicePixelRatio;
     const windowSize = elementScale * 500;
-
     /*Array of all nodes*/
     var nodeList;
     /*All nodes represented as a reference to the root node*/
@@ -39,12 +41,28 @@ const Canvas = props => {
         p5.createCanvas(windowSize, 1000).parent(canvasParentRef);
         p5.frameRate(100);
         setTree();
+        setColors(p5);
     }
 
     function setTree() {
         nodeList = [];
         //Generate all position and layer data
         return positionNode(tree, 1, 1);
+    }
+
+    /**Fills the customColors map**/
+    function setColors(p5) {
+        //A color has a value and a darkText bool property to indicate whether the text rendered on it should be dark
+        customColors = new Map([
+            ["red", {value: p5.color("#F44336"), darkText: false,}],
+            ["pink", {value: p5.color("#E91E63"), darkText: false,}],
+            ["purple", {value: p5.color("#9C27B0"), darkText: false,}],
+            ["blue", {value: p5.color("#2196F3"), darkText: true,}],
+            ["cyan", {value: p5.color("#00BCD4"), darkText: true,}],
+            ["green", {value: p5.color("#4CAF50"), darkText: true,}],
+            ["yellow", {value: p5.color("#FFEB3B"), darkText: true,}],
+            ["orange", {value: p5.color("#FF9800"), darkText: true,}]
+        ]);
     }
 
     function draw(p5) {
@@ -58,14 +76,28 @@ const Canvas = props => {
             if (el.right != null) {
                 p5.line(el.x, el.y, el.right.x, el.right.y);
             }
+
+            //Retrieve custom color
+            let darkText = true;
+            let color;
+            let colorArg = customColors.get(el.color);
+
+            //No custom color, draw the default one
+            if (colorArg === undefined) {
+                color = p5.color(p5.map(el.value, 100, 0, 0, 255), 220, 250);
+            } else {
+                color = colorArg.value;
+                darkText = colorArg.darkText;
+            }
+
             //Draw node
             p5.textAlign(p5.CENTER);
             p5.stroke(0);
             p5.strokeWeight(1);
-            p5.fill(p5.map(el.value, 100, 0, 0, 255), 220, 250);
+            p5.fill(color);
             p5.ellipse(el.x, el.y, 17 * elementScale);
             p5.noStroke();
-            p5.fill("black");
+            p5.fill(darkText ? "black" : "white");
             if (el.value !== null) {
                 p5.text(el.value, el.x, el.y + (6 + elementScale));
             }
