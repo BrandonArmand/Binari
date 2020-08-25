@@ -1,6 +1,6 @@
 /* eslint-disable-next-line */
 /* eslint-disable no-new-func, no-console, import/no-webpack-loader-syntax */
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import classNames from "classnames";
@@ -18,6 +18,7 @@ import "ace-builds/src-noconflict/theme-twilight";
 import styles from "assets/jss/material-kit-react/views/playground.js";
 import SplitterLayout from "react-splitter-layout";
 import "react-splitter-layout/lib/index.css";
+import { IconButton } from '@material-ui/core';
 
 import { Canvas, Debug, Error, Info, Directory } from "./components";
 import { setPage, saveCode, resetCode } from "../../store/actions";
@@ -43,6 +44,9 @@ function Playground(props) {
     // and therefore re-render the Playground component
     const { page, currentCodeObj, setPage, saveCode, resetCode, } = props;
     const currentCode = currentCodeObj[page];
+
+    //this ref will point to the splitter to adjust it's state
+    const lessonRef = useRef();
 
     let unsavedCode = currentCode;
     let log = [];
@@ -167,12 +171,18 @@ function Playground(props) {
                             <GridItem xs={12} sm={5} md={5} lg={5}>
                                 <div className={classes.canvasRegion}>
                                     <SplitterLayout
+                                        ref={lessonRef}
                                         vertical={true}
                                         customClassName={classes.splitter}
                                         secondaryInitialSize={160}
+                                        secondaryMinSize={25}
                                     >
-                                        {canvas}
-                                        <Info text={chapter[page].lesson}/>
+                                      {canvas}
+                                      <Info
+                                        text={chapter[page].lesson}
+                                        expand={()=>{lessonRef.current.setState({secondaryPaneSize:400});}}
+                                        hide={()=>{lessonRef.current.setState({secondaryPaneSize:25});}}
+                                        show={()=>{lessonRef.current.setState({secondaryPaneSize: 160})}}/>
                                     </SplitterLayout>
                                 </div>
                             </GridItem>
