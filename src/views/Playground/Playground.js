@@ -18,7 +18,6 @@ import "ace-builds/src-noconflict/theme-twilight";
 import styles from "assets/jss/material-kit-react/views/playground.js";
 import SplitterLayout from "react-splitter-layout";
 import "react-splitter-layout/lib/index.css";
-import { IconButton } from '@material-ui/core';
 
 import { Canvas, Debug, Error, Info, Directory } from "./components";
 import { setPage, saveCode, resetCode } from "../../store/actions";
@@ -177,12 +176,24 @@ function Playground(props) {
                                         secondaryInitialSize={160}
                                         secondaryMinSize={25}
                                     >
-                                      {canvas}
-                                      <Info
-                                        text={chapter[page].lesson}
-                                        expand={()=>{lessonRef.current.setState({secondaryPaneSize:400});}}
-                                        hide={()=>{lessonRef.current.setState({secondaryPaneSize:25});}}
-                                        show={()=>{lessonRef.current.setState({secondaryPaneSize: 160})}}/>
+                                        {canvas}
+                                        <Info
+                                            text={chapter[page].lesson}
+                                            expand={()=>{
+                                                lessonRef.current.setState({
+                                                    secondaryPaneSize:400,
+                                                });
+                                            }}
+                                            hide={()=>{
+                                                lessonRef.current.setState({
+                                                    secondaryPaneSize:25,
+                                                });
+                                            }}
+                                            show={()=>{
+                                                lessonRef.current.setState({
+                                                    secondaryPaneSize: 160,
+                                                });
+                                            }}/>
                                     </SplitterLayout>
                                 </div>
                             </GridItem>
