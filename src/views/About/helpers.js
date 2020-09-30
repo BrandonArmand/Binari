@@ -11,5 +11,5 @@ export function commitDel(arr) {
 }
 
 export function showDetail(val) {
-    return val !== 0 && val !== null && val !== undefined ? true : null;
+    return [0, null, undefined].includes(val) ? null : true;
 }
