@@ -18,12 +18,12 @@ export default function ProductSection() {
             <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={8}>
                     <h2 className={classes.title}>Let{"'"}s talk code</h2>
-                    <h5 className={classes.description}>
+                    <p className={classes.description}>
             Understanding Data Structures and Algorithms can be hard, I&apos;ve
             been there. That is why I built Binari, a one-stop shop for all
             things Binary Tree. Binari uses an interactive view so that you can
             fully encompass how Binary Trees operate.
-                    </h5>
+                    </p>
                 </GridItem>
             </GridContainer>
             <div>
@@ -74,7 +74,7 @@ export default function ProductSection() {
                     </GridItem>
                     <GridItem xs={12} sm={12} md={6}>
                         <h2 className={classes.videoTitle}>Universal Value Tree Problem</h2>
-                        <h5 className={classes.videoDescription}>
+                        <p className={classes.videoDescription}>
               There are many resources on the internet that break down various
               complex algorithms through interactive and visual understanding.
               An example is the video featured here. In addition to online
@@ -83,7 +83,7 @@ export default function ProductSection() {
               most notable work, Cracking the Coding Interview, offers insight
               into preparing for technical interviews, as well as methods on how
               to approach different types of algorithms.
-                        </h5>
+                        </p>
                     </GridItem>
                 </GridContainer>
             </div>

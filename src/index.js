@@ -49,12 +49,12 @@ function App() {
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={6}>
                                 <h1 className={classes.title}>Binari</h1>
-                                <h4>
+                                <p className={classes.subtitle}>
                                     Binary Trees are a gateway towards a deeper understanding of
                                     dynamic programming. Through the use of both recursion and
                                     iterative implementations, any developer can be guided towards
                                     becoming a more complete programmer.
-                                </h4>
+                                </p>
                                 <br/>
                                 <Button color="primary" linkTo="/playground">
                                     Get Started
