@@ -1,4 +1,4 @@
-# [Binari](https://binari.dev) v0.9.0
+# [Binary](https://binari.dev) v0.9.0
 
 [![Open Source Helpers](https://www.codetriage.com/brandonarmand/binari/badges/users.svg)](https://www.codetriage.com/brandonarmand/binari)
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)
