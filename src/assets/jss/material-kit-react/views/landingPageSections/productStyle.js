@@ -13,7 +13,9 @@ const productStyle = {
         textDecoration: "none",
     },
     description: {
-        color: "#999",
+        color: "#333",
+        fontSize: "1.0625rem",
+        lineHeight: "1.55em"
     },
     infoSection: {
         marginTop: "20px",
@@ -26,9 +28,11 @@ const productStyle = {
         marginLeft: "20px",
     },
     videoDescription: {
-        color: "#999",
+        color: "#333",
         textAlign: "left",
         marginLeft: "30px",
+        fontSize: "1.0625rem",
+        lineHeight: "1.55em"
     },
 };
 
