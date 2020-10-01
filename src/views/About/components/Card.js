@@ -10,6 +10,7 @@ import Button from "components/CustomButtons/Button.js";
 import Tooltip from "@material-ui/core/Tooltip";
 import { styles } from "assets/jss/material-kit-react/views/about/components/cardStyle";
 import PropTypes from "prop-types";
+import { showDetail } from "../helpers";
 
 const useStyles = makeStyles(styles);
 
@@ -42,7 +43,7 @@ const ContributorCard = props => {
                                     <i className="fas fa-globe" /> Website
                                 </Button>
                             )}
-                            {props.commits && (
+                            {showDetail(props.commits) && (
                                 <Tooltip
                                     title="Commits"
                                     placement="right"
@@ -57,7 +58,7 @@ const ContributorCard = props => {
                                     </div>
                                 </Tooltip>
                             )}
-                            {props.additions && (
+                            {showDetail(props.additions) && (
                                 <Tooltip
                                     title="Additions"
                                     placement="right"
@@ -72,7 +73,7 @@ const ContributorCard = props => {
                                     </div>
                                 </Tooltip>
                             )}
-                            {props.deletions && (
+                            {showDetail(props.deletions) && (
                                 <Tooltip
                                     title="Deletions"
                                     placement="right"
