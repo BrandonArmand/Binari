@@ -9,3 +9,7 @@ export function commitDel(arr) {
         return (typeof a.d != "undefined" ? a.d : a) + b.d;
     });
 }
+
+export function showDetail(val) {
+    return val ? true : null;
+}
