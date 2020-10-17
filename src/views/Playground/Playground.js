@@ -55,6 +55,7 @@ function Playground(props) {
     document.onkeydown = function (e) {
         //CTRL + ENTER to run code
         if (e.ctrlKey && e.keyCode === 13) {
+            e.preventDefault();
             document.getElementById("btnRunCode").click();
         }
         //CTRL + ALT + R to Reset code
