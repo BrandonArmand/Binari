@@ -21,7 +21,7 @@ const ContributorCard = props => {
             <Card>
                 <CardHeader color={props.color}>
                     <div className={classes.cardHeader}>
-                        <img className={classes.cardImg} src={props.avatar} alt="Avatar"></img>
+                        <img className={classes.cardImg} src={props.avatar} onError={(e)=>{e.target.onerror = null; e.target.src="http://www.gravatar.com/avatar/?d=mp&s=350"}} alt="Avatar"></img>
                         <div className={classes.wrapper}>
                             {props.linkedin && (
                                 <Button simple href={props.linkedin}>
