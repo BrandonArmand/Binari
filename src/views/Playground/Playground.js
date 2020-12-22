@@ -177,12 +177,24 @@ function Playground(props) {
                                         secondaryInitialSize={160}
                                         secondaryMinSize={25}
                                     >
-                                      {canvas}
-                                      <Info
-                                        text={chapter[page].lesson}
-                                        expand={()=>{lessonRef.current.setState({secondaryPaneSize:400});}}
-                                        hide={()=>{lessonRef.current.setState({secondaryPaneSize:25});}}
-                                        show={()=>{lessonRef.current.setState({secondaryPaneSize: 160})}}/>
+                                        {canvas}
+                                        <Info
+                                            text={chapter[page].lesson}
+                                            expand={()=>{
+                                                lessonRef.current.setState({
+                                                    secondaryPaneSize:400,
+                                                });
+                                            }}
+                                            hide={()=>{
+                                                lessonRef.current.setState({
+                                                    secondaryPaneSize:25,
+                                                });
+                                            }}
+                                            show={()=>{
+                                                lessonRef.current.setState({
+                                                    secondaryPaneSize: 160,
+                                                });
+                                            }}/>
                                     </SplitterLayout>
                                 </div>
                             </GridItem>
