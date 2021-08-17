@@ -21,9 +21,9 @@ import GridItem from "components/Grid/GridItem.js";
 
 //To decrease the initial load time I have added lazy loading to views.
 
-const LandingPage = React.lazy(() => import('views/LandingPage/LandingPage'));
-const Playground = React.lazy(() => import('views/Playground/Playground'))
-const About = React.lazy(() => import('views/About/About'))
+const LandingPage = React.lazy(() => import("views/LandingPage/LandingPage"));
+const Playground = React.lazy(() => import("views/Playground/Playground"))
+const About = React.lazy(() => import("views/About/About"))
 
 var hist = createBrowserHistory();
 const useStyles = makeStyles(styles);
