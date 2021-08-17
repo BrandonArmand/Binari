@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
@@ -15,9 +15,15 @@ import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 
-import LandingPage from "views/LandingPage/LandingPage.js";
-import Playground from "views/Playground/Playground";
-import About from "views/About/About";
+// import LandingPage from "views/LandingPage/LandingPage.js";
+// import Playground from "views/Playground/Playground";
+// import About from "views/About/About";
+
+//To decrease the initial load time I have added lazy loading to views.
+
+const LandingPage = React.lazy(() => import('views/LandingPage/LandingPage'));
+const Playground = React.lazy(() => import('views/Playground/Playground'))
+const About = React.lazy(() => import('views/About/About'))
 
 var hist = createBrowserHistory();
 const useStyles = makeStyles(styles);
@@ -63,11 +69,13 @@ function App() {
                         </GridContainer>
                     </div>
                 </Parallax>
-                <Switch>
-                    <Route path="/playground" component={Playground}/>
-                    <Route path="/about" component={About}/>
-                    <Route path="/" component={LandingPage}/>
-                </Switch>
+                <Suspense fallback={<h1> </h1>}>
+                    <Switch>
+                        <Route path="/playground" component={Playground}/>
+                        <Route path="/about" component={About}/>
+                        <Route path="/" component={LandingPage}/>
+                    </Switch>
+                </Suspense>
             </Router>
             <Footer/>
         </Provider>
