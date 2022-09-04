@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import consoleIcon from "../../../assets/imgs/console.svg";
 import PropTypes from "prop-types";
+import { lineOutput } from "./helpers";
 
 const useStyle = makeStyles({
     log: {
@@ -61,20 +62,8 @@ const Debug = ({ data, }) => {
         default:
             result = <span>{el}</span>;
         }
-        return lineOutput(result, wrkspc, i);
+        return lineOutput(result, wrkspc, i, classes);
     });
-
-    function lineOutput(line, wrkspc, key) {
-        return (
-            <div key={key}>
-                <span className={classes.directory}>
-                    {`binari@env/wrkspc${wrkspc}`}
-                </span>{" "}
-                {"> "}
-                {line}
-            </div>
-        );
-    }
 
     return (
         <>
