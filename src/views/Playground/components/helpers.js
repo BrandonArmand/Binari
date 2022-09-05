@@ -1,4 +1,5 @@
 import { node } from "prop-types";
+import React from "react";
 
 /*A map containing all custom colors name-value pairs*/
 let customColors;
@@ -10,18 +11,6 @@ let yDiff = 40;
 const elementScale =  window.devicePixelRatio < 2 ? 2 : window.devicePixelRatio;
 
 const windowSize = elementScale * 500;
-
-export function lineOutput(line, wrkspc, key, classes) {
-    return (
-        <div key={key}>
-            <span className={classes.directory}>
-                {`binari@env/wrkspc${wrkspc}`}
-            </span>{" "}
-            {"> "}
-            {line}
-        </div>
-    );
-}
 
 /**Fills the customColors map**/
 function setColors(p5) {
@@ -67,7 +56,7 @@ export function setTree(tree, nodeList) {
     return positionNode(tree, 1, 1, windowSize, nodeList);
 }
 
-export function draw(p5) {
+export function draw(p5, nodeList) {
     p5.background("white");
     nodeList.forEach(el => {
         //Draw lines to children
