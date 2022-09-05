@@ -11,7 +11,7 @@ const Canvas = props => {
 
     setTree(tree,  nodeList); 
 
-    return <Sketch setup={setup} draw={draw(p5, nodeList)} />;
+    return <Sketch setup={setup} draw={draw(nodeList)} />;
 };
 
 Canvas.propTypes = {
