@@ -3,7 +3,7 @@ export default `
 ## Fundamentals
 The diameter of a binary tree is the number of nodes along the longest path between any two nodes. In other words, it is the maximum distance between any two nodes in a tree.
 - ** Intuition: **
-Return depth and compute diameter for every node, And keep updating the diameter (class variable).
+Return depth and compute diameter for every node in a tree, And keep updating the diameter (class variable).
 
 - ** Algorithm for Diameter of a BST (or any binary tree): **
 1. Return 0 if current node is null.
