@@ -46,6 +46,7 @@ function Playground(props) {
 
     //this ref will point to the splitter to adjust it's state
     const lessonRef = useRef();
+    const editorRef = useRef();
 
     let unsavedCode = currentCode;
     let log = [];
@@ -104,7 +105,7 @@ function Playground(props) {
                     }
                 >
                     <div>
-                        <GridContainer>
+                        <GridContainer style={{ height: "80vh", }}>
                             <GridItem xs={12} sm={2} md={2} lg={2}>
                                 <Directory>
                                     <tbody>
@@ -130,43 +131,51 @@ function Playground(props) {
                                     </tbody>
                                 </Directory>
                             </GridItem>
-                            <GridItem xs={12} sm={5} md={5} lg={5}>
-                                <AceEditor
-                                    mode="javascript"
-                                    theme="twilight"
-                                    name="code"
-                                    width="100%"
-                                    height="calc(100vh - 325px)"
-                                    value={currentCode}
-                                    onChange={val => (unsavedCode = val)}
-                                    enableBasicAutocompletion={true}
-                                    enableLiveAutocompletion={true}
-                                    editorProps={{ $blockScrolling: false, }}
-                                    style={{ willChange: "auto !important", }}
-                                />
-                                {debug}
-                                <div className={classes.codeButtons}>
-                                    <Button
-                                        id="btnRunCode"
-                                        color="white"
-                                        simple={true}
-                                        onClick={() => saveCode(unsavedCode)}
-                                        title="Run (CTR+Enter)"
-                                    >
-                                        {" "}
-                                        Run Code{" "}
-                                    </Button>
-                                    <Button
-                                        id="btnReset"
-                                        color="warning"
-                                        simple={true}
-                                        onClick={resetCode}
-                                        title="Run (CTRL+ALT+R)"
-                                    >
-                                        {" "}
-                                        Reset{" "}
-                                    </Button>
-                                </div>
+                            <GridItem xs={12} sm={5} md={5} lg={5} style={{ minHight: "80 vh", }}>
+                                <SplitterLayout
+                                    ref={editorRef}
+                                    vertical={true}
+                                    customClassName={classes.splitter}
+                                    secondaryInitialSize={160}
+                                    secondaryMinSize={25}
+                                >
+                                    <AceEditor
+                                        mode="javascript"
+                                        theme="twilight"
+                                        name="code"
+                                        width="100%"
+                                        height= "100%"
+                                        value={currentCode}
+                                        onChange={val => (unsavedCode = val)}
+                                        enableBasicAutocompletion={true}
+                                        enableLiveAutocompletion={true}
+                                        editorProps={{ $blockScrolling: false, }}
+                                        style={{ willChange: "auto !important", }}
+                                    />
+                                    {debug}
+                                    <div className={classes.codeButtons}>
+                                        <Button
+                                            id="btnRunCode"
+                                            color="white"
+                                            simple={true}
+                                            onClick={() => saveCode(unsavedCode)}
+                                            title="Run (CTR+Enter)"
+                                        >
+                                            {" "}
+                                            Run Code{" "}
+                                        </Button>
+                                        <Button
+                                            id="btnReset"
+                                            color="warning"
+                                            simple={true}
+                                            onClick={resetCode}
+                                            title="Run (CTRL+ALT+R)"
+                                        >
+                                            {" "}
+                                            Reset{" "}
+                                        </Button>
+                                    </div>
+                                </SplitterLayout>
                             </GridItem>
                             <GridItem xs={12} sm={5} md={5} lg={5}>
                                 <div className={classes.canvasRegion}>
