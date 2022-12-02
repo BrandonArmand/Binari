@@ -15,6 +15,7 @@ Interactive code editor with a live binary tree visual designed to teach new dev
 
 [![Home](https://user-images.githubusercontent.com/27185256/205257676-b8e4eea5-f5a3-414f-b200-942d1ee53a30.png)](https://binari.dev/)
 [![Binari](https://user-images.githubusercontent.com/27185256/205258584-61bcd4a3-e025-4338-bcc2-fcad0fcfd4af.png)](https://binari.dev/playground)
+[![About](https://user-images.githubusercontent.com/27185256/205262044-a001f03a-3284-4ef0-9689-6d118e5b0e1f.png)](https://binari.dev/playground)
 
 ## Built With
 
