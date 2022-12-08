@@ -32,11 +32,13 @@
     "@babel/plugin-proposal-class-properties": "7.5.5",
     "@babel/preset-env": "7.5.5",
     "@babel/preset-react": "7.0.0",
+    "@testing-library/react": "^12.1.5",
     "eslint-config-prettier": "6.0.0",
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-react": "7.14.3",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
+    "jest": "^24.9.0",
     "prettier": "1.18.2"
   },
   "optionalDependencies": {

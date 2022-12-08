@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Info renders snapshot 1`] = `
+<div>
+  <button
+    class="MuiButtonBase-root MuiIconButton-root far fa-square"
+    style="position: absolute; top: 0px; right: 30px; height: 20px;"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiIconButton-label"
+    />
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+  <button
+    class="MuiButtonBase-root MuiIconButton-root fas fa-square"
+    style="position: absolute; top: 0px; right: 60px; height: 20px;"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiIconButton-label"
+    />
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+  <button
+    class="MuiButtonBase-root MuiIconButton-root fas fa-window-minimize"
+    style="position: absolute; top: 0px; right: 0px; height: 20px;"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiIconButton-label"
+    />
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
+  <div
+    class="makeStyles-main-1"
+  >
+    <p>
+      Test
+    </p>
+  </div>
+</div>
+`;
