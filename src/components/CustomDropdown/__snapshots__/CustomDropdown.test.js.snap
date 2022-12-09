@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomDropdown renders snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <button
+        aria-haspopup="true"
+        aria-label="Notifications"
+        class="MuiButtonBase-root MuiButton-root makeStyles-button-21 MuiButton-text"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          <b
+            class="makeStyles-caret-16"
+          />
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
