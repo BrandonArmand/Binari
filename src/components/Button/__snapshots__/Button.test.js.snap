@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders snapshot 1`] = `
+<div>
+  <button
+    class="makeStyles-button-1 undefined"
+  />
+</div>
+`;
