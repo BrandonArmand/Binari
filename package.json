@@ -39,7 +39,8 @@
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
     "jest": "^24.9.0",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "ts-jest": "^29.0.3"
   },
   "optionalDependencies": {
     "typescript": "3.5.3"
@@ -48,7 +49,6 @@
     "start": "react-scripts start",
     "build": "CI= react-scripts build && gulp licenses",
     "test": "react-scripts test --env=jsdom",
-    "unit": "jest --coverage",
     "eject": "react-scripts eject",
     "lint:check": "eslint . --ext=js,jsx;  exit 0",
     "lint:fix": "eslint . --ext=js,jsx --fix;  exit 0",
