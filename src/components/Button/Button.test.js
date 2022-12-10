@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Button from "./Button";
 
@@ -22,14 +22,24 @@ describe("Button", () => {
         expect(mockClickFn).toHaveBeenCalledTimes(1);
     });
     it("renders Link", () => {
-        render(<BrowserRouter><Button linkTo="test">Button</Button></BrowserRouter>);
+        render(
+            <BrowserRouter>
+                <Button linkTo="test">Button</Button>
+            </BrowserRouter>
+        );
         expect(screen.getByRole("link")).toBeInTheDocument();
     });
     it("renders Link and click it", () => {
         const mockClickFn = jest.fn();
-        render(<BrowserRouter><Button linkTo="test" onClick={mockClickFn}>Link</Button></BrowserRouter>);
-        const link = screen.getByText("Link")
-        link.click();
+        render(
+            <BrowserRouter>
+                <Button linkTo="test" onClick={mockClickFn}>
+                    Link
+                </Button>
+            </BrowserRouter>
+        );
+        const link = screen.getByText("Link");
+        fireEvent.click(link);
         expect(mockClickFn).toHaveBeenCalledTimes(1);
     });
 });

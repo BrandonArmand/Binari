@@ -9,11 +9,17 @@ describe("Badge", () => {
         expect(container).toMatchSnapshot();
     });
     it("renders snapshot with colour info", () => {
-        const { container } = render(<Badge color="info" />);
-        expect(container).toMatchSnapshot();
+        render(<Badge color="info">Info Badge</Badge>);
+        expect(screen.getByText("Info Badge")).toBeInTheDocument();
+        expect(screen.getByText("Info Badge")).toHaveClass(
+            "makeStyles-info-14"
+        );
     });
     it("renders text", () => {
-        render(<Badge>Badge</Badge>);
-        expect(screen.getByText("Badge")).toBeInTheDocument();
+        render(<Badge>Default Badge</Badge>);
+        expect(screen.getByText("Default Badge")).toBeInTheDocument();
+        expect(screen.getByText("Default Badge")).toHaveClass(
+            "makeStyles-badge-17 makeStyles-gray-24"
+        );
     });
 });
