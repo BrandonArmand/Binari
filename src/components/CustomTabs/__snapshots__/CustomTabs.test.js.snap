@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomTabs renders snapshot 1`] = `
+<div>
+  <div
+    class="makeStyles-card-8"
+  >
+    <div
+      class="makeStyles-cardHeader-11"
+    >
+      <div
+        class="MuiTabs-root makeStyles-tabsRoot-4"
+      >
+        <div
+          class="MuiTabs-scroller MuiTabs-fixed"
+          style="overflow: hidden;"
+        >
+          <div
+            class="MuiTabs-flexContainer"
+            role="tablist"
+          >
+            <button
+              aria-selected="true"
+              class="MuiButtonBase-root MuiTab-root makeStyles-tabRootButton-5 MuiTab-textColorInherit Mui-selected makeStyles-tabSelected-6 MuiTab-labelIcon"
+              role="tab"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiTab-wrapper makeStyles-tabWrapper-7"
+              >
+                <span
+                  aria-hidden="true"
+                  class="material-icons MuiIcon-root"
+                >
+                  tab icon
+                </span>
+                tab name
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+          <span
+            class="PrivateTabIndicator-root-21 PrivateTabIndicator-colorSecondary-23 MuiTabs-indicator makeStyles-displayNone-3"
+            style="left: 0px; width: 0px;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="makeStyles-cardBody-25"
+    >
+      <div>
+        tab content
+      </div>
+    </div>
+  </div>
+</div>
+`;
