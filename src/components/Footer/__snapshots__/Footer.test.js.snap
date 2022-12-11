@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders snapshot 1`] = `
+<div>
+  <footer
+    class="makeStyles-footer-4"
+  >
+    <div
+      class="makeStyles-container-7"
+    >
+      <div
+        class="makeStyles-left-2"
+      >
+        <ul
+          class="MuiList-root makeStyles-list-8 MuiList-padding"
+        >
+          <li
+            class="MuiListItem-root makeStyles-inlineBlock-9 MuiListItem-gutters"
+          >
+            <a
+              href="https://www.netlify.com"
+            >
+              <img
+                alt="Deploys by Netlify"
+                src="netlify.svg"
+              />
+            </a>
+          </li>
+          <li
+            class="MuiListItem-root makeStyles-inlineBlock-9 MuiListItem-gutters"
+          >
+            <a
+              class="makeStyles-block-1"
+              href="http://brandonarmand.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Brandon A. Welsh
+            </a>
+          </li>
+          <li
+            class="MuiListItem-root makeStyles-inlineBlock-9 MuiListItem-gutters"
+          >
+            <a
+              class="makeStyles-block-1"
+              href="https://github.com/BrandonArmand/Binari/blob/master/LICENSE.md"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              MIT License
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div>
+`;
