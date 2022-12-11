@@ -13,7 +13,9 @@ Interactive code editor with a live binary tree visual designed to teach new dev
 * [Playground](https://binari.dev/playground) - The primary learning route. Includes the code editor and canvas.
 * [About](https://binari.dev/about) - Application description w/ github API integration for contributor info.
 
-![Binari](https://user-images.githubusercontent.com/27185256/75616028-5278d680-5b00-11ea-8b74-b728553e5499.png "Site Photo")
+[![Home](https://user-images.githubusercontent.com/27185256/205257676-b8e4eea5-f5a3-414f-b200-942d1ee53a30.png)](https://binari.dev/)
+[![Binari](https://user-images.githubusercontent.com/27185256/205258584-61bcd4a3-e025-4338-bcc2-fcad0fcfd4af.png)](https://binari.dev/playground)
+[![About](https://user-images.githubusercontent.com/27185256/205262044-a001f03a-3284-4ef0-9689-6d118e5b0e1f.png)](https://binari.dev/playground)
 
 ## Built With
 
