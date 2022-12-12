@@ -16,7 +16,7 @@ const makeComponentStyles = makeStyles(() => ({
     ...buttonStyle,
 }));
 
-const RegularButton = React.forwardRef((props, ref) => {
+const CustomButton = React.forwardRef((props, ref) => {
     const {
         color,
         round,
@@ -54,7 +54,7 @@ const RegularButton = React.forwardRef((props, ref) => {
     );
 });
 
-RegularButton.propTypes = {
+CustomButton.propTypes = {
     color: PropTypes.oneOf([
         "primary",
         "info",
@@ -67,7 +67,7 @@ RegularButton.propTypes = {
         "twitter",
         "google",
         "github",
-        "transparent"
+        "transparent",
     ]),
     size: PropTypes.oneOf(["sm", "lg"]),
     simple: PropTypes.bool,
@@ -81,4 +81,4 @@ RegularButton.propTypes = {
     className: PropTypes.string,
 };
 
-export default RegularButton;
+export default CustomButton;

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardFooter renders snapshot 1`] = `
+<div>
+  <div
+    class="makeStyles-cardFooter-1"
+  />
+</div>
+`;

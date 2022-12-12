@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge renders snapshot 1`] = `
+<div>
+  <span
+    class="makeStyles-badge-1 makeStyles-gray-8"
+  />
+</div>
+`;

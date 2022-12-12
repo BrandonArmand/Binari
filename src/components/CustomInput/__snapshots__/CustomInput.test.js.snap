@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomInput renders snapshot 1`] = `
+<div>
+  <div
+    class="MuiFormControl-root makeStyles-formControl-9"
+  >
+    <div
+      class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-underline-2 MuiInputBase-formControl MuiInput-formControl"
+    >
+      <input
+        aria-invalid="false"
+        class="MuiInputBase-input MuiInput-input makeStyles-input-10"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;

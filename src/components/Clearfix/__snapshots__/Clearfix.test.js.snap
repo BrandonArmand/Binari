@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Clearfix renders snapshot 1`] = `
+<div>
+  <div
+    class="makeStyles-clearfix-1"
+  />
+</div>
+`;

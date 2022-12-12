@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomLinearProgress renders snapshot 1`] = `
+<div>
+  <div
+    class="MuiLinearProgress-root makeStyles-root-1 makeStyles-grayBackground-16 MuiLinearProgress-colorPrimary MuiLinearProgress-indeterminate"
+    role="progressbar"
+  >
+    <div
+      class="MuiLinearProgress-bar makeStyles-bar-2 makeStyles-gray-9 MuiLinearProgress-bar1Indeterminate MuiLinearProgress-barColorPrimary"
+    />
+    <div
+      class="MuiLinearProgress-bar makeStyles-bar-2 makeStyles-gray-9 MuiLinearProgress-bar2Indeterminate MuiLinearProgress-barColorPrimary"
+    />
+  </div>
+</div>
+`;

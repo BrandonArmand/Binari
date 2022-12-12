@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridItem renders snapshot 1`] = `
+<div>
+  <div
+    class="MuiGrid-root makeStyles-grid-1  MuiGrid-item"
+  />
+</div>
+`;

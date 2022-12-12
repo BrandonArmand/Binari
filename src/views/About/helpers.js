@@ -13,3 +13,19 @@ export function commitDel(arr) {
 export function showDetail(val) {
     return val ? true : null;
 }
+
+export async function getContributors() {
+    const apiHeaders = new Headers();
+    apiHeaders.append("Authorization", `Bearer ${process.env.REACT_APP_TOKEN}`);
+    const reqOptions = {
+        method: "GET",
+        headers: apiHeaders,
+        redirect: "follow",
+    };
+    let response = await fetch(
+        "https://api.github.com/repos/brandonarmand/binari/stats/contributors",
+        reqOptions
+    );
+    let dataJson = await response.json();
+    return dataJson?.sort((a, b) => (a?.total < b?.total ? 1 : -1));
+}
