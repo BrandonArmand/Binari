@@ -10,7 +10,7 @@
     "classnames": "2.2.6",
     "history": "4.9.0",
     "js-beautify": "^1.10.2",
-    "moment": "2.24.0",
+    "moment": "^2.29.4",
     "node-sass": "^4.13.1",
     "nouislider": "14.0.2",
     "prop-types": "15.7.2",
@@ -28,7 +28,7 @@
     "redux": "^4.0.5"
   },
   "devDependencies": {
-    "@babel/cli": "7.5.5",
+    "@babel/cli": "^7.19.3",
     "@babel/plugin-proposal-class-properties": "7.5.5",
     "@babel/preset-env": "7.5.5",
     "@babel/preset-react": "7.0.0",
