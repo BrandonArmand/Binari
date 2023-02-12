@@ -38,17 +38,45 @@ There is plenty to do for both developers and designers of every skill level. Ch
 1. Read the rules!
 2. Issues tagged with `first-timers-only` are reserved for new contributors. Let them have a chance.
 3. Each pull request should only introduce a single update at a time. Do not reference multiple issues that are unrelated to one-another.
+4. Attempt to match the coding style of the project.
+5. Adhere to the Code of Conduct, outlined below.
 
-### Setup
-1) Fork the repo.
-2) Run a couple of commands in the project's file directory.
+### Setup and Contributing Changes
+1) Fork the repo into your GitHub account (available in the top right corner).
 
+2) Clone the forked repo.
+```
+git clone https://github.com/<yourgithubaccount>/Binari.git
+```
+
+3) Navigate to the Binari directory and create/switch to a new branch.
+```
+cd Binari
+git checkout -b <branch-name>
+```
+
+4) Make changes to files. To see the changes you are making reflected in the application, run
 ```
 npm install
 npm start
 ```
+Build the project.
 
-3) Build.
+5) Add the edited files and commit your changes.
+```
+git add <files>
+git commit -m "<add message describing your changes>"
+```
+
+6) Push the changes to the remote repo.
+```
+git push -u origin <branch-name>
+```
+In the future, you can simply push to this branch by running `git push`.
+
+7) Navigate back to your forked version of the project, where GitHub will ask if you would like to open a Pull Request. Create a PR, adding a description of your changes, the purpose of the changes, and a link to the issue you are solving.
+
+8) Your PR will be reviewed by other members, who will either approve the merge or request changes.
 
 ## Code of Conduct
 
