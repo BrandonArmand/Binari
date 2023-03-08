@@ -50,6 +50,14 @@ npm start
 
 3) Build.
 
+### Contributors
+
+<a href="https://github.com/BrandonArmand/Binari/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=BrandonArmand/Binari" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
+
 ## Code of Conduct
 
 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
