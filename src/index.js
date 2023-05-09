@@ -44,6 +44,7 @@ function App() {
                         height: 150,
                         color: "white",
                     }}
+                    style="font-size: 24px; font-weight: 800"
                 />
                 <Parallax
                     filter
