@@ -63,7 +63,7 @@ export default function Header(props) {
     });
     const brandComponent = (
         <Link to={route} className={classes.link}>
-            <img src="/apple-icon.png" style={height: "56px", 'margin-right': "1rem"}/>
+            <img src="/apple-icon.png" style={{height: "56px", 'margin-right': "1rem"}}/>
             <Button className={classes.title}>{brand}</Button>
         </Link>
     );
