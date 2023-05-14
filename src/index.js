@@ -57,7 +57,7 @@ function App() {
                                 <h1 className={classes.title}>Binari</h1>
                                 <p className={classes.subtitle}>
                                     Binary Trees are a gateway towards a deeper understanding of
-                                    dynamic programming. Through the use of both recursion and
+                                    programming. Through the use of both recursion and
                                     iterative implementations, any developer can be guided towards
                                     becoming a more complete programmer.
                                 </p>
