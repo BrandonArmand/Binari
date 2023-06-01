@@ -3,6 +3,19 @@ import { makeStyles } from "@material-ui/core/styles";
 import consoleIcon from "../../../assets/imgs/console.svg";
 import PropTypes from "prop-types";
 
+export function lineOutput(line, wrkspc, key, classes) {
+    return (
+        <div key={key}>
+            <span className={classes.directory}>
+                {`binari@env/wrkspc${wrkspc}`}
+            </span>{" "}
+            {"> "}
+            {line}
+        </div>
+    );
+}
+
+
 const useStyle = makeStyles({
     log: {
         fontFamily: "Consolas, serif",
@@ -61,20 +74,8 @@ const Debug = ({ data, }) => {
         default:
             result = <span>{el}</span>;
         }
-        return lineOutput(result, wrkspc, i);
+        return lineOutput(result, wrkspc, i, classes);
     });
-
-    function lineOutput(line, wrkspc, key) {
-        return (
-            <div key={key}>
-                <span className={classes.directory}>
-                    {`binari@env/wrkspc${wrkspc}`}
-                </span>{" "}
-                {"> "}
-                {line}
-            </div>
-        );
-    }
 
     return (
         <>

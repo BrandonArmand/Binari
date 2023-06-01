@@ -67,5 +67,16 @@
       "not op_mini all"
     ],
     "development": []
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandonArmand/Binari.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrandonArmand/Binari/issues"
+  },
+  "homepage": "https://github.com/BrandonArmand/Binari#readme"
 }
