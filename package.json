@@ -11,7 +11,6 @@
     "history": "4.9.0",
     "js-beautify": "^1.10.2",
     "moment": "^2.29.4",
-    "node-sass": "^4.13.1",
     "nouislider": "14.0.2",
     "prop-types": "15.7.2",
     "react": "16.9.0",
@@ -25,7 +24,8 @@
     "react-scripts": "^3.3.0",
     "react-slick": "0.25.2",
     "react-splitter-layout": "^4.0.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "sass": "^1.64.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
@@ -41,6 +41,7 @@
     "gulp-append-prepend": "1.0.8",
     "jest": "^24.9.0",
     "prettier": "1.18.2",
+    "react-test-renderer": "16.9",
     "ts-jest": "^29.0.3"
   },
   "optionalDependencies": {
