@@ -1,11 +1,24 @@
+/*Array of all nodes*/
+var nodeList;
+const elementScale = window.devicePixelRatio < 2 ? 2 : window.devicePixelRatio;
+const windowSize = elementScale * 500;
+
+/*A map containing all custom colors name-value pairs*/
+let customColors;
+
+
 export function setTree() {
     nodeList = [];
-    //Generate all position and layer data
-    return positionNode(tree, 1, 1);
+    return;
 }
 
 /**Add position, layer and order from left to right information to this node and all it's children**/
 export function positionNode(node, layer, xOrder) {
+    /*Space between the layers realative to elementScale*/
+    let yDiff = 40;
+    /*Offset of the root node from the top of the canvas relative to elementScale*/
+    let top = 20;
+
     node.layer = layer;
     node.xOrder = xOrder;
     node.y = ((node.layer - 1) * yDiff + top) * elementScale;
