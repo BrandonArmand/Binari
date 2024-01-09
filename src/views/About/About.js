@@ -73,14 +73,6 @@ export default function About() {
                         >
                             <h2>Brandon A. Welsh</h2>
                         </Card>
-                        <Card
-                            avatar="https://media-exp1.licdn.com/dms/image/C4E03AQHuvD1qATn3AQ/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=4203eiQl-31Rsqj0qicTXSjkjqA0ugfGXlDeqmpyuVw"
-                            linkedin="https://www.linkedin.com/in/gizella-o-824a13161/"
-                            dribbble="https://dribbble.com/gizellaortiz"
-                            color="gigi"
-                        >
-                            <h2>Gigi Ortiz</h2>
-                        </Card>
 
                         <h1 className={classes.title}>Contributors</h1>
                         {contributors != null ? (
