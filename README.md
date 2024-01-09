@@ -85,6 +85,9 @@ In the future, you can simply push to this branch by running `git push`.
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
+              
+### Stargazers
+[![Stargazers over time](https://starchart.cc/BrandonArmand/Binari.svg?variant=adaptive)](https://starchart.cc/BrandonArmand/Binari)
 
 ## Code of Conduct
 
