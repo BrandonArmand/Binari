@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header
+  className="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionFixed makeStyles-appBar-1 MuiAppBar-colorPrimary mui-fixed"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular makeStyles-container-5 MuiToolbar-gutters"
+  >
+    <div
+      className="makeStyles-flex-6"
+    >
+      <a
+        className="makeStyles-link-2"
+        href="/home"
+        onClick={[Function]}
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root makeStyles-title-7 MuiButton-text"
+          disabled={false}
+          onBlur={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiButton-label"
+          >
+            BrandName
+          </span>
+          <span
+            className="MuiTouchRipple-root"
+          />
+        </button>
+      </a>
+    </div>
+    <div
+      className="PrivateHiddenCss-smDown-24"
+    />
+  </div>
+</header>
+`;

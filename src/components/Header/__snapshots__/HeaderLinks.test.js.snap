@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderLinks renders snapshot 1`] = `
+<div>
+  <ul
+    class="MuiList-root makeStyles-list-1 MuiList-padding"
+  >
+    <li
+      class="MuiListItem-root makeStyles-listItem-2 MuiListItem-gutters"
+    >
+      <a
+        class="makeStyles-link-10"
+        href="/playground"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-button-14 makeStyles-transparent-28 makeStyles-navLink-4 MuiButton-text"
+          tabindex="0"
+          target="_blank"
+          title="Get Started"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Playground
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </a>
+    </li>
+    <li
+      class="MuiListItem-root makeStyles-listItem-2 MuiListItem-gutters"
+    >
+      <a
+        class="makeStyles-link-10"
+        href="/about"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-button-14 makeStyles-transparent-28 makeStyles-navLink-4 MuiButton-text"
+          tabindex="0"
+          target="_blank"
+          title="Get to know me!"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            About
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </a>
+    </li>
+    <li
+      class="MuiListItem-root makeStyles-listItem-2 MuiListItem-gutters"
+    >
+      <a
+        aria-disabled="false"
+        class="MuiButtonBase-root MuiButton-root makeStyles-button-14 makeStyles-transparent-28 makeStyles-navLink-4 MuiButton-text"
+        href="https://github.com/BrandonArmand/Binari"
+        tabindex="0"
+        target="_blank"
+        title="Checkout my GitHub"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          <i
+            class="makeStyles-socialIcons-9 fab fa-github"
+          />
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </a>
+    </li>
+  </ul>
+</div>
+`;
